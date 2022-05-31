@@ -4,6 +4,7 @@ var CRDsValidation map[string]string = map[string]string{
 	"datavolumetemplatespec": `openAPIV3Schema:
   nullable: true
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -21,12 +22,14 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: DataVolumeSpec contains the DataVolume specification.
       properties:
+        "": {}
         checkpoints:
           description: Checkpoints is a list of DataVolumeCheckpoints, representing
             stages in a multistage import.
           items:
             description: DataVolumeCheckpoint defines a stage in a warm migration.
             properties:
+              "": {}
               current:
                 description: Current is the identifier of the snapshot created for
                   this checkpoint.
@@ -60,6 +63,7 @@ var CRDsValidation map[string]string = map[string]string{
         pvc:
           description: PVC is the PVC specification
           properties:
+            "": {}
             accessModes:
               description: 'AccessModes contains the desired access modes the volume
                 should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -75,6 +79,7 @@ var CRDsValidation map[string]string = map[string]string{
                 the AnyVolumeDataSource feature gate is enabled, this field will always
                 have the same contents as the DataSourceRef field.'
               properties:
+                "": {}
                 apiGroup:
                   description: APIGroup is the group for the resource being referenced.
                     If APIGroup is not specified, the specified Kind must be in the
@@ -109,6 +114,7 @@ var CRDsValidation map[string]string = map[string]string{
                 (Alpha) Using this field requires the AnyVolumeDataSource feature
                 gate to be enabled.'
               properties:
+                "": {}
                 apiGroup:
                   description: APIGroup is the group for the resource being referenced.
                     If APIGroup is not specified, the specified Kind must be in the
@@ -131,6 +137,7 @@ var CRDsValidation map[string]string = map[string]string{
                 value but must still be higher than capacity recorded in the status
                 field of the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
               properties:
+                "": {}
                 limits:
                   additionalProperties:
                     anyOf:
@@ -157,6 +164,7 @@ var CRDsValidation map[string]string = map[string]string{
             selector:
               description: A label query over volumes to consider for binding.
               properties:
+                "": {}
                 matchExpressions:
                   description: matchExpressions is a list of label selector requirements.
                     The requirements are ANDed.
@@ -164,6 +172,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: A label selector requirement is a selector that contains
                       values, a key, and an operator that relates the key and values.
                     properties:
+                      "": {}
                       key:
                         description: key is the label key that the selector applies
                           to.
@@ -213,6 +222,7 @@ var CRDsValidation map[string]string = map[string]string{
         source:
           description: Source is the src of the data for the requested DataVolume
           properties:
+            "": {}
             blank:
               description: DataVolumeBlankImage provides the parameters to create
                 a new raw blank image for the PVC
@@ -222,6 +232,7 @@ var CRDsValidation map[string]string = map[string]string{
                 with an optional basic auth user name and password, and an optional
                 configmap containing additional CAs
               properties:
+                "": {}
                 certConfigMap:
                   description: CertConfigMap is a configmap reference, containing
                     a Certificate Authority(CA) public key, and a base64 encoded pem
@@ -255,6 +266,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: DataVolumeSourceImageIO provides the parameters to create
                 a Data Volume from an imageio source
               properties:
+                "": {}
                 certConfigMap:
                   description: CertConfigMap provides a reference to the CA cert
                   type: string
@@ -276,6 +288,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: DataVolumeSourcePVC provides the parameters to create a
                 Data Volume from an existing PVC
               properties:
+                "": {}
                 name:
                   description: The name of the source PVC
                   type: string
@@ -290,6 +303,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: DataVolumeSourceRegistry provides the parameters to create
                 a Data Volume from an registry source
               properties:
+                "": {}
                 certConfigMap:
                   description: CertConfigMap provides a reference to the Registry
                     certs
@@ -314,6 +328,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: DataVolumeSourceS3 provides the parameters to create a
                 Data Volume from an S3 source
               properties:
+                "": {}
                 certConfigMap:
                   description: CertConfigMap is a configmap reference, containing
                     a Certificate Authority(CA) public key, and a base64 encoded pem
@@ -337,6 +352,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: DataVolumeSourceVDDK provides the parameters to create
                 a Data Volume from a Vmware source
               properties:
+                "": {}
                 backingFile:
                   description: BackingFile is the path to the virtual hard disk to
                     migrate from vCenter/ESXi
@@ -368,6 +384,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: SourceRef is an indirect reference to the source of data for
             the requested DataVolume
           properties:
+            "": {}
             kind:
               description: The kind of the source reference, currently only "DataSource"
                 is supported
@@ -386,6 +403,7 @@ var CRDsValidation map[string]string = map[string]string{
         storage:
           description: Storage is the requested storage specification
           properties:
+            "": {}
             accessModes:
               description: 'AccessModes contains the desired access modes the volume
                 should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -402,6 +420,7 @@ var CRDsValidation map[string]string = map[string]string{
                 can support the specified data source, it will create a new volume
                 based on the contents of the specified data source.'
               properties:
+                "": {}
                 apiGroup:
                   description: APIGroup is the group for the resource being referenced.
                     If APIGroup is not specified, the specified Kind must be in the
@@ -421,6 +440,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: 'Resources represents the minimum resources the volume
                 should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
               properties:
+                "": {}
                 limits:
                   additionalProperties:
                     anyOf:
@@ -447,6 +467,7 @@ var CRDsValidation map[string]string = map[string]string{
             selector:
               description: A label query over volumes to consider for binding.
               properties:
+                "": {}
                 matchExpressions:
                   description: matchExpressions is a list of label selector requirements.
                     The requirements are ANDed.
@@ -454,6 +475,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: A label selector requirement is a selector that contains
                       values, a key, and an operator that relates the key and values.
                     properties:
+                      "": {}
                       key:
                         description: key is the label key that the selector applies
                           to.
@@ -513,6 +535,7 @@ var CRDsValidation map[string]string = map[string]string{
 	"kubevirt": `openAPIV3Schema:
   description: KubeVirt represents the object deploying all KubeVirt resources
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -527,14 +550,18 @@ var CRDsValidation map[string]string = map[string]string{
       type: object
     spec:
       properties:
+        "": {}
         certificateRotateStrategy:
           properties:
+            "": {}
             selfSigned:
               properties:
+                "": {}
                 ca:
                   description: CA configuration CA certs are kept in the CA bundle
                     as long as they are valid
                   properties:
+                    "": {}
                     duration:
                       description: The requested 'duration' (i.e. lifetime) of the
                         Certificate.
@@ -557,6 +584,7 @@ var CRDsValidation map[string]string = map[string]string{
                 server:
                   description: Server configuration Certs are rotated and discarded
                   properties:
+                    "": {}
                     duration:
                       description: The requested 'duration' (i.e. lifetime) of the
                         Certificate.
@@ -572,21 +600,26 @@ var CRDsValidation map[string]string = map[string]string{
         configuration:
           description: holds kubevirt configurations. same as the virt-configMap
           properties:
+            "": {}
             apiConfiguration:
               description: ReloadableComponentConfiguration holds all generic k8s
                 configuration options which can be reloaded by components without
                 requiring a restart.
               properties:
+                "": {}
                 restClient:
                   description: RestClient can be used to tune certain aspects of the
                     k8s client in use.
                   properties:
+                    "": {}
                     rateLimiter:
                       description: RateLimiter allows selecting and configuring different
                         rate limiters for the k8s client.
                       properties:
+                        "": {}
                         tokenBucketRateLimiter:
                           properties:
+                            "": {}
                             burst:
                               description: Maximum burst for throttle. If it's zero,
                                 the component default will be used
@@ -608,16 +641,20 @@ var CRDsValidation map[string]string = map[string]string{
                 configuration options which can be reloaded by components without
                 requiring a restart.
               properties:
+                "": {}
                 restClient:
                   description: RestClient can be used to tune certain aspects of the
                     k8s client in use.
                   properties:
+                    "": {}
                     rateLimiter:
                       description: RateLimiter allows selecting and configuring different
                         rate limiters for the k8s client.
                       properties:
+                        "": {}
                         tokenBucketRateLimiter:
                           properties:
+                            "": {}
                             burst:
                               description: Maximum burst for throttle. If it's zero,
                                 the component default will be used
@@ -647,12 +684,14 @@ var CRDsValidation map[string]string = map[string]string{
             developerConfiguration:
               description: DeveloperConfiguration holds developer options
               properties:
+                "": {}
                 cpuAllocationRatio:
                   type: integer
                 diskVerification:
                   description: DiskVerification holds container disks verification
                     limits
                   properties:
+                    "": {}
                     memoryLimit:
                       anyOf:
                       - type: integer
@@ -669,6 +708,7 @@ var CRDsValidation map[string]string = map[string]string{
                 logVerbosity:
                   description: LogVerbosity sets log verbosity level of  various components
                   properties:
+                    "": {}
                     nodeVerbosity:
                       additionalProperties:
                         type: integer
@@ -723,16 +763,20 @@ var CRDsValidation map[string]string = map[string]string{
                 configuration options which can be reloaded by components without
                 requiring a restart.
               properties:
+                "": {}
                 restClient:
                   description: RestClient can be used to tune certain aspects of the
                     k8s client in use.
                   properties:
+                    "": {}
                     rateLimiter:
                       description: RateLimiter allows selecting and configuring different
                         rate limiters for the k8s client.
                       properties:
+                        "": {}
                         tokenBucketRateLimiter:
                           properties:
+                            "": {}
                             burst:
                               description: Maximum burst for throttle. If it's zero,
                                 the component default will be used
@@ -759,6 +803,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: MediatedDevicesConfiguration holds information about MDEV
                 types to be defined, if available
               properties:
+                "": {}
                 mediatedDevicesTypes:
                   items:
                     type: string
@@ -770,6 +815,7 @@ var CRDsValidation map[string]string = map[string]string{
                       MDEV types to be defined in a specifc node that matches the
                       NodeSelector field.
                     properties:
+                      "": {}
                       mediatedDevicesTypes:
                         items:
                           type: string
@@ -796,6 +842,7 @@ var CRDsValidation map[string]string = map[string]string{
             migrations:
               description: MigrationConfiguration holds migration options
               properties:
+                "": {}
                 allowAutoConverge:
                   type: boolean
                 allowPostCopy:
@@ -832,6 +879,7 @@ var CRDsValidation map[string]string = map[string]string{
             network:
               description: NetworkConfiguration holds network options
               properties:
+                "": {}
                 defaultNetworkInterface:
                   type: string
                 permitBridgeInterfaceOnPodNetwork:
@@ -849,11 +897,13 @@ var CRDsValidation map[string]string = map[string]string{
               description: PermittedHostDevices holds information about devices allowed
                 for passthrough
               properties:
+                "": {}
                 mediatedDevices:
                   items:
                     description: MediatedHostDevice represents a host mediated device
                       allowed for passthrough
                     properties:
+                      "": {}
                       externalResourceProvider:
                         type: boolean
                       mdevNameSelector:
@@ -871,6 +921,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: PciHostDevice represents a host PCI device allowed
                       for passthrough
                     properties:
+                      "": {}
                       externalResourceProvider:
                         description: If true, KubeVirt will leave the allocation and
                           monitoring to an external device plugin
@@ -897,6 +948,7 @@ var CRDsValidation map[string]string = map[string]string{
               type: string
             smbios:
               properties:
+                "": {}
                 family:
                   type: string
                 manufacturer:
@@ -920,16 +972,20 @@ var CRDsValidation map[string]string = map[string]string{
                 configuration options which can be reloaded by components without
                 requiring a restart.
               properties:
+                "": {}
                 restClient:
                   description: RestClient can be used to tune certain aspects of the
                     k8s client in use.
                   properties:
+                    "": {}
                     rateLimiter:
                       description: RateLimiter allows selecting and configuring different
                         rate limiters for the k8s client.
                       properties:
+                        "": {}
                         tokenBucketRateLimiter:
                           properties:
+                            "": {}
                             burst:
                               description: Maximum burst for throttle. If it's zero,
                                 the component default will be used
@@ -949,9 +1005,11 @@ var CRDsValidation map[string]string = map[string]string{
           type: object
         customizeComponents:
           properties:
+            "": {}
             flags:
               description: Configure the value used for deployment and daemonset resources
               properties:
+                "": {}
                 api:
                   additionalProperties:
                     type: string
@@ -968,6 +1026,7 @@ var CRDsValidation map[string]string = map[string]string{
             patches:
               items:
                 properties:
+                  "": {}
                   patch:
                     type: string
                   resourceName:
@@ -1002,20 +1061,24 @@ var CRDsValidation map[string]string = map[string]string{
           description: selectors and tolerations that should apply to KubeVirt infrastructure
             components
           properties:
+            "": {}
             nodePlacement:
               description: nodePlacement describes scheduling configuration for specific
                 KubeVirt components
               properties:
+                "": {}
                 affinity:
                   description: affinity enables pod affinity/anti-affinity placement
                     expanding the types of constraints that can be expressed with
                     nodeSelector. affinity is going to be applied to the relevant
                     kind of pods in parallel with nodeSelector See https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
                   properties:
+                    "": {}
                     nodeAffinity:
                       description: Describes node affinity scheduling rules for the
                         pod.
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -1034,10 +1097,12 @@ var CRDsValidation map[string]string = map[string]string{
                               A null preferred scheduling term matches no objects
                               (i.e. is also a no-op).
                             properties:
+                              "": {}
                               preference:
                                 description: A node selector term, associated with
                                   the corresponding weight.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -1046,6 +1111,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -1082,6 +1148,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -1130,6 +1197,7 @@ var CRDsValidation map[string]string = map[string]string{
                             may or may not try to eventually evict the pod from its
                             node.
                           properties:
+                            "": {}
                             nodeSelectorTerms:
                               description: Required. A list of node selector terms.
                                 The terms are ORed.
@@ -1139,6 +1207,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   The TopologySelectorTerm type implements a subset
                                   of the NodeSelectorTerm.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -1147,6 +1216,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -1183,6 +1253,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -1221,6 +1292,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Describes pod affinity scheduling rules (e.g. co-locate
                         this pod in the same node, zone, etc. as some other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -1238,14 +1310,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -1256,6 +1331,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -1304,6 +1380,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -1314,6 +1391,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -1404,10 +1482,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -1417,6 +1497,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -1463,6 +1544,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -1472,6 +1554,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -1536,6 +1619,7 @@ var CRDsValidation map[string]string = map[string]string{
                         avoid putting this pod in the same node, zone, etc. as some
                         other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the anti-affinity expressions specified
@@ -1554,14 +1638,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -1572,6 +1659,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -1620,6 +1708,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -1630,6 +1719,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -1720,10 +1810,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -1733,6 +1825,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -1779,6 +1872,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -1788,6 +1882,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -1867,6 +1962,7 @@ var CRDsValidation map[string]string = map[string]string{
                       any taint that matches the triple <key,value,effect> using the
                       matching operator <operator>.
                     properties:
+                      "": {}
                       effect:
                         description: Effect indicates the taint effect to match. Empty
                           means match all taint effects. When specified, allowed values
@@ -1943,6 +2039,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: WorkloadUpdateStrategy defines at the cluster level how to
             handle automated workload updates
           properties:
+            "": {}
             batchEvictionInterval:
               description: "BatchEvictionInterval Represents the interval to wait
                 before issuing the next batch of shutdowns \n Defaults to 1 minute"
@@ -1968,20 +2065,24 @@ var CRDsValidation map[string]string = map[string]string{
         workloads:
           description: selectors and tolerations that should apply to KubeVirt workloads
           properties:
+            "": {}
             nodePlacement:
               description: nodePlacement describes scheduling configuration for specific
                 KubeVirt components
               properties:
+                "": {}
                 affinity:
                   description: affinity enables pod affinity/anti-affinity placement
                     expanding the types of constraints that can be expressed with
                     nodeSelector. affinity is going to be applied to the relevant
                     kind of pods in parallel with nodeSelector See https://kubernetes.io/docs/concepts/scheduling-eviction/assign-pod-node/#affinity-and-anti-affinity
                   properties:
+                    "": {}
                     nodeAffinity:
                       description: Describes node affinity scheduling rules for the
                         pod.
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -2000,10 +2101,12 @@ var CRDsValidation map[string]string = map[string]string{
                               A null preferred scheduling term matches no objects
                               (i.e. is also a no-op).
                             properties:
+                              "": {}
                               preference:
                                 description: A node selector term, associated with
                                   the corresponding weight.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -2012,6 +2115,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -2048,6 +2152,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -2096,6 +2201,7 @@ var CRDsValidation map[string]string = map[string]string{
                             may or may not try to eventually evict the pod from its
                             node.
                           properties:
+                            "": {}
                             nodeSelectorTerms:
                               description: Required. A list of node selector terms.
                                 The terms are ORed.
@@ -2105,6 +2211,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   The TopologySelectorTerm type implements a subset
                                   of the NodeSelectorTerm.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -2113,6 +2220,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -2149,6 +2257,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -2187,6 +2296,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Describes pod affinity scheduling rules (e.g. co-locate
                         this pod in the same node, zone, etc. as some other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -2204,14 +2314,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -2222,6 +2335,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -2270,6 +2384,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -2280,6 +2395,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -2370,10 +2486,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -2383,6 +2501,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -2429,6 +2548,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -2438,6 +2558,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -2502,6 +2623,7 @@ var CRDsValidation map[string]string = map[string]string{
                         avoid putting this pod in the same node, zone, etc. as some
                         other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the anti-affinity expressions specified
@@ -2520,14 +2642,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -2538,6 +2663,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -2586,6 +2712,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -2596,6 +2723,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -2686,10 +2814,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -2699,6 +2829,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -2745,6 +2876,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -2754,6 +2886,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -2833,6 +2966,7 @@ var CRDsValidation map[string]string = map[string]string{
                       any taint that matches the triple <key,value,effect> using the
                       matching operator <operator>.
                     properties:
+                      "": {}
                       effect:
                         description: Effect indicates the taint effect to match. Empty
                           means match all taint effects. When specified, allowed values
@@ -2879,10 +3013,12 @@ var CRDsValidation map[string]string = map[string]string{
       description: KubeVirtStatus represents information pertaining to a KubeVirt
         deployment.
       properties:
+        "": {}
         conditions:
           items:
             description: KubeVirtCondition represents a condition of a KubeVirt deployment
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -2909,6 +3045,7 @@ var CRDsValidation map[string]string = map[string]string{
             description: GenerationStatus keeps track of the generation for a given
               resource so that decisions about forced updates can be made.
             properties:
+              "": {}
               group:
                 description: group is the group of the thing you're tracking
                 type: string
@@ -2974,6 +3111,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: MigrationPolicy holds migration policy (i.e. configurations) to apply
     to a VM or group of VMs
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -2988,6 +3126,7 @@ var CRDsValidation map[string]string = map[string]string{
       type: object
     spec:
       properties:
+        "": {}
         allowAutoConverge:
           type: boolean
         allowPostCopy:
@@ -3003,12 +3142,14 @@ var CRDsValidation map[string]string = map[string]string{
           type: integer
         selectors:
           properties:
+            "": {}
             namespaceSelector:
               description: A label selector is a label query over a set of resources.
                 The result of matchLabels and matchExpressions are ANDed. An empty
                 label selector matches all objects. A null label selector matches
                 no objects.
               properties:
+                "": {}
                 matchExpressions:
                   description: matchExpressions is a list of label selector requirements.
                     The requirements are ANDed.
@@ -3016,6 +3157,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: A label selector requirement is a selector that contains
                       values, a key, and an operator that relates the key and values.
                     properties:
+                      "": {}
                       key:
                         description: key is the label key that the selector applies
                           to.
@@ -3055,6 +3197,7 @@ var CRDsValidation map[string]string = map[string]string{
                 label selector matches all objects. A null label selector matches
                 no objects.
               properties:
+                "": {}
                 matchExpressions:
                   description: matchExpressions is a list of label selector requirements.
                     The requirements are ANDed.
@@ -3062,6 +3205,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: A label selector requirement is a selector that contains
                       values, a key, and an operator that relates the key and values.
                     properties:
+                      "": {}
                       key:
                         description: key is the label key that the selector applies
                           to.
@@ -3112,6 +3256,7 @@ var CRDsValidation map[string]string = map[string]string{
     VirtualMachineInstance. It also mirrors the running state of the created VirtualMachineInstance
     in its status.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -3127,6 +3272,7 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: Spec contains the specification of VirtualMachineInstance created
       properties:
+        "": {}
         dataVolumeTemplates:
           description: dataVolumeTemplates is a list of dataVolumes that the VirtualMachineInstance
             template can reference. DataVolumes in this list are dynamically created
@@ -3134,6 +3280,7 @@ var CRDsValidation map[string]string = map[string]string{
           items:
             nullable: true
             properties:
+              "": {}
               apiVersion:
                 description: 'APIVersion defines the versioned schema of this representation
                   of an object. Servers should convert recognized schemas to the latest
@@ -3152,6 +3299,7 @@ var CRDsValidation map[string]string = map[string]string{
               spec:
                 description: DataVolumeSpec contains the DataVolume specification.
                 properties:
+                  "": {}
                   checkpoints:
                     description: Checkpoints is a list of DataVolumeCheckpoints, representing
                       stages in a multistage import.
@@ -3159,6 +3307,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: DataVolumeCheckpoint defines a stage in a warm
                         migration.
                       properties:
+                        "": {}
                         current:
                           description: Current is the identifier of the snapshot created
                             for this checkpoint.
@@ -3193,6 +3342,7 @@ var CRDsValidation map[string]string = map[string]string{
                   pvc:
                     description: PVC is the PVC specification
                     properties:
+                      "": {}
                       accessModes:
                         description: 'AccessModes contains the desired access modes
                           the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -3209,6 +3359,7 @@ var CRDsValidation map[string]string = map[string]string{
                           feature gate is enabled, this field will always have the
                           same contents as the DataSourceRef field.'
                         properties:
+                          "": {}
                           apiGroup:
                             description: APIGroup is the group for the resource being
                               referenced. If APIGroup is not specified, the specified
@@ -3247,6 +3398,7 @@ var CRDsValidation map[string]string = map[string]string{
                           this field requires the AnyVolumeDataSource feature gate
                           to be enabled.'
                         properties:
+                          "": {}
                           apiGroup:
                             description: APIGroup is the group for the resource being
                               referenced. If APIGroup is not specified, the specified
@@ -3271,6 +3423,7 @@ var CRDsValidation map[string]string = map[string]string{
                           than capacity recorded in the status field of the claim.
                           More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                         properties:
+                          "": {}
                           limits:
                             additionalProperties:
                               anyOf:
@@ -3298,6 +3451,7 @@ var CRDsValidation map[string]string = map[string]string{
                       selector:
                         description: A label query over volumes to consider for binding.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -3306,6 +3460,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -3357,6 +3512,7 @@ var CRDsValidation map[string]string = map[string]string{
                   source:
                     description: Source is the src of the data for the requested DataVolume
                     properties:
+                      "": {}
                       blank:
                         description: DataVolumeBlankImage provides the parameters
                           to create a new raw blank image for the PVC
@@ -3367,6 +3523,7 @@ var CRDsValidation map[string]string = map[string]string{
                           password, and an optional configmap containing additional
                           CAs
                         properties:
+                          "": {}
                           certConfigMap:
                             description: CertConfigMap is a configmap reference, containing
                               a Certificate Authority(CA) public key, and a base64
@@ -3400,6 +3557,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DataVolumeSourceImageIO provides the parameters
                           to create a Data Volume from an imageio source
                         properties:
+                          "": {}
                           certConfigMap:
                             description: CertConfigMap provides a reference to the
                               CA cert
@@ -3422,6 +3580,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DataVolumeSourcePVC provides the parameters to
                           create a Data Volume from an existing PVC
                         properties:
+                          "": {}
                           name:
                             description: The name of the source PVC
                             type: string
@@ -3436,6 +3595,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DataVolumeSourceRegistry provides the parameters
                           to create a Data Volume from an registry source
                         properties:
+                          "": {}
                           certConfigMap:
                             description: CertConfigMap provides a reference to the
                               Registry certs
@@ -3461,6 +3621,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DataVolumeSourceS3 provides the parameters to
                           create a Data Volume from an S3 source
                         properties:
+                          "": {}
                           certConfigMap:
                             description: CertConfigMap is a configmap reference, containing
                               a Certificate Authority(CA) public key, and a base64
@@ -3484,6 +3645,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DataVolumeSourceVDDK provides the parameters
                           to create a Data Volume from a Vmware source
                         properties:
+                          "": {}
                           backingFile:
                             description: BackingFile is the path to the virtual hard
                               disk to migrate from vCenter/ESXi
@@ -3516,6 +3678,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: SourceRef is an indirect reference to the source
                       of data for the requested DataVolume
                     properties:
+                      "": {}
                       kind:
                         description: The kind of the source reference, currently only
                           "DataSource" is supported
@@ -3534,6 +3697,7 @@ var CRDsValidation map[string]string = map[string]string{
                   storage:
                     description: Storage is the requested storage specification
                     properties:
+                      "": {}
                       accessModes:
                         description: 'AccessModes contains the desired access modes
                           the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -3551,6 +3715,7 @@ var CRDsValidation map[string]string = map[string]string{
                           support the specified data source, it will create a new
                           volume based on the contents of the specified data source.'
                         properties:
+                          "": {}
                           apiGroup:
                             description: APIGroup is the group for the resource being
                               referenced. If APIGroup is not specified, the specified
@@ -3571,6 +3736,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'Resources represents the minimum resources the
                           volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                         properties:
+                          "": {}
                           limits:
                             additionalProperties:
                               anyOf:
@@ -3598,6 +3764,7 @@ var CRDsValidation map[string]string = map[string]string{
                       selector:
                         description: A label query over volumes to consider for binding.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -3606,6 +3773,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -3668,6 +3836,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: FlavorMatcher references a flavor that is used to fill fields
             in Template
           properties:
+            "": {}
             kind:
               description: 'Kind specifies which flavor resource is referenced. Allowed
                 values are: "VirtualMachineFlavor" and "VirtualMachineClusterFlavor".
@@ -3683,6 +3852,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: PreferenceMatcher references a set of preference that is used
             to fill fields in Template
           properties:
+            "": {}
             kind:
               description: 'Kind specifies which preference resource is referenced.
                 Allowed values are: "VirtualMachinePreference" and "VirtualMachineClusterPreference".
@@ -3705,6 +3875,7 @@ var CRDsValidation map[string]string = map[string]string{
         template:
           description: Template is the direct specification of VirtualMachineInstance
           properties:
+            "": {}
             metadata:
               nullable: true
               type: object
@@ -3713,6 +3884,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: VirtualMachineInstance Spec contains the VirtualMachineInstance
                 specification.
               properties:
+                "": {}
                 accessCredentials:
                   description: Specifies a set of public keys to inject into the vm
                     guest
@@ -3721,14 +3893,17 @@ var CRDsValidation map[string]string = map[string]string{
                       can be used to authorize remote access to the vm guest Only
                       one of its members may be specified.
                     properties:
+                      "": {}
                       sshPublicKey:
                         description: SSHPublicKey represents the source and method
                           of applying a ssh public key into a guest virtual machine.
                         properties:
+                          "": {}
                           propagationMethod:
                             description: PropagationMethod represents how the public
                               key is injected into the vm guest.
                             properties:
+                              "": {}
                               configDrive:
                                 description: ConfigDrivePropagation means that the
                                   ssh public keys are injected into the VM using metadata
@@ -3741,6 +3916,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   feature requires the qemu guest agent to be running
                                   within the guest.
                                 properties:
+                                  "": {}
                                   users:
                                     description: Users represents a list of guest
                                       users that should have the ssh public keys added
@@ -3757,10 +3933,12 @@ var CRDsValidation map[string]string = map[string]string{
                             description: Source represents where the public keys are
                               pulled from
                             properties:
+                              "": {}
                               secret:
                                 description: Secret means that the access credential
                                   is pulled from a kubernetes secret
                                 properties:
+                                  "": {}
                                   secretName:
                                     description: SecretName represents the name of
                                       the secret in the VMI's namespace
@@ -3777,10 +3955,12 @@ var CRDsValidation map[string]string = map[string]string{
                         description: UserPassword represents the source and method
                           for applying a guest user's password
                         properties:
+                          "": {}
                           propagationMethod:
                             description: propagationMethod represents how the user
                               passwords are injected into the vm guest.
                             properties:
+                              "": {}
                               qemuGuestAgent:
                                 description: QemuGuestAgentAccessCredentailPropagation
                                   means passwords are dynamically injected into the
@@ -3793,10 +3973,12 @@ var CRDsValidation map[string]string = map[string]string{
                             description: Source represents where the user passwords
                               are pulled from
                             properties:
+                              "": {}
                               secret:
                                 description: Secret means that the access credential
                                   is pulled from a kubernetes secret
                                 properties:
+                                  "": {}
                                   secretName:
                                     description: SecretName represents the name of
                                       the secret in the VMI's namespace
@@ -3815,10 +3997,12 @@ var CRDsValidation map[string]string = map[string]string{
                 affinity:
                   description: If affinity is specifies, obey all the affinity rules
                   properties:
+                    "": {}
                     nodeAffinity:
                       description: Describes node affinity scheduling rules for the
                         pod.
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -3837,10 +4021,12 @@ var CRDsValidation map[string]string = map[string]string{
                               A null preferred scheduling term matches no objects
                               (i.e. is also a no-op).
                             properties:
+                              "": {}
                               preference:
                                 description: A node selector term, associated with
                                   the corresponding weight.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -3849,6 +4035,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -3885,6 +4072,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -3933,6 +4121,7 @@ var CRDsValidation map[string]string = map[string]string{
                             may or may not try to eventually evict the pod from its
                             node.
                           properties:
+                            "": {}
                             nodeSelectorTerms:
                               description: Required. A list of node selector terms.
                                 The terms are ORed.
@@ -3942,6 +4131,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   The TopologySelectorTerm type implements a subset
                                   of the NodeSelectorTerm.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -3950,6 +4140,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -3986,6 +4177,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -4024,6 +4216,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Describes pod affinity scheduling rules (e.g. co-locate
                         this pod in the same node, zone, etc. as some other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -4041,14 +4234,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -4059,6 +4255,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -4107,6 +4304,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -4117,6 +4315,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -4207,10 +4406,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -4220,6 +4421,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -4266,6 +4468,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -4275,6 +4478,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -4339,6 +4543,7 @@ var CRDsValidation map[string]string = map[string]string{
                         avoid putting this pod in the same node, zone, etc. as some
                         other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the anti-affinity expressions specified
@@ -4357,14 +4562,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -4375,6 +4583,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -4423,6 +4632,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -4433,6 +4643,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -4523,10 +4734,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -4536,6 +4749,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -4582,6 +4796,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -4591,6 +4806,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -4656,6 +4872,7 @@ var CRDsValidation map[string]string = map[string]string{
                     here will be merged to the generated DNS configuration based on
                     DNSPolicy.
                   properties:
+                    "": {}
                     nameservers:
                       description: A list of DNS name server IP addresses. This will
                         be appended to the base nameservers generated from DNSPolicy.
@@ -4672,6 +4889,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: PodDNSConfigOption defines DNS resolver options
                           of a pod.
                         properties:
+                          "": {}
                           name:
                             description: Required.
                             type: string
@@ -4699,10 +4917,12 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Specification of the desired behavior of the VirtualMachineInstance
                     on the host.
                   properties:
+                    "": {}
                     chassis:
                       description: Chassis specifies the chassis info passed to the
                         domain.
                       properties:
+                        "": {}
                         asset:
                           type: string
                         manufacturer:
@@ -4717,14 +4937,17 @@ var CRDsValidation map[string]string = map[string]string{
                     clock:
                       description: Clock sets the clock and timers of the vmi.
                       properties:
+                        "": {}
                         timer:
                           description: Timer specifies whih timers are attached to
                             the vmi.
                           properties:
+                            "": {}
                             hpet:
                               description: HPET (High Precision Event Timer) - multiple
                                 timers with periodic interrupts.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -4742,6 +4965,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 the host’s wall clock time (paravirtualized). For
                                 windows guests.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -4753,6 +4977,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 host’s wall clock time (paravirtualized). For linux
                                 guests."
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -4763,6 +4988,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: PIT (Programmable Interval Timer) - a timer
                                 with periodic interrupts.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -4778,6 +5004,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: RTC (Real Time Clock) - a continuously
                                 running timer with periodic interrupts.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -4803,6 +5030,7 @@ var CRDsValidation map[string]string = map[string]string{
                             If an offset is specified, guest changes to the clock
                             will be kept during reboots and are not reset.
                           properties:
+                            "": {}
                             offsetSeconds:
                               description: OffsetSeconds specifies an offset in seconds,
                                 relative to UTC. If set, guest changes to the clock
@@ -4814,6 +5042,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: CPU allow specified the detailed CPU topology inside
                         the vmi.
                       properties:
+                        "": {}
                         cores:
                           description: Cores specifies the number of cores inside
                             the vmi. Must be a value greater or equal 1.
@@ -4830,6 +5059,7 @@ var CRDsValidation map[string]string = map[string]string{
                           items:
                             description: CPUFeature allows specifying a CPU feature.
                             properties:
+                              "": {}
                               name:
                                 description: Name of the CPU feature
                                 type: string
@@ -4867,6 +5097,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: NUMA allows specifying settings for the guest
                             NUMA topology
                           properties:
+                            "": {}
                             guestMappingPassthrough:
                               description: GuestMappingPassthrough will create an
                                 efficient guest topology based on host CPUs exclusively
@@ -4879,6 +5110,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Realtime instructs the virt-launcher to tune
                             the VMI for lower latency, optional for real time workloads
                           properties:
+                            "": {}
                             mask:
                               description: 'Mask defines the vcpu mask expression
                                 that defines which vcpus are used for realtime. Format
@@ -4900,6 +5132,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Devices allows adding disks, network interfaces,
                         and others
                       properties:
+                        "": {}
                         autoattachGraphicsDevice:
                           description: Whether to attach the default graphics device
                             or not. VNC will not be available if set to false. Defaults
@@ -4936,14 +5169,17 @@ var CRDsValidation map[string]string = map[string]string{
                             are connected to the vmi.
                           items:
                             properties:
+                              "": {}
                               blockSize:
                                 description: If specified, the virtual disk will be
                                   presented with the given block sizes.
                                 properties:
+                                  "": {}
                                   custom:
                                     description: CustomBlockSize represents the desired
                                       logical and physical block size for a VM disk.
                                     properties:
+                                      "": {}
                                       logical:
                                         type: integer
                                       physical:
@@ -4956,6 +5192,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Represents if a feature is enabled
                                       or disabled.
                                     properties:
+                                      "": {}
                                       enabled:
                                         description: Enabled determines if the feature
                                           should be enabled or disabled on the guest.
@@ -4979,6 +5216,7 @@ var CRDsValidation map[string]string = map[string]string{
                               cdrom:
                                 description: Attach a volume as a cdrom to the vmi.
                                 properties:
+                                  "": {}
                                   bus:
                                     description: 'Bus indicates the type of disk device
                                       to emulate. supported values: virtio, sata,
@@ -5001,6 +5239,7 @@ var CRDsValidation map[string]string = map[string]string{
                               disk:
                                 description: Attach a volume as a disk to the vmi.
                                 properties:
+                                  "": {}
                                   bus:
                                     description: 'Bus indicates the type of disk device
                                       to emulate. supported values: virtio, sata,
@@ -5023,6 +5262,7 @@ var CRDsValidation map[string]string = map[string]string{
                               lun:
                                 description: Attach a volume as a LUN to the vmi.
                                 properties:
+                                  "": {}
                                   bus:
                                     description: 'Bus indicates the type of disk device
                                       to emulate. supported values: virtio, sata,
@@ -5056,6 +5296,7 @@ var CRDsValidation map[string]string = map[string]string{
                             to the vmi.
                           items:
                             properties:
+                              "": {}
                               name:
                                 description: Name is the device name
                                 type: string
@@ -5072,6 +5313,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Whether to attach a GPU device to the vmi.
                           items:
                             properties:
+                              "": {}
                               deviceName:
                                 type: string
                               name:
@@ -5085,8 +5327,10 @@ var CRDsValidation map[string]string = map[string]string{
                                 type: string
                               virtualGPUOptions:
                                 properties:
+                                  "": {}
                                   display:
                                     properties:
+                                      "": {}
                                       enabled:
                                         description: Enabled determines if a display
                                           addapter backed by a vGPU should be enabled
@@ -5097,6 +5341,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           the guest OS loads a real GPU driver Defaults
                                           to true.
                                         properties:
+                                          "": {}
                                           enabled:
                                             description: Enabled determines if the
                                               feature should be enabled or disabled
@@ -5115,6 +5360,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Whether to attach a host device to the vmi.
                           items:
                             properties:
+                              "": {}
                               deviceName:
                                 description: DeviceName is the resource name of the
                                   host device exposed by a device plugin
@@ -5136,6 +5382,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Inputs describe input devices
                           items:
                             properties:
+                              "": {}
                               bus:
                                 description: 'Bus indicates the bus of input device
                                   to emulate. Supported values: virtio, usb.'
@@ -5157,6 +5404,7 @@ var CRDsValidation map[string]string = map[string]string{
                             are added to the vmi.
                           items:
                             properties:
+                              "": {}
                               bootOrder:
                                 description: BootOrder is an integer value > 0, used
                                   to determine ordering of boot devices. Lower values
@@ -5172,6 +5420,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: If specified the network interface will
                                   pass additional DHCP options to the VMI
                                 properties:
+                                  "": {}
                                   bootFileName:
                                     description: If specified will pass option 67
                                       to interface's DHCP server
@@ -5189,6 +5438,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: DHCPExtraOptions defines Extra
                                         DHCP options for a VM.
                                       properties:
+                                        "": {}
                                         option:
                                           description: Option is an Integer value
                                             from 224-254 Required.
@@ -5244,6 +5494,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     the virtual machine. Default protocol TCP. The
                                     port field is mandatory
                                   properties:
+                                    "": {}
                                     name:
                                       description: If specified, this must be an IANA_SVC_NAME
                                         and unique within the pod. Each named port
@@ -5295,6 +5546,7 @@ var CRDsValidation map[string]string = map[string]string{
                         sound:
                           description: Whether to emulate a sound device.
                           properties:
+                            "": {}
                             model:
                               description: 'We only support ich9 or ac97. If SoundDevice
                                 is not set: No sound card is emulated. If SoundDevice
@@ -5319,9 +5571,11 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Watchdog describes a watchdog device which
                             can be added to the vmi.
                           properties:
+                            "": {}
                             i6300esb:
                               description: i6300esb watchdog device.
                               properties:
+                                "": {}
                                 action:
                                   description: The action to take. Valid values are
                                     poweroff, reset, shutdown. Defaults to reset.
@@ -5337,10 +5591,12 @@ var CRDsValidation map[string]string = map[string]string{
                     features:
                       description: Features like acpi, apic, hyperv, smm.
                       properties:
+                        "": {}
                         acpi:
                           description: ACPI enables/disables ACPI inside the guest.
                             Defaults to enabled.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -5349,6 +5605,7 @@ var CRDsValidation map[string]string = map[string]string{
                         apic:
                           description: Defaults to the machine type setting.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -5361,11 +5618,13 @@ var CRDsValidation map[string]string = map[string]string{
                         hyperv:
                           description: Defaults to the machine type setting.
                           properties:
+                            "": {}
                             evmcs:
                               description: EVMCS Speeds up L2 vmexits, but disables
                                 other virtualization features. Requires vapic. Defaults
                                 to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5377,6 +5636,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 handling for Hyper-V on KVM. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5388,6 +5648,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 environments. Requires vpindex. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5399,6 +5660,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 on TSC frequency changes. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5409,6 +5671,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Relaxed instructs the guest OS to disable
                                 watchdog timeouts. Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5420,6 +5683,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 vmi. Requires synic. Defaults to the machine type
                                 setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5431,6 +5695,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 improve scheduling in the guest. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5441,6 +5706,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Spinlocks allows to configure the spinlock
                                 retry attempts.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5457,6 +5723,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: SyNIC enables the Synthetic Interrupt Controller.
                                 Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5468,10 +5735,12 @@ var CRDsValidation map[string]string = map[string]string{
                                 Controller Timers, reducing CPU load. Defaults to
                                 the machine type setting.
                               properties:
+                                "": {}
                                 direct:
                                   description: Represents if a feature is enabled
                                     or disabled.
                                   properties:
+                                    "": {}
                                     enabled:
                                       description: Enabled determines if the feature
                                         should be enabled or disabled on the guest.
@@ -5486,6 +5755,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 environments. Requires vpindex. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5496,6 +5766,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: VAPIC improves the paravirtualized handling
                                 of interrupts. Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5506,6 +5777,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: VendorID allows setting the hypervisor
                                 vendor id. Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5521,6 +5793,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 to help windows identifying virtual processors. Defaults
                                 to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -5532,6 +5805,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Configure how KVM presence is exposed to the
                             guest.
                           properties:
+                            "": {}
                             hidden:
                               description: Hide the KVM hypervisor from standard MSR
                                 based discovery. Defaults to false
@@ -5542,6 +5816,7 @@ var CRDsValidation map[string]string = map[string]string{
                             spinlocks. For older kernels this feature should be explicitly
                             disabled.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -5551,6 +5826,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: SMM enables/disables System Management Mode.
                             TSEG not yet implemented.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -5560,13 +5836,16 @@ var CRDsValidation map[string]string = map[string]string{
                     firmware:
                       description: Firmware.
                       properties:
+                        "": {}
                         bootloader:
                           description: Settings to control the bootloader that is
                             used.
                           properties:
+                            "": {}
                             bios:
                               description: If set (default), BIOS will be used.
                               properties:
+                                "": {}
                                 useSerial:
                                   description: If set, the BIOS output will be transmitted
                                     over serial
@@ -5575,6 +5854,7 @@ var CRDsValidation map[string]string = map[string]string{
                             efi:
                               description: If set, EFI will be used instead of BIOS.
                               properties:
+                                "": {}
                                 secureBoot:
                                   description: If set, SecureBoot will be enabled
                                     and the OVMF roms will be swapped for SecureBoot-enabled
@@ -5586,10 +5866,12 @@ var CRDsValidation map[string]string = map[string]string{
                         kernelBoot:
                           description: Settings to set the kernel for booting.
                           properties:
+                            "": {}
                             container:
                               description: Container defines the container that containes
                                 kernel artifacts
                               properties:
+                                "": {}
                                 image:
                                   description: Image that contains initrd / kernel
                                     files.
@@ -5637,6 +5919,7 @@ var CRDsValidation map[string]string = map[string]string{
                     launchSecurity:
                       description: Launch Security setting of the vmi.
                       properties:
+                        "": {}
                         sev:
                           description: AMD Secure Encrypted Virtualization (SEV).
                           type: object
@@ -5644,6 +5927,7 @@ var CRDsValidation map[string]string = map[string]string{
                     machine:
                       description: Machine type.
                       properties:
+                        "": {}
                         type:
                           description: QEMU machine type is the actual chipset of
                             the VirtualMachineInstance.
@@ -5652,6 +5936,7 @@ var CRDsValidation map[string]string = map[string]string{
                     memory:
                       description: Memory allow specifying the VMI memory features.
                       properties:
+                        "": {}
                         guest:
                           anyOf:
                           - type: integer
@@ -5667,6 +5952,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Hugepages allow to use hugepages for the VirtualMachineInstance
                             instead of regular memory.
                           properties:
+                            "": {}
                             pageSize:
                               description: PageSize specifies the hugepage size, for
                                 x86_64 architecture valid values are 1Gi and 2Mi.
@@ -5677,6 +5963,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Resources describes the Compute Resources required
                         by this vmi.
                       properties:
+                        "": {}
                         limits:
                           additionalProperties:
                             anyOf:
@@ -5723,12 +6010,14 @@ var CRDsValidation map[string]string = map[string]string{
                     VirtualmachineInstances will be stopped if the probe fails. Cannot
                     be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                   properties:
+                    "": {}
                     exec:
                       description: One and only one of the following should be specified.
                         Exec specifies the action to take, it will be executed on
                         the guest through the qemu-guest-agent. If the guest agent
                         is not available, this probe will fail.
                       properties:
+                        "": {}
                         command:
                           description: Command is the command line to execute inside
                             the container, the working directory for the command  is
@@ -5754,6 +6043,7 @@ var CRDsValidation map[string]string = map[string]string{
                     httpGet:
                       description: HTTPGet specifies the http request to perform.
                       properties:
+                        "": {}
                         host:
                           description: Host name to connect to, defaults to the pod
                             IP. You probably want to set "Host" in httpHeaders instead.
@@ -5765,6 +6055,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: HTTPHeader describes a custom header to be
                               used in HTTP probes
                             properties:
+                              "": {}
                               name:
                                 description: The header field name
                                 type: string
@@ -5816,6 +6107,7 @@ var CRDsValidation map[string]string = map[string]string{
                         port. TCP hooks not yet supported TODO: implement a realistic
                         TCP lifecycle hook'
                       properties:
+                        "": {}
                         host:
                           description: 'Optional: Host name to connect to, defaults
                             to the pod IP.'
@@ -5850,9 +6142,11 @@ var CRDsValidation map[string]string = map[string]string{
                     description: Network represents a network type and a resource
                       that should be connected to the vm.
                     properties:
+                      "": {}
                       multus:
                         description: Represents the multus cni network.
                         properties:
+                          "": {}
                           default:
                             description: Select the default network and add it to
                               the multus-cni.io/default-network annotation.
@@ -5872,6 +6166,7 @@ var CRDsValidation map[string]string = map[string]string{
                       pod:
                         description: Represents the stock pod network interface.
                         properties:
+                          "": {}
                           vmIPv6NetworkCIDR:
                             description: IPv6 CIDR for the vm network. Defaults to
                               fd10:0:2::/120 if not specified.
@@ -5902,12 +6197,14 @@ var CRDsValidation map[string]string = map[string]string{
                     VirtualmachineInstances will be removed from service endpoints
                     if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                   properties:
+                    "": {}
                     exec:
                       description: One and only one of the following should be specified.
                         Exec specifies the action to take, it will be executed on
                         the guest through the qemu-guest-agent. If the guest agent
                         is not available, this probe will fail.
                       properties:
+                        "": {}
                         command:
                           description: Command is the command line to execute inside
                             the container, the working directory for the command  is
@@ -5933,6 +6230,7 @@ var CRDsValidation map[string]string = map[string]string{
                     httpGet:
                       description: HTTPGet specifies the http request to perform.
                       properties:
+                        "": {}
                         host:
                           description: Host name to connect to, defaults to the pod
                             IP. You probably want to set "Host" in httpHeaders instead.
@@ -5944,6 +6242,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: HTTPHeader describes a custom header to be
                               used in HTTP probes
                             properties:
+                              "": {}
                               name:
                                 description: The header field name
                                 type: string
@@ -5995,6 +6294,7 @@ var CRDsValidation map[string]string = map[string]string{
                         port. TCP hooks not yet supported TODO: implement a realistic
                         TCP lifecycle hook'
                       properties:
+                        "": {}
                         host:
                           description: 'Optional: Host name to connect to, defaults
                             to the pod IP.'
@@ -6051,6 +6351,7 @@ var CRDsValidation map[string]string = map[string]string{
                       any taint that matches the triple <key,value,effect> using the
                       matching operator <operator>.
                     properties:
+                      "": {}
                       effect:
                         description: Effect indicates the taint effect to match. Empty
                           means match all taint effects. When specified, allowed values
@@ -6084,18 +6385,130 @@ var CRDsValidation map[string]string = map[string]string{
                         type: string
                     type: object
                   type: array
+                topologySpreadConstraints:
+                  description: TopologySpreadConstraints describes how a group of
+                    VMIs ought to spread across topology domains. K8s scheduler will
+                    schedule VMI pods in a way which abides by the constraints.
+                  items:
+                    description: TopologySpreadConstraint specifies how to spread
+                      matching pods among the given topology.
+                    properties:
+                      "": {}
+                      labelSelector:
+                        description: LabelSelector is used to find matching pods.
+                          Pods that match this label selector are counted to determine
+                          the number of pods in their corresponding topology domain.
+                        properties:
+                          "": {}
+                          matchExpressions:
+                            description: matchExpressions is a list of label selector
+                              requirements. The requirements are ANDed.
+                            items:
+                              description: A label selector requirement is a selector
+                                that contains values, a key, and an operator that
+                                relates the key and values.
+                              properties:
+                                "": {}
+                                key:
+                                  description: key is the label key that the selector
+                                    applies to.
+                                  type: string
+                                operator:
+                                  description: operator represents a key's relationship
+                                    to a set of values. Valid operators are In, NotIn,
+                                    Exists and DoesNotExist.
+                                  type: string
+                                values:
+                                  description: values is an array of string values.
+                                    If the operator is In or NotIn, the values array
+                                    must be non-empty. If the operator is Exists or
+                                    DoesNotExist, the values array must be empty.
+                                    This array is replaced during a strategic merge
+                                    patch.
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - key
+                              - operator
+                              type: object
+                            type: array
+                          matchLabels:
+                            additionalProperties:
+                              type: string
+                            description: matchLabels is a map of {key,value} pairs.
+                              A single {key,value} in the matchLabels map is equivalent
+                              to an element of matchExpressions, whose key field is
+                              "key", the operator is "In", and the values array contains
+                              only "value". The requirements are ANDed.
+                            type: object
+                        type: object
+                      maxSkew:
+                        description: 'MaxSkew describes the degree to which pods may
+                          be unevenly distributed. When ''whenUnsatisfiable=DoNotSchedule'',
+                          it is the maximum permitted difference between the number
+                          of matching pods in the target topology and the global minimum.
+                          For example, in a 3-zone cluster, MaxSkew is set to 1, and
+                          pods with the same labelSelector spread as 1/1/0: | zone1
+                          | zone2 | zone3 | |   P   |   P   |       | - if MaxSkew
+                          is 1, incoming pod can only be scheduled to zone3 to become
+                          1/1/1; scheduling it onto zone1(zone2) would make the ActualSkew(2-0)
+                          on zone1(zone2) violate MaxSkew(1). - if MaxSkew is 2, incoming
+                          pod can be scheduled onto any zone. When ''whenUnsatisfiable=ScheduleAnyway'',
+                          it is used to give higher precedence to topologies that
+                          satisfy it. It''s a required field. Default value is 1 and
+                          0 is not allowed.'
+                        format: int32
+                        type: integer
+                      topologyKey:
+                        description: TopologyKey is the key of node labels. Nodes
+                          that have a label with this key and identical values are
+                          considered to be in the same topology. We consider each
+                          <key, value> as a "bucket", and try to put balanced number
+                          of pods into each bucket. It's a required field.
+                        type: string
+                      whenUnsatisfiable:
+                        description: 'WhenUnsatisfiable indicates how to deal with
+                          a pod if it doesn''t satisfy the spread constraint. - DoNotSchedule
+                          (default) tells the scheduler not to schedule it. - ScheduleAnyway
+                          tells the scheduler to schedule the pod in any location,   but
+                          giving higher precedence to topologies that would help reduce
+                          the   skew. A constraint is considered "Unsatisfiable" for
+                          an incoming pod if and only if every possible node assignment
+                          for that pod would violate "MaxSkew" on some topology. For
+                          example, in a 3-zone cluster, MaxSkew is set to 1, and pods
+                          with the same labelSelector spread as 3/1/1: | zone1 | zone2
+                          | zone3 | | P P P |   P   |   P   | If WhenUnsatisfiable
+                          is set to DoNotSchedule, incoming pod can only be scheduled
+                          to zone2(zone3) to become 3/2/1(3/1/2) as ActualSkew(2-1)
+                          on zone2(zone3) satisfies MaxSkew(1). In other words, the
+                          cluster can still be imbalanced, but scheduler won''t make
+                          it *more* imbalanced. It''s a required field.'
+                        type: string
+                    required:
+                    - maxSkew
+                    - topologyKey
+                    - whenUnsatisfiable
+                    type: object
+                  type: array
+                  x-kubernetes-list-map-keys:
+                  - topologyKey
+                  - whenUnsatisfiable
+                  x-kubernetes-list-type: map
                 volumes:
                   description: List of volumes that can be mounted by disks belonging
                     to the vmi.
                   items:
                     description: Volume represents a named volume in a vmi.
                     properties:
+                      "": {}
                       cloudInitConfigDrive:
                         description: 'CloudInitConfigDrive represents a cloud-init
                           Config Drive user-data source. The Config Drive data will
                           be added as a disk to the vmi. A proper cloud-init installation
                           is required inside the guest. More info: https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html'
                         properties:
+                          "": {}
                           networkData:
                             description: NetworkData contains config drive inline
                               cloud-init networkdata.
@@ -6108,6 +6521,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: NetworkDataSecretRef references a k8s secret
                               that contains config drive networkdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -6118,6 +6532,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: UserDataSecretRef references a k8s secret
                               that contains config drive userdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -6139,6 +6554,7 @@ var CRDsValidation map[string]string = map[string]string{
                           to the vmi. A proper cloud-init installation is required
                           inside the guest. More info: http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html'
                         properties:
+                          "": {}
                           networkData:
                             description: NetworkData contains NoCloud inline cloud-init
                               networkdata.
@@ -6151,6 +6567,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: NetworkDataSecretRef references a k8s secret
                               that contains NoCloud networkdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -6161,6 +6578,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: UserDataSecretRef references a k8s secret
                               that contains NoCloud userdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -6180,6 +6598,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'ConfigMapSource represents a reference to a
                           ConfigMap in the same namespace. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/'
                         properties:
+                          "": {}
                           name:
                             description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                               TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -6199,6 +6618,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'ContainerDisk references a docker image, embedding
                           a qcow or raw disk. More info: https://kubevirt.gitbooks.io/user-guide/registry-disk.html'
                         properties:
+                          "": {}
                           image:
                             description: Image is the name of the image with the embedded
                               disk.
@@ -6226,6 +6646,7 @@ var CRDsValidation map[string]string = map[string]string{
                           PVC for this volume as well as the process of populating
                           that PVC with a disk image.
                         properties:
+                          "": {}
                           hotpluggable:
                             description: Hotpluggable indicates whether the volume
                               can be hotplugged and hotunplugged.
@@ -6241,17 +6662,20 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DownwardAPI represents downward API about the
                           pod that should populate this volume
                         properties:
+                          "": {}
                           fields:
                             description: Fields is a list of downward API volume file
                             items:
                               description: DownwardAPIVolumeFile represents information
                                 to create the file containing the pod field
                               properties:
+                                "": {}
                                 fieldRef:
                                   description: 'Required: Selects a field of the pod:
                                     only annotations, labels, name and namespace are
                                     supported.'
                                   properties:
+                                    "": {}
                                     apiVersion:
                                       description: Version of the schema the FieldPath
                                         is written in terms of, defaults to "v1".
@@ -6288,6 +6712,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     limits.memory, requests.cpu and requests.memory)
                                     are currently supported.'
                                   properties:
+                                    "": {}
                                     containerName:
                                       description: 'Container name: required for volumes,
                                         optional for env vars'
@@ -6327,6 +6752,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'EmptyDisk represents a temporary disk which
                           shares the vmis lifecycle. More info: https://kubevirt.gitbooks.io/user-guide/disks-and-volumes.html'
                         properties:
+                          "": {}
                           capacity:
                             anyOf:
                             - type: integer
@@ -6342,11 +6768,13 @@ var CRDsValidation map[string]string = map[string]string{
                           specified source and provides copy-on-write image on top
                           of it.
                         properties:
+                          "": {}
                           persistentVolumeClaim:
                             description: 'PersistentVolumeClaimVolumeSource represents
                               a reference to a PersistentVolumeClaim in the same namespace.
                               Directly attached to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                             properties:
+                              "": {}
                               claimName:
                                 description: 'ClaimName is the name of a PersistentVolumeClaim
                                   in the same namespace as the pod using this volume.
@@ -6364,6 +6792,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: HostDisk represents a disk created on the cluster
                           level
                         properties:
+                          "": {}
                           capacity:
                             anyOf:
                             - type: integer
@@ -6391,6 +6820,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: MemoryDump is attached to the virt launcher and
                           is populated with a memory dump of the vmi
                         properties:
+                          "": {}
                           claimName:
                             description: 'ClaimName is the name of a PersistentVolumeClaim
                               in the same namespace as the pod using this volume.
@@ -6416,6 +6846,7 @@ var CRDsValidation map[string]string = map[string]string{
                           a reference to a PersistentVolumeClaim in the same namespace.
                           Directly attached to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                         properties:
+                          "": {}
                           claimName:
                             description: 'ClaimName is the name of a PersistentVolumeClaim
                               in the same namespace as the pod using this volume.
@@ -6436,6 +6867,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'SecretVolumeSource represents a reference to
                           a secret data in the same namespace. More info: https://kubernetes.io/docs/concepts/configuration/secret/'
                         properties:
+                          "": {}
                           optional:
                             description: Specify whether the Secret or it's keys must
                               be defined
@@ -6456,6 +6888,7 @@ var CRDsValidation map[string]string = map[string]string{
                           to a service account. There can only be one volume of this
                           type! More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
                         properties:
+                          "": {}
                           serviceAccountName:
                             description: 'Name of the service account in the pod''s
                               namespace to use. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
@@ -6464,11 +6897,13 @@ var CRDsValidation map[string]string = map[string]string{
                       sysprep:
                         description: Represents a Sysprep volume source.
                         properties:
+                          "": {}
                           configMap:
                             description: ConfigMap references a ConfigMap that contains
                               Sysprep answer file named autounattend.xml that should
                               be attached as disk of CDROM type.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -6480,6 +6915,7 @@ var CRDsValidation map[string]string = map[string]string{
                               Sysprep answer file named autounattend.xml that should
                               be attached as disk of CDROM type.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -6502,11 +6938,13 @@ var CRDsValidation map[string]string = map[string]string{
       description: Status holds the current state of the controller and brief information
         about its associated VirtualMachineInstance
       properties:
+        "": {}
         conditions:
           description: Hold the state information of the VirtualMachine and its VirtualMachineInstance
           items:
             description: VirtualMachineCondition represents the state of VirtualMachine
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -6537,6 +6975,7 @@ var CRDsValidation map[string]string = map[string]string{
             of getting a memory dump to the given pvc
           nullable: true
           properties:
+            "": {}
             claimName:
               description: ClaimName is the name of the pvc that will contain the
                 memory dump
@@ -6583,6 +7022,7 @@ var CRDsValidation map[string]string = map[string]string{
             purposes of crash loop backoffs
           nullable: true
           properties:
+            "": {}
             consecutiveFailCount:
               type: integer
             lastFailedVMIUID:
@@ -6600,6 +7040,7 @@ var CRDsValidation map[string]string = map[string]string{
             be taken on a VMI e.g. stop a specific VMI then start a new one.
           items:
             properties:
+              "": {}
               action:
                 description: Indicates the type of action that is requested. e.g.
                   Start or Stop
@@ -6622,22 +7063,27 @@ var CRDsValidation map[string]string = map[string]string{
             the VMI template and hotplug on an active running VMI.
           items:
             properties:
+              "": {}
               addVolumeOptions:
                 description: AddVolumeOptions when set indicates a volume should be
                   added. The details within this field specify how to add the volume
                 properties:
+                  "": {}
                   disk:
                     description: Disk represents the hotplug disk that will be plugged
                       into the running VMI
                     properties:
+                      "": {}
                       blockSize:
                         description: If specified, the virtual disk will be presented
                           with the given block sizes.
                         properties:
+                          "": {}
                           custom:
                             description: CustomBlockSize represents the desired logical
                               and physical block size for a VM disk.
                             properties:
+                              "": {}
                               logical:
                                 type: integer
                               physical:
@@ -6649,6 +7095,7 @@ var CRDsValidation map[string]string = map[string]string{
                           matchVolume:
                             description: Represents if a feature is enabled or disabled.
                             properties:
+                              "": {}
                               enabled:
                                 description: Enabled determines if the feature should
                                   be enabled or disabled on the guest. Defaults to
@@ -6670,6 +7117,7 @@ var CRDsValidation map[string]string = map[string]string{
                       cdrom:
                         description: Attach a volume as a cdrom to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -6691,6 +7139,7 @@ var CRDsValidation map[string]string = map[string]string{
                       disk:
                         description: Attach a volume as a disk to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -6711,6 +7160,7 @@ var CRDsValidation map[string]string = map[string]string{
                       lun:
                         description: Attach a volume as a LUN to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -6756,11 +7206,13 @@ var CRDsValidation map[string]string = map[string]string{
                     description: VolumeSource represents the source of the volume
                       to map to the disk.
                     properties:
+                      "": {}
                       dataVolume:
                         description: DataVolume represents the dynamic creation a
                           PVC for this volume as well as the process of populating
                           that PVC with a disk image.
                         properties:
+                          "": {}
                           hotpluggable:
                             description: Hotpluggable indicates whether the volume
                               can be hotplugged and hotunplugged.
@@ -6777,6 +7229,7 @@ var CRDsValidation map[string]string = map[string]string{
                           a reference to a PersistentVolumeClaim in the same namespace.
                           Directly attached to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                         properties:
+                          "": {}
                           claimName:
                             description: 'ClaimName is the name of a PersistentVolumeClaim
                               in the same namespace as the pod using this volume.
@@ -6804,6 +7257,7 @@ var CRDsValidation map[string]string = map[string]string{
                   be removed. The details within this field specify how to add the
                   volume
                 properties:
+                  "": {}
                   dryRun:
                     description: 'When present, indicates that modifications should
                       not be persisted. An invalid or unrecognized dryRun directive
@@ -6829,6 +7283,7 @@ var CRDsValidation map[string]string = map[string]string{
             snapshotting is supported by each volume.
           items:
             properties:
+              "": {}
               enabled:
                 description: True if the volume supports snapshotting
                 type: boolean
@@ -6852,6 +7307,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachineClusterFlavor is a cluster scoped version of VirtualMachineFlavor
     resource.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -6867,9 +7323,11 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: Required spec describing the flavor
       properties:
+        "": {}
         cpu:
           description: Required CPU related attributes of the flavor.
           properties:
+            "": {}
             dedicatedCPUPlacement:
               description: DedicatedCPUPlacement requests the scheduler to place the
                 VirtualMachineInstance on a node with enough dedicated pCPUs and pin
@@ -6895,6 +7353,7 @@ var CRDsValidation map[string]string = map[string]string{
             numa:
               description: NUMA allows specifying settings for the guest NUMA topology
               properties:
+                "": {}
                 guestMappingPassthrough:
                   description: GuestMappingPassthrough will create an efficient guest
                     topology based on host CPUs exclusively assigned to a pod. The
@@ -6906,6 +7365,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Realtime instructs the virt-launcher to tune the VMI for
                 lower latency, optional for real time workloads
               properties:
+                "": {}
                 mask:
                   description: 'Mask defines the vcpu mask expression that defines
                     which vcpus are used for realtime. Format matches libvirt''s expressions.
@@ -6919,6 +7379,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Optionally defines any GPU devices associated with the flavor.
           items:
             properties:
+              "": {}
               deviceName:
                 type: string
               name:
@@ -6930,8 +7391,10 @@ var CRDsValidation map[string]string = map[string]string{
                 type: string
               virtualGPUOptions:
                 properties:
+                  "": {}
                   display:
                     properties:
+                      "": {}
                       enabled:
                         description: Enabled determines if a display addapter backed
                           by a vGPU should be enabled or disabled on the guest. Defaults
@@ -6941,6 +7404,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: Enables a boot framebuffer, until the guest OS
                           loads a real GPU driver Defaults to true.
                         properties:
+                          "": {}
                           enabled:
                             description: Enabled determines if the feature should
                               be enabled or disabled on the guest. Defaults to true.
@@ -6958,6 +7422,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Optionally defines any HostDevices associated with the flavor.
           items:
             properties:
+              "": {}
               deviceName:
                 description: DeviceName is the resource name of the host device exposed
                   by a device plugin
@@ -6980,6 +7445,7 @@ var CRDsValidation map[string]string = map[string]string{
         launchSecurity:
           description: Optionally defines the LaunchSecurity to be used by the flavor.
           properties:
+            "": {}
             sev:
               description: AMD Secure Encrypted Virtualization (SEV).
               type: object
@@ -6987,6 +7453,7 @@ var CRDsValidation map[string]string = map[string]string{
         memory:
           description: Required Memory related attributes of the flavor.
           properties:
+            "": {}
             guest:
               anyOf:
               - type: integer
@@ -6999,6 +7466,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Optionally enables the use of hugepages for the VirtualMachineInstance
                 instead of regular memory.
               properties:
+                "": {}
                 pageSize:
                   description: PageSize specifies the hugepage size, for x86_64 architecture
                     valid values are 1Gi and 2Mi.
@@ -7017,6 +7485,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachineClusterPreference is a cluster scoped version of the
     VirtualMachinePreference resource.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -7032,14 +7501,17 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: Required spec describing the preferences
       properties:
+        "": {}
         clock:
           description: Clock optionally defines preferences associated with the Clock
             attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredClockOffset:
               description: ClockOffset allows specifying the UTC offset or the timezone
                 of the guest clock.
               properties:
+                "": {}
                 timezone:
                   description: Timezone sets the guest clock to the specified timezone.
                     Zone name follows the TZ environment variable format (e.g. 'America/New_York').
@@ -7049,6 +7521,7 @@ var CRDsValidation map[string]string = map[string]string{
                     offset is specified, guest changes to the clock will be kept during
                     reboots and are not reset.
                   properties:
+                    "": {}
                     offsetSeconds:
                       description: OffsetSeconds specifies an offset in seconds, relative
                         to UTC. If set, guest changes to the clock will be kept during
@@ -7059,10 +7532,12 @@ var CRDsValidation map[string]string = map[string]string{
             preferredTimer:
               description: Timer specifies whih timers are attached to the vmi.
               properties:
+                "": {}
                 hpet:
                   description: HPET (High Precision Event Timer) - multiple timers
                     with periodic interrupts.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -7077,6 +7552,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Hyperv (Hypervclock) - lets guests read the host’s
                     wall clock time (paravirtualized). For windows guests.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -7086,6 +7562,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: "KVM \t(KVM clock) - lets guests read the host’s wall
                     clock time (paravirtualized). For linux guests."
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -7095,6 +7572,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: PIT (Programmable Interval Timer) - a timer with periodic
                     interrupts.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -7109,6 +7587,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: RTC (Real Time Clock) - a continuously running timer
                     with periodic interrupts.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -7128,6 +7607,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: CPU optionally defines preferences associated with the CPU
             attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredCPUTopology:
               description: PreferredCPUTopology optionally defines the preferred guest
                 visible CPU topology, defaults to PreferCores.
@@ -7137,6 +7617,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Devices optionally defines preferences associated with the
             Devices attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredAutoattachGraphicsDevice:
               description: PreferredAutoattachGraphicsDevice optionally defines the
                 preferred value of AutoattachGraphicsDevice
@@ -7169,10 +7650,12 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredBlockSize optionally defines the block size of
                 Disk devices.
               properties:
+                "": {}
                 custom:
                   description: CustomBlockSize represents the desired logical and
                     physical block size for a VM disk.
                   properties:
+                    "": {}
                     logical:
                       type: integer
                     physical:
@@ -7184,6 +7667,7 @@ var CRDsValidation map[string]string = map[string]string{
                 matchVolume:
                   description: Represents if a feature is enabled or disabled.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7246,8 +7730,10 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredVirtualGPUOptions optionally defines the preferred
                 value of VirtualGPUOptions
               properties:
+                "": {}
                 display:
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if a display addapter backed
                         by a vGPU should be enabled or disabled on the guest. Defaults
@@ -7257,6 +7743,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Enables a boot framebuffer, until the guest OS
                         loads a real GPU driver Defaults to true.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -7269,9 +7756,11 @@ var CRDsValidation map[string]string = map[string]string{
           description: Features optionally defines preferences associated with the
             Features attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredAcpi:
               description: PreferredAcpi optionally enables the ACPI feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -7281,6 +7770,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredApic optionally enables and configures the APIC
                 feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -7294,10 +7784,12 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredHyperv optionally enables and configures HyperV
                 features
               properties:
+                "": {}
                 evmcs:
                   description: EVMCS Speeds up L2 vmexits, but disables other virtualization
                     features. Requires vapic. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7307,6 +7799,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Frequencies improves the TSC clock source handling
                     for Hyper-V on KVM. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7316,6 +7809,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: IPI improves performances in overcommited environments.
                     Requires vpindex. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7325,6 +7819,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Reenlightenment enables the notifications on TSC frequency
                     changes. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7334,6 +7829,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Relaxed instructs the guest OS to disable watchdog
                     timeouts. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7343,6 +7839,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Reset enables Hyperv reboot/reset for the vmi. Requires
                     synic. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7352,6 +7849,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Runtime improves the time accounting to improve scheduling
                     in the guest. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7360,6 +7858,7 @@ var CRDsValidation map[string]string = map[string]string{
                 spinlocks:
                   description: Spinlocks allows to configure the spinlock retry attempts.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7374,6 +7873,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: SyNIC enables the Synthetic Interrupt Controller. Defaults
                     to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7383,9 +7883,11 @@ var CRDsValidation map[string]string = map[string]string{
                   description: SyNICTimer enables Synthetic Interrupt Controller Timers,
                     reducing CPU load. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     direct:
                       description: Represents if a feature is enabled or disabled.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -7398,6 +7900,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: TLBFlush improves performances in overcommited environments.
                     Requires vpindex. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7407,6 +7910,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: VAPIC improves the paravirtualized handling of interrupts.
                     Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7416,6 +7920,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: VendorID allows setting the hypervisor vendor id. Defaults
                     to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7430,6 +7935,7 @@ var CRDsValidation map[string]string = map[string]string{
                     windows identifying virtual processors. Defaults to the machine
                     type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -7439,6 +7945,7 @@ var CRDsValidation map[string]string = map[string]string{
             preferredKvm:
               description: PreferredKvm optionally enables and configures KVM features
               properties:
+                "": {}
                 hidden:
                   description: Hide the KVM hypervisor from standard MSR based discovery.
                     Defaults to false
@@ -7447,6 +7954,7 @@ var CRDsValidation map[string]string = map[string]string{
             preferredPvspinlock:
               description: PreferredPvspinlock optionally enables the Pvspinlock feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -7455,6 +7963,7 @@ var CRDsValidation map[string]string = map[string]string{
             preferredSmm:
               description: PreferredSmm optionally enables the SMM feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -7465,6 +7974,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Firmware optionally defines preferences associated with the
             Firmware attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredUseBios:
               description: PreferredUseBios optionally enables BIOS
               type: boolean
@@ -7485,6 +7995,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Machine optionally defines preferences associated with the
             Machine attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredMachineType:
               description: PreferredMachineType optionally defines the preferred machine
                 type to use.
@@ -7499,6 +8010,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachineFlavor resource contains quantitative and resource related
     VirtualMachine configuration that can be used by multiple VirtualMachine resources.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -7514,9 +8026,11 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: Required spec describing the flavor
       properties:
+        "": {}
         cpu:
           description: Required CPU related attributes of the flavor.
           properties:
+            "": {}
             dedicatedCPUPlacement:
               description: DedicatedCPUPlacement requests the scheduler to place the
                 VirtualMachineInstance on a node with enough dedicated pCPUs and pin
@@ -7542,6 +8056,7 @@ var CRDsValidation map[string]string = map[string]string{
             numa:
               description: NUMA allows specifying settings for the guest NUMA topology
               properties:
+                "": {}
                 guestMappingPassthrough:
                   description: GuestMappingPassthrough will create an efficient guest
                     topology based on host CPUs exclusively assigned to a pod. The
@@ -7553,6 +8068,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Realtime instructs the virt-launcher to tune the VMI for
                 lower latency, optional for real time workloads
               properties:
+                "": {}
                 mask:
                   description: 'Mask defines the vcpu mask expression that defines
                     which vcpus are used for realtime. Format matches libvirt''s expressions.
@@ -7566,6 +8082,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Optionally defines any GPU devices associated with the flavor.
           items:
             properties:
+              "": {}
               deviceName:
                 type: string
               name:
@@ -7577,8 +8094,10 @@ var CRDsValidation map[string]string = map[string]string{
                 type: string
               virtualGPUOptions:
                 properties:
+                  "": {}
                   display:
                     properties:
+                      "": {}
                       enabled:
                         description: Enabled determines if a display addapter backed
                           by a vGPU should be enabled or disabled on the guest. Defaults
@@ -7588,6 +8107,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: Enables a boot framebuffer, until the guest OS
                           loads a real GPU driver Defaults to true.
                         properties:
+                          "": {}
                           enabled:
                             description: Enabled determines if the feature should
                               be enabled or disabled on the guest. Defaults to true.
@@ -7605,6 +8125,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Optionally defines any HostDevices associated with the flavor.
           items:
             properties:
+              "": {}
               deviceName:
                 description: DeviceName is the resource name of the host device exposed
                   by a device plugin
@@ -7627,6 +8148,7 @@ var CRDsValidation map[string]string = map[string]string{
         launchSecurity:
           description: Optionally defines the LaunchSecurity to be used by the flavor.
           properties:
+            "": {}
             sev:
               description: AMD Secure Encrypted Virtualization (SEV).
               type: object
@@ -7634,6 +8156,7 @@ var CRDsValidation map[string]string = map[string]string{
         memory:
           description: Required Memory related attributes of the flavor.
           properties:
+            "": {}
             guest:
               anyOf:
               - type: integer
@@ -7646,6 +8169,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Optionally enables the use of hugepages for the VirtualMachineInstance
                 instead of regular memory.
               properties:
+                "": {}
                 pageSize:
                   description: PageSize specifies the hugepage size, for x86_64 architecture
                     valid values are 1Gi and 2Mi.
@@ -7664,6 +8188,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachineInstance is *the* VirtualMachineInstance Definition.
     It represents a virtual machine in the runtime environment of kubernetes.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -7680,6 +8205,7 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineInstance Spec contains the VirtualMachineInstance
         specification.
       properties:
+        "": {}
         accessCredentials:
           description: Specifies a set of public keys to inject into the vm guest
           items:
@@ -7687,14 +8213,17 @@ var CRDsValidation map[string]string = map[string]string{
               be used to authorize remote access to the vm guest Only one of its members
               may be specified.
             properties:
+              "": {}
               sshPublicKey:
                 description: SSHPublicKey represents the source and method of applying
                   a ssh public key into a guest virtual machine.
                 properties:
+                  "": {}
                   propagationMethod:
                     description: PropagationMethod represents how the public key is
                       injected into the vm guest.
                     properties:
+                      "": {}
                       configDrive:
                         description: ConfigDrivePropagation means that the ssh public
                           keys are injected into the VM using metadata using the configDrive
@@ -7706,6 +8235,7 @@ var CRDsValidation map[string]string = map[string]string{
                           runtime via the qemu guest agent. This feature requires
                           the qemu guest agent to be running within the guest.
                         properties:
+                          "": {}
                           users:
                             description: Users represents a list of guest users that
                               should have the ssh public keys added to their authorized_keys
@@ -7722,10 +8252,12 @@ var CRDsValidation map[string]string = map[string]string{
                     description: Source represents where the public keys are pulled
                       from
                     properties:
+                      "": {}
                       secret:
                         description: Secret means that the access credential is pulled
                           from a kubernetes secret
                         properties:
+                          "": {}
                           secretName:
                             description: SecretName represents the name of the secret
                               in the VMI's namespace
@@ -7742,10 +8274,12 @@ var CRDsValidation map[string]string = map[string]string{
                 description: UserPassword represents the source and method for applying
                   a guest user's password
                 properties:
+                  "": {}
                   propagationMethod:
                     description: propagationMethod represents how the user passwords
                       are injected into the vm guest.
                     properties:
+                      "": {}
                       qemuGuestAgent:
                         description: QemuGuestAgentAccessCredentailPropagation means
                           passwords are dynamically injected into the vm at runtime
@@ -7757,10 +8291,12 @@ var CRDsValidation map[string]string = map[string]string{
                     description: Source represents where the user passwords are pulled
                       from
                     properties:
+                      "": {}
                       secret:
                         description: Secret means that the access credential is pulled
                           from a kubernetes secret
                         properties:
+                          "": {}
                           secretName:
                             description: SecretName represents the name of the secret
                               in the VMI's namespace
@@ -7779,9 +8315,11 @@ var CRDsValidation map[string]string = map[string]string{
         affinity:
           description: If affinity is specifies, obey all the affinity rules
           properties:
+            "": {}
             nodeAffinity:
               description: Describes node affinity scheduling rules for the pod.
               properties:
+                "": {}
                 preferredDuringSchedulingIgnoredDuringExecution:
                   description: The scheduler will prefer to schedule pods to nodes
                     that satisfy the affinity expressions specified by this field,
@@ -7798,10 +8336,12 @@ var CRDsValidation map[string]string = map[string]string{
                       with implicit weight 0 (i.e. it's a no-op). A null preferred
                       scheduling term matches no objects (i.e. is also a no-op).
                     properties:
+                      "": {}
                       preference:
                         description: A node selector term, associated with the corresponding
                           weight.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: A list of node selector requirements by node's
                               labels.
@@ -7810,6 +8350,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: The label key that the selector applies
                                     to.
@@ -7844,6 +8385,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: The label key that the selector applies
                                     to.
@@ -7889,6 +8431,7 @@ var CRDsValidation map[string]string = map[string]string{
                     due to an update), the system may or may not try to eventually
                     evict the pod from its node.
                   properties:
+                    "": {}
                     nodeSelectorTerms:
                       description: Required. A list of node selector terms. The terms
                         are ORed.
@@ -7897,6 +8440,7 @@ var CRDsValidation map[string]string = map[string]string{
                           objects. The requirements of them are ANDed. The TopologySelectorTerm
                           type implements a subset of the NodeSelectorTerm.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: A list of node selector requirements by node's
                               labels.
@@ -7905,6 +8449,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: The label key that the selector applies
                                     to.
@@ -7939,6 +8484,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: The label key that the selector applies
                                     to.
@@ -7975,6 +8521,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Describes pod affinity scheduling rules (e.g. co-locate
                 this pod in the same node, zone, etc. as some other pod(s)).
               properties:
+                "": {}
                 preferredDuringSchedulingIgnoredDuringExecution:
                   description: The scheduler will prefer to schedule pods to nodes
                     that satisfy the affinity expressions specified by this field,
@@ -7990,14 +8537,17 @@ var CRDsValidation map[string]string = map[string]string{
                     description: The weights of all of the matched WeightedPodAffinityTerm
                       fields are added per-node to find the most preferred node(s)
                     properties:
+                      "": {}
                       podAffinityTerm:
                         description: Required. A pod affinity term, associated with
                           the corresponding weight.
                         properties:
+                          "": {}
                           labelSelector:
                             description: A label query over a set of resources, in
                               this case pods.
                             properties:
+                              "": {}
                               matchExpressions:
                                 description: matchExpressions is a list of label selector
                                   requirements. The requirements are ANDed.
@@ -8006,6 +8556,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     that contains values, a key, and an operator that
                                     relates the key and values.
                                   properties:
+                                    "": {}
                                     key:
                                       description: key is the label key that the selector
                                         applies to.
@@ -8050,6 +8601,7 @@ var CRDsValidation map[string]string = map[string]string{
                               field is beta-level and is only honored when PodAffinityNamespaceSelector
                               feature is enabled.
                             properties:
+                              "": {}
                               matchExpressions:
                                 description: matchExpressions is a list of label selector
                                   requirements. The requirements are ANDed.
@@ -8058,6 +8610,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     that contains values, a key, and an operator that
                                     relates the key and values.
                                   properties:
+                                    "": {}
                                     key:
                                       description: key is the label key that the selector
                                         applies to.
@@ -8141,10 +8694,12 @@ var CRDsValidation map[string]string = map[string]string{
                       value of the label with key <topologyKey> matches that of any
                       node on which a pod of the set of pods is running
                     properties:
+                      "": {}
                       labelSelector:
                         description: A label query over a set of resources, in this
                           case pods.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -8153,6 +8708,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -8197,6 +8753,7 @@ var CRDsValidation map[string]string = map[string]string{
                           is only honored when PodAffinityNamespaceSelector feature
                           is enabled.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -8205,6 +8762,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -8265,6 +8823,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Describes pod anti-affinity scheduling rules (e.g. avoid
                 putting this pod in the same node, zone, etc. as some other pod(s)).
               properties:
+                "": {}
                 preferredDuringSchedulingIgnoredDuringExecution:
                   description: The scheduler will prefer to schedule pods to nodes
                     that satisfy the anti-affinity expressions specified by this field,
@@ -8280,14 +8839,17 @@ var CRDsValidation map[string]string = map[string]string{
                     description: The weights of all of the matched WeightedPodAffinityTerm
                       fields are added per-node to find the most preferred node(s)
                     properties:
+                      "": {}
                       podAffinityTerm:
                         description: Required. A pod affinity term, associated with
                           the corresponding weight.
                         properties:
+                          "": {}
                           labelSelector:
                             description: A label query over a set of resources, in
                               this case pods.
                             properties:
+                              "": {}
                               matchExpressions:
                                 description: matchExpressions is a list of label selector
                                   requirements. The requirements are ANDed.
@@ -8296,6 +8858,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     that contains values, a key, and an operator that
                                     relates the key and values.
                                   properties:
+                                    "": {}
                                     key:
                                       description: key is the label key that the selector
                                         applies to.
@@ -8340,6 +8903,7 @@ var CRDsValidation map[string]string = map[string]string{
                               field is beta-level and is only honored when PodAffinityNamespaceSelector
                               feature is enabled.
                             properties:
+                              "": {}
                               matchExpressions:
                                 description: matchExpressions is a list of label selector
                                   requirements. The requirements are ANDed.
@@ -8348,6 +8912,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     that contains values, a key, and an operator that
                                     relates the key and values.
                                   properties:
+                                    "": {}
                                     key:
                                       description: key is the label key that the selector
                                         applies to.
@@ -8431,10 +8996,12 @@ var CRDsValidation map[string]string = map[string]string{
                       value of the label with key <topologyKey> matches that of any
                       node on which a pod of the set of pods is running
                     properties:
+                      "": {}
                       labelSelector:
                         description: A label query over a set of resources, in this
                           case pods.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -8443,6 +9010,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -8487,6 +9055,7 @@ var CRDsValidation map[string]string = map[string]string{
                           is only honored when PodAffinityNamespaceSelector feature
                           is enabled.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -8495,6 +9064,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -8556,6 +9126,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Specifies the DNS parameters of a pod. Parameters specified
             here will be merged to the generated DNS configuration based on DNSPolicy.
           properties:
+            "": {}
             nameservers:
               description: A list of DNS name server IP addresses. This will be appended
                 to the base nameservers generated from DNSPolicy. Duplicated nameservers
@@ -8572,6 +9143,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: PodDNSConfigOption defines DNS resolver options of a
                   pod.
                 properties:
+                  "": {}
                   name:
                     description: Required.
                     type: string
@@ -8598,9 +9170,11 @@ var CRDsValidation map[string]string = map[string]string{
           description: Specification of the desired behavior of the VirtualMachineInstance
             on the host.
           properties:
+            "": {}
             chassis:
               description: Chassis specifies the chassis info passed to the domain.
               properties:
+                "": {}
                 asset:
                   type: string
                 manufacturer:
@@ -8615,13 +9189,16 @@ var CRDsValidation map[string]string = map[string]string{
             clock:
               description: Clock sets the clock and timers of the vmi.
               properties:
+                "": {}
                 timer:
                   description: Timer specifies whih timers are attached to the vmi.
                   properties:
+                    "": {}
                     hpet:
                       description: HPET (High Precision Event Timer) - multiple timers
                         with periodic interrupts.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -8636,6 +9213,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Hyperv (Hypervclock) - lets guests read the host’s
                         wall clock time (paravirtualized). For windows guests.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -8645,6 +9223,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: "KVM \t(KVM clock) - lets guests read the host’s
                         wall clock time (paravirtualized). For linux guests."
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -8654,6 +9233,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: PIT (Programmable Interval Timer) - a timer with
                         periodic interrupts.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -8668,6 +9248,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: RTC (Real Time Clock) - a continuously running
                         timer with periodic interrupts.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -8691,6 +9272,7 @@ var CRDsValidation map[string]string = map[string]string{
                     offset is specified, guest changes to the clock will be kept during
                     reboots and are not reset.
                   properties:
+                    "": {}
                     offsetSeconds:
                       description: OffsetSeconds specifies an offset in seconds, relative
                         to UTC. If set, guest changes to the clock will be kept during
@@ -8702,6 +9284,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: CPU allow specified the detailed CPU topology inside the
                 vmi.
               properties:
+                "": {}
                 cores:
                   description: Cores specifies the number of cores inside the vmi.
                     Must be a value greater or equal 1.
@@ -8718,6 +9301,7 @@ var CRDsValidation map[string]string = map[string]string{
                   items:
                     description: CPUFeature allows specifying a CPU feature.
                     properties:
+                      "": {}
                       name:
                         description: Name of the CPU feature
                         type: string
@@ -8752,6 +9336,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: NUMA allows specifying settings for the guest NUMA
                     topology
                   properties:
+                    "": {}
                     guestMappingPassthrough:
                       description: GuestMappingPassthrough will create an efficient
                         guest topology based on host CPUs exclusively assigned to
@@ -8764,6 +9349,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Realtime instructs the virt-launcher to tune the VMI
                     for lower latency, optional for real time workloads
                   properties:
+                    "": {}
                     mask:
                       description: 'Mask defines the vcpu mask expression that defines
                         which vcpus are used for realtime. Format matches libvirt''s
@@ -8784,6 +9370,7 @@ var CRDsValidation map[string]string = map[string]string{
             devices:
               description: Devices allows adding disks, network interfaces, and others
               properties:
+                "": {}
                 autoattachGraphicsDevice:
                   description: Whether to attach the default graphics device or not.
                     VNC will not be available if set to false. Defaults to true.
@@ -8817,14 +9404,17 @@ var CRDsValidation map[string]string = map[string]string{
                     to the vmi.
                   items:
                     properties:
+                      "": {}
                       blockSize:
                         description: If specified, the virtual disk will be presented
                           with the given block sizes.
                         properties:
+                          "": {}
                           custom:
                             description: CustomBlockSize represents the desired logical
                               and physical block size for a VM disk.
                             properties:
+                              "": {}
                               logical:
                                 type: integer
                               physical:
@@ -8836,6 +9426,7 @@ var CRDsValidation map[string]string = map[string]string{
                           matchVolume:
                             description: Represents if a feature is enabled or disabled.
                             properties:
+                              "": {}
                               enabled:
                                 description: Enabled determines if the feature should
                                   be enabled or disabled on the guest. Defaults to
@@ -8857,6 +9448,7 @@ var CRDsValidation map[string]string = map[string]string{
                       cdrom:
                         description: Attach a volume as a cdrom to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -8878,6 +9470,7 @@ var CRDsValidation map[string]string = map[string]string{
                       disk:
                         description: Attach a volume as a disk to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -8898,6 +9491,7 @@ var CRDsValidation map[string]string = map[string]string{
                       lun:
                         description: Attach a volume as a LUN to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -8930,6 +9524,7 @@ var CRDsValidation map[string]string = map[string]string{
                     to the vmi.
                   items:
                     properties:
+                      "": {}
                       name:
                         description: Name is the device name
                         type: string
@@ -8946,6 +9541,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Whether to attach a GPU device to the vmi.
                   items:
                     properties:
+                      "": {}
                       deviceName:
                         type: string
                       name:
@@ -8958,8 +9554,10 @@ var CRDsValidation map[string]string = map[string]string{
                         type: string
                       virtualGPUOptions:
                         properties:
+                          "": {}
                           display:
                             properties:
+                              "": {}
                               enabled:
                                 description: Enabled determines if a display addapter
                                   backed by a vGPU should be enabled or disabled on
@@ -8969,6 +9567,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: Enables a boot framebuffer, until the
                                   guest OS loads a real GPU driver Defaults to true.
                                 properties:
+                                  "": {}
                                   enabled:
                                     description: Enabled determines if the feature
                                       should be enabled or disabled on the guest.
@@ -8987,6 +9586,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Whether to attach a host device to the vmi.
                   items:
                     properties:
+                      "": {}
                       deviceName:
                         description: DeviceName is the resource name of the host device
                           exposed by a device plugin
@@ -9007,6 +9607,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Inputs describe input devices
                   items:
                     properties:
+                      "": {}
                       bus:
                         description: 'Bus indicates the bus of input device to emulate.
                           Supported values: virtio, usb.'
@@ -9028,6 +9629,7 @@ var CRDsValidation map[string]string = map[string]string{
                     to the vmi.
                   items:
                     properties:
+                      "": {}
                       bootOrder:
                         description: BootOrder is an integer value > 0, used to determine
                           ordering of boot devices. Lower values take precedence.
@@ -9042,6 +9644,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: If specified the network interface will pass
                           additional DHCP options to the VMI
                         properties:
+                          "": {}
                           bootFileName:
                             description: If specified will pass option 67 to interface's
                               DHCP server
@@ -9059,6 +9662,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: DHCPExtraOptions defines Extra DHCP options
                                 for a VM.
                               properties:
+                                "": {}
                                 option:
                                   description: Option is an Integer value from 224-254
                                     Required.
@@ -9111,6 +9715,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Port represents a port to expose from the virtual
                             machine. Default protocol TCP. The port field is mandatory
                           properties:
+                            "": {}
                             name:
                               description: If specified, this must be an IANA_SVC_NAME
                                 and unique within the pod. Each named port in a pod
@@ -9160,6 +9765,7 @@ var CRDsValidation map[string]string = map[string]string{
                 sound:
                   description: Whether to emulate a sound device.
                   properties:
+                    "": {}
                     model:
                       description: 'We only support ich9 or ac97. If SoundDevice is
                         not set: No sound card is emulated. If SoundDevice is set
@@ -9184,9 +9790,11 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Watchdog describes a watchdog device which can be added
                     to the vmi.
                   properties:
+                    "": {}
                     i6300esb:
                       description: i6300esb watchdog device.
                       properties:
+                        "": {}
                         action:
                           description: The action to take. Valid values are poweroff,
                             reset, shutdown. Defaults to reset.
@@ -9202,10 +9810,12 @@ var CRDsValidation map[string]string = map[string]string{
             features:
               description: Features like acpi, apic, hyperv, smm.
               properties:
+                "": {}
                 acpi:
                   description: ACPI enables/disables ACPI inside the guest. Defaults
                     to enabled.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -9214,6 +9824,7 @@ var CRDsValidation map[string]string = map[string]string{
                 apic:
                   description: Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -9226,11 +9837,13 @@ var CRDsValidation map[string]string = map[string]string{
                 hyperv:
                   description: Defaults to the machine type setting.
                   properties:
+                    "": {}
                     evmcs:
                       description: EVMCS Speeds up L2 vmexits, but disables other
                         virtualization features. Requires vapic. Defaults to the machine
                         type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9240,6 +9853,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Frequencies improves the TSC clock source handling
                         for Hyper-V on KVM. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9249,6 +9863,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: IPI improves performances in overcommited environments.
                         Requires vpindex. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9258,6 +9873,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Reenlightenment enables the notifications on TSC
                         frequency changes. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9267,6 +9883,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Relaxed instructs the guest OS to disable watchdog
                         timeouts. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9276,6 +9893,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Reset enables Hyperv reboot/reset for the vmi.
                         Requires synic. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9285,6 +9903,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Runtime improves the time accounting to improve
                         scheduling in the guest. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9294,6 +9913,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Spinlocks allows to configure the spinlock retry
                         attempts.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9308,6 +9928,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: SyNIC enables the Synthetic Interrupt Controller.
                         Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9317,9 +9938,11 @@ var CRDsValidation map[string]string = map[string]string{
                       description: SyNICTimer enables Synthetic Interrupt Controller
                         Timers, reducing CPU load. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         direct:
                           description: Represents if a feature is enabled or disabled.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -9333,6 +9956,7 @@ var CRDsValidation map[string]string = map[string]string{
                         environments. Requires vpindex. Defaults to the machine type
                         setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9342,6 +9966,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: VAPIC improves the paravirtualized handling of
                         interrupts. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9351,6 +9976,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: VendorID allows setting the hypervisor vendor id.
                         Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9365,6 +9991,7 @@ var CRDsValidation map[string]string = map[string]string{
                         help windows identifying virtual processors. Defaults to the
                         machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -9374,6 +10001,7 @@ var CRDsValidation map[string]string = map[string]string{
                 kvm:
                   description: Configure how KVM presence is exposed to the guest.
                   properties:
+                    "": {}
                     hidden:
                       description: Hide the KVM hypervisor from standard MSR based
                         discovery. Defaults to false
@@ -9384,6 +10012,7 @@ var CRDsValidation map[string]string = map[string]string{
                     spinlocks. For older kernels this feature should be explicitly
                     disabled.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -9393,6 +10022,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: SMM enables/disables System Management Mode. TSEG not
                     yet implemented.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -9402,12 +10032,15 @@ var CRDsValidation map[string]string = map[string]string{
             firmware:
               description: Firmware.
               properties:
+                "": {}
                 bootloader:
                   description: Settings to control the bootloader that is used.
                   properties:
+                    "": {}
                     bios:
                       description: If set (default), BIOS will be used.
                       properties:
+                        "": {}
                         useSerial:
                           description: If set, the BIOS output will be transmitted
                             over serial
@@ -9416,6 +10049,7 @@ var CRDsValidation map[string]string = map[string]string{
                     efi:
                       description: If set, EFI will be used instead of BIOS.
                       properties:
+                        "": {}
                         secureBoot:
                           description: If set, SecureBoot will be enabled and the
                             OVMF roms will be swapped for SecureBoot-enabled ones.
@@ -9426,10 +10060,12 @@ var CRDsValidation map[string]string = map[string]string{
                 kernelBoot:
                   description: Settings to set the kernel for booting.
                   properties:
+                    "": {}
                     container:
                       description: Container defines the container that containes
                         kernel artifacts
                       properties:
+                        "": {}
                         image:
                           description: Image that contains initrd / kernel files.
                           type: string
@@ -9473,6 +10109,7 @@ var CRDsValidation map[string]string = map[string]string{
             launchSecurity:
               description: Launch Security setting of the vmi.
               properties:
+                "": {}
                 sev:
                   description: AMD Secure Encrypted Virtualization (SEV).
                   type: object
@@ -9480,6 +10117,7 @@ var CRDsValidation map[string]string = map[string]string{
             machine:
               description: Machine type.
               properties:
+                "": {}
                 type:
                   description: QEMU machine type is the actual chipset of the VirtualMachineInstance.
                   type: string
@@ -9487,6 +10125,7 @@ var CRDsValidation map[string]string = map[string]string{
             memory:
               description: Memory allow specifying the VMI memory features.
               properties:
+                "": {}
                 guest:
                   anyOf:
                   - type: integer
@@ -9501,6 +10140,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Hugepages allow to use hugepages for the VirtualMachineInstance
                     instead of regular memory.
                   properties:
+                    "": {}
                     pageSize:
                       description: PageSize specifies the hugepage size, for x86_64
                         architecture valid values are 1Gi and 2Mi.
@@ -9511,6 +10151,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Resources describes the Compute Resources required by this
                 vmi.
               properties:
+                "": {}
                 limits:
                   additionalProperties:
                     anyOf:
@@ -9554,12 +10195,14 @@ var CRDsValidation map[string]string = map[string]string{
           description: 'Periodic probe of VirtualMachineInstance liveness. VirtualmachineInstances
             will be stopped if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
           properties:
+            "": {}
             exec:
               description: One and only one of the following should be specified.
                 Exec specifies the action to take, it will be executed on the guest
                 through the qemu-guest-agent. If the guest agent is not available,
                 this probe will fail.
               properties:
+                "": {}
                 command:
                   description: Command is the command line to execute inside the container,
                     the working directory for the command  is root ('/') in the container's
@@ -9583,6 +10226,7 @@ var CRDsValidation map[string]string = map[string]string{
             httpGet:
               description: HTTPGet specifies the http request to perform.
               properties:
+                "": {}
                 host:
                   description: Host name to connect to, defaults to the pod IP. You
                     probably want to set "Host" in httpHeaders instead.
@@ -9594,6 +10238,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: HTTPHeader describes a custom header to be used in
                       HTTP probes
                     properties:
+                      "": {}
                       name:
                         description: The header field name
                         type: string
@@ -9643,6 +10288,7 @@ var CRDsValidation map[string]string = map[string]string{
                 hooks not yet supported TODO: implement a realistic TCP lifecycle
                 hook'
               properties:
+                "": {}
                 host:
                   description: 'Optional: Host name to connect to, defaults to the
                     pod IP.'
@@ -9674,9 +10320,11 @@ var CRDsValidation map[string]string = map[string]string{
             description: Network represents a network type and a resource that should
               be connected to the vm.
             properties:
+              "": {}
               multus:
                 description: Represents the multus cni network.
                 properties:
+                  "": {}
                   default:
                     description: Select the default network and add it to the multus-cni.io/default-network
                       annotation.
@@ -9696,6 +10344,7 @@ var CRDsValidation map[string]string = map[string]string{
               pod:
                 description: Represents the stock pod network interface.
                 properties:
+                  "": {}
                   vmIPv6NetworkCIDR:
                     description: IPv6 CIDR for the vm network. Defaults to fd10:0:2::/120
                       if not specified.
@@ -9724,12 +10373,14 @@ var CRDsValidation map[string]string = map[string]string{
             VirtualmachineInstances will be removed from service endpoints if the
             probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
           properties:
+            "": {}
             exec:
               description: One and only one of the following should be specified.
                 Exec specifies the action to take, it will be executed on the guest
                 through the qemu-guest-agent. If the guest agent is not available,
                 this probe will fail.
               properties:
+                "": {}
                 command:
                   description: Command is the command line to execute inside the container,
                     the working directory for the command  is root ('/') in the container's
@@ -9753,6 +10404,7 @@ var CRDsValidation map[string]string = map[string]string{
             httpGet:
               description: HTTPGet specifies the http request to perform.
               properties:
+                "": {}
                 host:
                   description: Host name to connect to, defaults to the pod IP. You
                     probably want to set "Host" in httpHeaders instead.
@@ -9764,6 +10416,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: HTTPHeader describes a custom header to be used in
                       HTTP probes
                     properties:
+                      "": {}
                       name:
                         description: The header field name
                         type: string
@@ -9813,6 +10466,7 @@ var CRDsValidation map[string]string = map[string]string{
                 hooks not yet supported TODO: implement a realistic TCP lifecycle
                 hook'
               properties:
+                "": {}
                 host:
                   description: 'Optional: Host name to connect to, defaults to the
                     pod IP.'
@@ -9864,6 +10518,7 @@ var CRDsValidation map[string]string = map[string]string{
               that matches the triple <key,value,effect> using the matching operator
               <operator>.
             properties:
+              "": {}
               effect:
                 description: Effect indicates the taint effect to match. Empty means
                   match all taint effects. When specified, allowed values are NoSchedule,
@@ -9896,18 +10551,126 @@ var CRDsValidation map[string]string = map[string]string{
                 type: string
             type: object
           type: array
+        topologySpreadConstraints:
+          description: TopologySpreadConstraints describes how a group of VMIs ought
+            to spread across topology domains. K8s scheduler will schedule VMI pods
+            in a way which abides by the constraints.
+          items:
+            description: TopologySpreadConstraint specifies how to spread matching
+              pods among the given topology.
+            properties:
+              "": {}
+              labelSelector:
+                description: LabelSelector is used to find matching pods. Pods that
+                  match this label selector are counted to determine the number of
+                  pods in their corresponding topology domain.
+                properties:
+                  "": {}
+                  matchExpressions:
+                    description: matchExpressions is a list of label selector requirements.
+                      The requirements are ANDed.
+                    items:
+                      description: A label selector requirement is a selector that
+                        contains values, a key, and an operator that relates the key
+                        and values.
+                      properties:
+                        "": {}
+                        key:
+                          description: key is the label key that the selector applies
+                            to.
+                          type: string
+                        operator:
+                          description: operator represents a key's relationship to
+                            a set of values. Valid operators are In, NotIn, Exists
+                            and DoesNotExist.
+                          type: string
+                        values:
+                          description: values is an array of string values. If the
+                            operator is In or NotIn, the values array must be non-empty.
+                            If the operator is Exists or DoesNotExist, the values
+                            array must be empty. This array is replaced during a strategic
+                            merge patch.
+                          items:
+                            type: string
+                          type: array
+                      required:
+                      - key
+                      - operator
+                      type: object
+                    type: array
+                  matchLabels:
+                    additionalProperties:
+                      type: string
+                    description: matchLabels is a map of {key,value} pairs. A single
+                      {key,value} in the matchLabels map is equivalent to an element
+                      of matchExpressions, whose key field is "key", the operator
+                      is "In", and the values array contains only "value". The requirements
+                      are ANDed.
+                    type: object
+                type: object
+              maxSkew:
+                description: 'MaxSkew describes the degree to which pods may be unevenly
+                  distributed. When ''whenUnsatisfiable=DoNotSchedule'', it is the
+                  maximum permitted difference between the number of matching pods
+                  in the target topology and the global minimum. For example, in a
+                  3-zone cluster, MaxSkew is set to 1, and pods with the same labelSelector
+                  spread as 1/1/0: | zone1 | zone2 | zone3 | |   P   |   P   |       |
+                  - if MaxSkew is 1, incoming pod can only be scheduled to zone3 to
+                  become 1/1/1; scheduling it onto zone1(zone2) would make the ActualSkew(2-0)
+                  on zone1(zone2) violate MaxSkew(1). - if MaxSkew is 2, incoming
+                  pod can be scheduled onto any zone. When ''whenUnsatisfiable=ScheduleAnyway'',
+                  it is used to give higher precedence to topologies that satisfy
+                  it. It''s a required field. Default value is 1 and 0 is not allowed.'
+                format: int32
+                type: integer
+              topologyKey:
+                description: TopologyKey is the key of node labels. Nodes that have
+                  a label with this key and identical values are considered to be
+                  in the same topology. We consider each <key, value> as a "bucket",
+                  and try to put balanced number of pods into each bucket. It's a
+                  required field.
+                type: string
+              whenUnsatisfiable:
+                description: 'WhenUnsatisfiable indicates how to deal with a pod if
+                  it doesn''t satisfy the spread constraint. - DoNotSchedule (default)
+                  tells the scheduler not to schedule it. - ScheduleAnyway tells the
+                  scheduler to schedule the pod in any location,   but giving higher
+                  precedence to topologies that would help reduce the   skew. A constraint
+                  is considered "Unsatisfiable" for an incoming pod if and only if
+                  every possible node assignment for that pod would violate "MaxSkew"
+                  on some topology. For example, in a 3-zone cluster, MaxSkew is set
+                  to 1, and pods with the same labelSelector spread as 3/1/1: | zone1
+                  | zone2 | zone3 | | P P P |   P   |   P   | If WhenUnsatisfiable
+                  is set to DoNotSchedule, incoming pod can only be scheduled to zone2(zone3)
+                  to become 3/2/1(3/1/2) as ActualSkew(2-1) on zone2(zone3) satisfies
+                  MaxSkew(1). In other words, the cluster can still be imbalanced,
+                  but scheduler won''t make it *more* imbalanced. It''s a required
+                  field.'
+                type: string
+            required:
+            - maxSkew
+            - topologyKey
+            - whenUnsatisfiable
+            type: object
+          type: array
+          x-kubernetes-list-map-keys:
+          - topologyKey
+          - whenUnsatisfiable
+          x-kubernetes-list-type: map
         volumes:
           description: List of volumes that can be mounted by disks belonging to the
             vmi.
           items:
             description: Volume represents a named volume in a vmi.
             properties:
+              "": {}
               cloudInitConfigDrive:
                 description: 'CloudInitConfigDrive represents a cloud-init Config
                   Drive user-data source. The Config Drive data will be added as a
                   disk to the vmi. A proper cloud-init installation is required inside
                   the guest. More info: https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html'
                 properties:
+                  "": {}
                   networkData:
                     description: NetworkData contains config drive inline cloud-init
                       networkdata.
@@ -9920,6 +10683,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: NetworkDataSecretRef references a k8s secret that
                       contains config drive networkdata.
                     properties:
+                      "": {}
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                           TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -9929,6 +10693,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: UserDataSecretRef references a k8s secret that contains
                       config drive userdata.
                     properties:
+                      "": {}
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                           TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -9949,6 +10714,7 @@ var CRDsValidation map[string]string = map[string]string{
                   cloud-init installation is required inside the guest. More info:
                   http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html'
                 properties:
+                  "": {}
                   networkData:
                     description: NetworkData contains NoCloud inline cloud-init networkdata.
                     type: string
@@ -9960,6 +10726,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: NetworkDataSecretRef references a k8s secret that
                       contains NoCloud networkdata.
                     properties:
+                      "": {}
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                           TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -9969,6 +10736,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: UserDataSecretRef references a k8s secret that contains
                       NoCloud userdata.
                     properties:
+                      "": {}
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                           TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -9986,6 +10754,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: 'ConfigMapSource represents a reference to a ConfigMap
                   in the same namespace. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/'
                 properties:
+                  "": {}
                   name:
                     description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                       TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -10005,6 +10774,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: 'ContainerDisk references a docker image, embedding a
                   qcow or raw disk. More info: https://kubevirt.gitbooks.io/user-guide/registry-disk.html'
                 properties:
+                  "": {}
                   image:
                     description: Image is the name of the image with the embedded
                       disk.
@@ -10029,6 +10799,7 @@ var CRDsValidation map[string]string = map[string]string{
                   this volume as well as the process of populating that PVC with a
                   disk image.
                 properties:
+                  "": {}
                   hotpluggable:
                     description: Hotpluggable indicates whether the volume can be
                       hotplugged and hotunplugged.
@@ -10044,16 +10815,19 @@ var CRDsValidation map[string]string = map[string]string{
                 description: DownwardAPI represents downward API about the pod that
                   should populate this volume
                 properties:
+                  "": {}
                   fields:
                     description: Fields is a list of downward API volume file
                     items:
                       description: DownwardAPIVolumeFile represents information to
                         create the file containing the pod field
                       properties:
+                        "": {}
                         fieldRef:
                           description: 'Required: Selects a field of the pod: only
                             annotations, labels, name and namespace are supported.'
                           properties:
+                            "": {}
                             apiVersion:
                               description: Version of the schema the FieldPath is
                                 written in terms of, defaults to "v1".
@@ -10087,6 +10861,7 @@ var CRDsValidation map[string]string = map[string]string{
                             resources limits and requests (limits.cpu, limits.memory,
                             requests.cpu and requests.memory) are currently supported.'
                           properties:
+                            "": {}
                             containerName:
                               description: 'Container name: required for volumes,
                                 optional for env vars'
@@ -10126,6 +10901,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: 'EmptyDisk represents a temporary disk which shares the
                   vmis lifecycle. More info: https://kubevirt.gitbooks.io/user-guide/disks-and-volumes.html'
                 properties:
+                  "": {}
                   capacity:
                     anyOf:
                     - type: integer
@@ -10140,11 +10916,13 @@ var CRDsValidation map[string]string = map[string]string{
                 description: Ephemeral is a special volume source that "wraps" specified
                   source and provides copy-on-write image on top of it.
                 properties:
+                  "": {}
                   persistentVolumeClaim:
                     description: 'PersistentVolumeClaimVolumeSource represents a reference
                       to a PersistentVolumeClaim in the same namespace. Directly attached
                       to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                     properties:
+                      "": {}
                       claimName:
                         description: 'ClaimName is the name of a PersistentVolumeClaim
                           in the same namespace as the pod using this volume. More
@@ -10161,6 +10939,7 @@ var CRDsValidation map[string]string = map[string]string{
               hostDisk:
                 description: HostDisk represents a disk created on the cluster level
                 properties:
+                  "": {}
                   capacity:
                     anyOf:
                     - type: integer
@@ -10187,6 +10966,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: MemoryDump is attached to the virt launcher and is populated
                   with a memory dump of the vmi
                 properties:
+                  "": {}
                   claimName:
                     description: 'ClaimName is the name of a PersistentVolumeClaim
                       in the same namespace as the pod using this volume. More info:
@@ -10212,6 +10992,7 @@ var CRDsValidation map[string]string = map[string]string{
                   to a PersistentVolumeClaim in the same namespace. Directly attached
                   to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                 properties:
+                  "": {}
                   claimName:
                     description: 'ClaimName is the name of a PersistentVolumeClaim
                       in the same namespace as the pod using this volume. More info:
@@ -10232,6 +11013,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: 'SecretVolumeSource represents a reference to a secret
                   data in the same namespace. More info: https://kubernetes.io/docs/concepts/configuration/secret/'
                 properties:
+                  "": {}
                   optional:
                     description: Specify whether the Secret or it's keys must be defined
                     type: boolean
@@ -10251,6 +11033,7 @@ var CRDsValidation map[string]string = map[string]string{
                   a service account. There can only be one volume of this type! More
                   info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
                 properties:
+                  "": {}
                   serviceAccountName:
                     description: 'Name of the service account in the pod''s namespace
                       to use. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
@@ -10259,11 +11042,13 @@ var CRDsValidation map[string]string = map[string]string{
               sysprep:
                 description: Represents a Sysprep volume source.
                 properties:
+                  "": {}
                   configMap:
                     description: ConfigMap references a ConfigMap that contains Sysprep
                       answer file named autounattend.xml that should be attached as
                       disk of CDROM type.
                     properties:
+                      "": {}
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                           TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -10274,6 +11059,7 @@ var CRDsValidation map[string]string = map[string]string{
                       answer file named autounattend.xml that should be attached as
                       disk of CDROM type.
                     properties:
+                      "": {}
                       name:
                         description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                           TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -10291,6 +11077,7 @@ var CRDsValidation map[string]string = map[string]string{
       description: Status is the high level overview of how the VirtualMachineInstance
         is doing. It contains information available to controllers and users.
       properties:
+        "": {}
         activePods:
           additionalProperties:
             type: string
@@ -10302,6 +11089,7 @@ var CRDsValidation map[string]string = map[string]string{
             pod runtime.
           items:
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -10336,6 +11124,7 @@ var CRDsValidation map[string]string = map[string]string{
         guestOSInfo:
           description: Guest OS Information
           properties:
+            "": {}
             id:
               description: Guest OS Id
               type: string
@@ -10365,6 +11154,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Interfaces represent the details of available network interfaces.
           items:
             properties:
+              "": {}
               infoSource:
                 description: 'Specifies the origin of the interface data collected.
                   values: domain, guest-agent, or both'
@@ -10401,6 +11191,7 @@ var CRDsValidation map[string]string = map[string]string{
         migrationState:
           description: Represents the status of a live migration
           properties:
+            "": {}
             abortRequested:
               description: Indicates that the migration has been requested to abort
               type: boolean
@@ -10421,6 +11212,7 @@ var CRDsValidation map[string]string = map[string]string{
             migrationConfiguration:
               description: Migration configurations to apply
               properties:
+                "": {}
                 allowAutoConverge:
                   type: boolean
                 allowPostCopy:
@@ -10524,6 +11316,7 @@ var CRDsValidation map[string]string = map[string]string{
             description: VirtualMachineInstancePhaseTransitionTimestamp gives a timestamp
               in relation to when a phase is set on a vmi
             properties:
+              "": {}
               phase:
                 description: Phase is the status of the VirtualMachineInstance in
                   kubernetes world. It is not the VirtualMachineInstance status, but
@@ -10553,6 +11346,7 @@ var CRDsValidation map[string]string = map[string]string{
           type: integer
         topologyHints:
           properties:
+            "": {}
             tscFrequency:
               format: int64
               type: integer
@@ -10567,10 +11361,12 @@ var CRDsValidation map[string]string = map[string]string{
             description: VolumeStatus represents information about the status of volumes
               attached to the VirtualMachineInstance.
             properties:
+              "": {}
               hotplugVolume:
                 description: If the volume is hotplug, this will contain the hotplug
                   status.
                 properties:
+                  "": {}
                   attachPodName:
                     description: AttachPodName is the name of the pod used to attach
                       the volume to the node.
@@ -10584,6 +11380,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: If the volume is memorydump volume, this will contain
                   the memorydump info.
                 properties:
+                  "": {}
                   claimName:
                     description: ClaimName is the name of the pvc the memory was dumped
                       to
@@ -10611,6 +11408,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: PersistentVolumeClaimInfo is information about the PVC
                   that handler requires during start flow
                 properties:
+                  "": {}
                   accessModes:
                     description: 'AccessModes contains the desired access modes the
                       volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -10683,6 +11481,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachineInstanceMigration represents the object tracking a VMI's
     migration to another host in the cluster
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -10697,6 +11496,7 @@ var CRDsValidation map[string]string = map[string]string{
       type: object
     spec:
       properties:
+        "": {}
         vmiName:
           description: The name of the VMI to perform the migration on. VMI must exist
             in the migration objects namespace
@@ -10706,9 +11506,11 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineInstanceMigration reprents information pertaining
         to a VMI's migration.
       properties:
+        "": {}
         conditions:
           items:
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -10743,6 +11545,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: 'VirtualMachineInstancePreset defines a VMI spec.domain to be applied
     to all VMIs that match the provided label selector More info: https://kubevirt.io/user-guide/virtual_machines/presets/#overrides'
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -10759,12 +11562,15 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineInstance Spec contains the VirtualMachineInstance
         specification.
       properties:
+        "": {}
         domain:
           description: Domain is the same object type as contained in VirtualMachineInstanceSpec
           properties:
+            "": {}
             chassis:
               description: Chassis specifies the chassis info passed to the domain.
               properties:
+                "": {}
                 asset:
                   type: string
                 manufacturer:
@@ -10779,13 +11585,16 @@ var CRDsValidation map[string]string = map[string]string{
             clock:
               description: Clock sets the clock and timers of the vmi.
               properties:
+                "": {}
                 timer:
                   description: Timer specifies whih timers are attached to the vmi.
                   properties:
+                    "": {}
                     hpet:
                       description: HPET (High Precision Event Timer) - multiple timers
                         with periodic interrupts.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -10800,6 +11609,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Hyperv (Hypervclock) - lets guests read the host’s
                         wall clock time (paravirtualized). For windows guests.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -10809,6 +11619,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: "KVM \t(KVM clock) - lets guests read the host’s
                         wall clock time (paravirtualized). For linux guests."
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -10818,6 +11629,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: PIT (Programmable Interval Timer) - a timer with
                         periodic interrupts.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -10832,6 +11644,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: RTC (Real Time Clock) - a continuously running
                         timer with periodic interrupts.
                       properties:
+                        "": {}
                         present:
                           description: Enabled set to false makes sure that the machine
                             type or a preset can't add the timer. Defaults to true.
@@ -10855,6 +11668,7 @@ var CRDsValidation map[string]string = map[string]string{
                     offset is specified, guest changes to the clock will be kept during
                     reboots and are not reset.
                   properties:
+                    "": {}
                     offsetSeconds:
                       description: OffsetSeconds specifies an offset in seconds, relative
                         to UTC. If set, guest changes to the clock will be kept during
@@ -10866,6 +11680,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: CPU allow specified the detailed CPU topology inside the
                 vmi.
               properties:
+                "": {}
                 cores:
                   description: Cores specifies the number of cores inside the vmi.
                     Must be a value greater or equal 1.
@@ -10882,6 +11697,7 @@ var CRDsValidation map[string]string = map[string]string{
                   items:
                     description: CPUFeature allows specifying a CPU feature.
                     properties:
+                      "": {}
                       name:
                         description: Name of the CPU feature
                         type: string
@@ -10916,6 +11732,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: NUMA allows specifying settings for the guest NUMA
                     topology
                   properties:
+                    "": {}
                     guestMappingPassthrough:
                       description: GuestMappingPassthrough will create an efficient
                         guest topology based on host CPUs exclusively assigned to
@@ -10928,6 +11745,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Realtime instructs the virt-launcher to tune the VMI
                     for lower latency, optional for real time workloads
                   properties:
+                    "": {}
                     mask:
                       description: 'Mask defines the vcpu mask expression that defines
                         which vcpus are used for realtime. Format matches libvirt''s
@@ -10948,6 +11766,7 @@ var CRDsValidation map[string]string = map[string]string{
             devices:
               description: Devices allows adding disks, network interfaces, and others
               properties:
+                "": {}
                 autoattachGraphicsDevice:
                   description: Whether to attach the default graphics device or not.
                     VNC will not be available if set to false. Defaults to true.
@@ -10981,14 +11800,17 @@ var CRDsValidation map[string]string = map[string]string{
                     to the vmi.
                   items:
                     properties:
+                      "": {}
                       blockSize:
                         description: If specified, the virtual disk will be presented
                           with the given block sizes.
                         properties:
+                          "": {}
                           custom:
                             description: CustomBlockSize represents the desired logical
                               and physical block size for a VM disk.
                             properties:
+                              "": {}
                               logical:
                                 type: integer
                               physical:
@@ -11000,6 +11822,7 @@ var CRDsValidation map[string]string = map[string]string{
                           matchVolume:
                             description: Represents if a feature is enabled or disabled.
                             properties:
+                              "": {}
                               enabled:
                                 description: Enabled determines if the feature should
                                   be enabled or disabled on the guest. Defaults to
@@ -11021,6 +11844,7 @@ var CRDsValidation map[string]string = map[string]string{
                       cdrom:
                         description: Attach a volume as a cdrom to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -11042,6 +11866,7 @@ var CRDsValidation map[string]string = map[string]string{
                       disk:
                         description: Attach a volume as a disk to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -11062,6 +11887,7 @@ var CRDsValidation map[string]string = map[string]string{
                       lun:
                         description: Attach a volume as a LUN to the vmi.
                         properties:
+                          "": {}
                           bus:
                             description: 'Bus indicates the type of disk device to
                               emulate. supported values: virtio, sata, scsi.'
@@ -11094,6 +11920,7 @@ var CRDsValidation map[string]string = map[string]string{
                     to the vmi.
                   items:
                     properties:
+                      "": {}
                       name:
                         description: Name is the device name
                         type: string
@@ -11110,6 +11937,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Whether to attach a GPU device to the vmi.
                   items:
                     properties:
+                      "": {}
                       deviceName:
                         type: string
                       name:
@@ -11122,8 +11950,10 @@ var CRDsValidation map[string]string = map[string]string{
                         type: string
                       virtualGPUOptions:
                         properties:
+                          "": {}
                           display:
                             properties:
+                              "": {}
                               enabled:
                                 description: Enabled determines if a display addapter
                                   backed by a vGPU should be enabled or disabled on
@@ -11133,6 +11963,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: Enables a boot framebuffer, until the
                                   guest OS loads a real GPU driver Defaults to true.
                                 properties:
+                                  "": {}
                                   enabled:
                                     description: Enabled determines if the feature
                                       should be enabled or disabled on the guest.
@@ -11151,6 +11982,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Whether to attach a host device to the vmi.
                   items:
                     properties:
+                      "": {}
                       deviceName:
                         description: DeviceName is the resource name of the host device
                           exposed by a device plugin
@@ -11171,6 +12003,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Inputs describe input devices
                   items:
                     properties:
+                      "": {}
                       bus:
                         description: 'Bus indicates the bus of input device to emulate.
                           Supported values: virtio, usb.'
@@ -11192,6 +12025,7 @@ var CRDsValidation map[string]string = map[string]string{
                     to the vmi.
                   items:
                     properties:
+                      "": {}
                       bootOrder:
                         description: BootOrder is an integer value > 0, used to determine
                           ordering of boot devices. Lower values take precedence.
@@ -11206,6 +12040,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: If specified the network interface will pass
                           additional DHCP options to the VMI
                         properties:
+                          "": {}
                           bootFileName:
                             description: If specified will pass option 67 to interface's
                               DHCP server
@@ -11223,6 +12058,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: DHCPExtraOptions defines Extra DHCP options
                                 for a VM.
                               properties:
+                                "": {}
                                 option:
                                   description: Option is an Integer value from 224-254
                                     Required.
@@ -11275,6 +12111,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Port represents a port to expose from the virtual
                             machine. Default protocol TCP. The port field is mandatory
                           properties:
+                            "": {}
                             name:
                               description: If specified, this must be an IANA_SVC_NAME
                                 and unique within the pod. Each named port in a pod
@@ -11324,6 +12161,7 @@ var CRDsValidation map[string]string = map[string]string{
                 sound:
                   description: Whether to emulate a sound device.
                   properties:
+                    "": {}
                     model:
                       description: 'We only support ich9 or ac97. If SoundDevice is
                         not set: No sound card is emulated. If SoundDevice is set
@@ -11348,9 +12186,11 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Watchdog describes a watchdog device which can be added
                     to the vmi.
                   properties:
+                    "": {}
                     i6300esb:
                       description: i6300esb watchdog device.
                       properties:
+                        "": {}
                         action:
                           description: The action to take. Valid values are poweroff,
                             reset, shutdown. Defaults to reset.
@@ -11366,10 +12206,12 @@ var CRDsValidation map[string]string = map[string]string{
             features:
               description: Features like acpi, apic, hyperv, smm.
               properties:
+                "": {}
                 acpi:
                   description: ACPI enables/disables ACPI inside the guest. Defaults
                     to enabled.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -11378,6 +12220,7 @@ var CRDsValidation map[string]string = map[string]string{
                 apic:
                   description: Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -11390,11 +12233,13 @@ var CRDsValidation map[string]string = map[string]string{
                 hyperv:
                   description: Defaults to the machine type setting.
                   properties:
+                    "": {}
                     evmcs:
                       description: EVMCS Speeds up L2 vmexits, but disables other
                         virtualization features. Requires vapic. Defaults to the machine
                         type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11404,6 +12249,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Frequencies improves the TSC clock source handling
                         for Hyper-V on KVM. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11413,6 +12259,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: IPI improves performances in overcommited environments.
                         Requires vpindex. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11422,6 +12269,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Reenlightenment enables the notifications on TSC
                         frequency changes. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11431,6 +12279,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Relaxed instructs the guest OS to disable watchdog
                         timeouts. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11440,6 +12289,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Reset enables Hyperv reboot/reset for the vmi.
                         Requires synic. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11449,6 +12299,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Runtime improves the time accounting to improve
                         scheduling in the guest. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11458,6 +12309,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Spinlocks allows to configure the spinlock retry
                         attempts.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11472,6 +12324,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: SyNIC enables the Synthetic Interrupt Controller.
                         Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11481,9 +12334,11 @@ var CRDsValidation map[string]string = map[string]string{
                       description: SyNICTimer enables Synthetic Interrupt Controller
                         Timers, reducing CPU load. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         direct:
                           description: Represents if a feature is enabled or disabled.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -11497,6 +12352,7 @@ var CRDsValidation map[string]string = map[string]string{
                         environments. Requires vpindex. Defaults to the machine type
                         setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11506,6 +12362,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: VAPIC improves the paravirtualized handling of
                         interrupts. Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11515,6 +12372,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: VendorID allows setting the hypervisor vendor id.
                         Defaults to the machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11529,6 +12387,7 @@ var CRDsValidation map[string]string = map[string]string{
                         help windows identifying virtual processors. Defaults to the
                         machine type setting.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -11538,6 +12397,7 @@ var CRDsValidation map[string]string = map[string]string{
                 kvm:
                   description: Configure how KVM presence is exposed to the guest.
                   properties:
+                    "": {}
                     hidden:
                       description: Hide the KVM hypervisor from standard MSR based
                         discovery. Defaults to false
@@ -11548,6 +12408,7 @@ var CRDsValidation map[string]string = map[string]string{
                     spinlocks. For older kernels this feature should be explicitly
                     disabled.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -11557,6 +12418,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: SMM enables/disables System Management Mode. TSEG not
                     yet implemented.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -11566,12 +12428,15 @@ var CRDsValidation map[string]string = map[string]string{
             firmware:
               description: Firmware.
               properties:
+                "": {}
                 bootloader:
                   description: Settings to control the bootloader that is used.
                   properties:
+                    "": {}
                     bios:
                       description: If set (default), BIOS will be used.
                       properties:
+                        "": {}
                         useSerial:
                           description: If set, the BIOS output will be transmitted
                             over serial
@@ -11580,6 +12445,7 @@ var CRDsValidation map[string]string = map[string]string{
                     efi:
                       description: If set, EFI will be used instead of BIOS.
                       properties:
+                        "": {}
                         secureBoot:
                           description: If set, SecureBoot will be enabled and the
                             OVMF roms will be swapped for SecureBoot-enabled ones.
@@ -11590,10 +12456,12 @@ var CRDsValidation map[string]string = map[string]string{
                 kernelBoot:
                   description: Settings to set the kernel for booting.
                   properties:
+                    "": {}
                     container:
                       description: Container defines the container that containes
                         kernel artifacts
                       properties:
+                        "": {}
                         image:
                           description: Image that contains initrd / kernel files.
                           type: string
@@ -11637,6 +12505,7 @@ var CRDsValidation map[string]string = map[string]string{
             launchSecurity:
               description: Launch Security setting of the vmi.
               properties:
+                "": {}
                 sev:
                   description: AMD Secure Encrypted Virtualization (SEV).
                   type: object
@@ -11644,6 +12513,7 @@ var CRDsValidation map[string]string = map[string]string{
             machine:
               description: Machine type.
               properties:
+                "": {}
                 type:
                   description: QEMU machine type is the actual chipset of the VirtualMachineInstance.
                   type: string
@@ -11651,6 +12521,7 @@ var CRDsValidation map[string]string = map[string]string{
             memory:
               description: Memory allow specifying the VMI memory features.
               properties:
+                "": {}
                 guest:
                   anyOf:
                   - type: integer
@@ -11665,6 +12536,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Hugepages allow to use hugepages for the VirtualMachineInstance
                     instead of regular memory.
                   properties:
+                    "": {}
                     pageSize:
                       description: PageSize specifies the hugepage size, for x86_64
                         architecture valid values are 1Gi and 2Mi.
@@ -11675,6 +12547,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: Resources describes the Compute Resources required by this
                 vmi.
               properties:
+                "": {}
                 limits:
                   additionalProperties:
                     anyOf:
@@ -11708,6 +12581,7 @@ var CRDsValidation map[string]string = map[string]string{
         selector:
           description: Selector is a label query over a set of VMIs. Required.
           properties:
+            "": {}
             matchExpressions:
               description: matchExpressions is a list of label selector requirements.
                 The requirements are ANDed.
@@ -11715,6 +12589,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: A label selector requirement is a selector that contains
                   values, a key, and an operator that relates the key and values.
                 properties:
+                  "": {}
                   key:
                     description: key is the label key that the selector applies to.
                     type: string
@@ -11753,6 +12628,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachineInstance is *the* VirtualMachineInstance Definition.
     It represents a virtual machine in the runtime environment of kubernetes.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -11769,6 +12645,7 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineInstance Spec contains the VirtualMachineInstance
         specification.
       properties:
+        "": {}
         paused:
           description: Indicates that the replica set is paused.
           type: boolean
@@ -11781,6 +12658,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Label selector for pods. Existing ReplicaSets whose pods are
             selected by this will be the ones affected by this deployment.
           properties:
+            "": {}
             matchExpressions:
               description: matchExpressions is a list of label selector requirements.
                 The requirements are ANDed.
@@ -11788,6 +12666,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: A label selector requirement is a selector that contains
                   values, a key, and an operator that relates the key and values.
                 properties:
+                  "": {}
                   key:
                     description: key is the label key that the selector applies to.
                     type: string
@@ -11820,6 +12699,7 @@ var CRDsValidation map[string]string = map[string]string{
         template:
           description: Template describes the pods that will be created.
           properties:
+            "": {}
             metadata:
               nullable: true
               type: object
@@ -11828,6 +12708,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: VirtualMachineInstance Spec contains the VirtualMachineInstance
                 specification.
               properties:
+                "": {}
                 accessCredentials:
                   description: Specifies a set of public keys to inject into the vm
                     guest
@@ -11836,14 +12717,17 @@ var CRDsValidation map[string]string = map[string]string{
                       can be used to authorize remote access to the vm guest Only
                       one of its members may be specified.
                     properties:
+                      "": {}
                       sshPublicKey:
                         description: SSHPublicKey represents the source and method
                           of applying a ssh public key into a guest virtual machine.
                         properties:
+                          "": {}
                           propagationMethod:
                             description: PropagationMethod represents how the public
                               key is injected into the vm guest.
                             properties:
+                              "": {}
                               configDrive:
                                 description: ConfigDrivePropagation means that the
                                   ssh public keys are injected into the VM using metadata
@@ -11856,6 +12740,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   feature requires the qemu guest agent to be running
                                   within the guest.
                                 properties:
+                                  "": {}
                                   users:
                                     description: Users represents a list of guest
                                       users that should have the ssh public keys added
@@ -11872,10 +12757,12 @@ var CRDsValidation map[string]string = map[string]string{
                             description: Source represents where the public keys are
                               pulled from
                             properties:
+                              "": {}
                               secret:
                                 description: Secret means that the access credential
                                   is pulled from a kubernetes secret
                                 properties:
+                                  "": {}
                                   secretName:
                                     description: SecretName represents the name of
                                       the secret in the VMI's namespace
@@ -11892,10 +12779,12 @@ var CRDsValidation map[string]string = map[string]string{
                         description: UserPassword represents the source and method
                           for applying a guest user's password
                         properties:
+                          "": {}
                           propagationMethod:
                             description: propagationMethod represents how the user
                               passwords are injected into the vm guest.
                             properties:
+                              "": {}
                               qemuGuestAgent:
                                 description: QemuGuestAgentAccessCredentailPropagation
                                   means passwords are dynamically injected into the
@@ -11908,10 +12797,12 @@ var CRDsValidation map[string]string = map[string]string{
                             description: Source represents where the user passwords
                               are pulled from
                             properties:
+                              "": {}
                               secret:
                                 description: Secret means that the access credential
                                   is pulled from a kubernetes secret
                                 properties:
+                                  "": {}
                                   secretName:
                                     description: SecretName represents the name of
                                       the secret in the VMI's namespace
@@ -11930,10 +12821,12 @@ var CRDsValidation map[string]string = map[string]string{
                 affinity:
                   description: If affinity is specifies, obey all the affinity rules
                   properties:
+                    "": {}
                     nodeAffinity:
                       description: Describes node affinity scheduling rules for the
                         pod.
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -11952,10 +12845,12 @@ var CRDsValidation map[string]string = map[string]string{
                               A null preferred scheduling term matches no objects
                               (i.e. is also a no-op).
                             properties:
+                              "": {}
                               preference:
                                 description: A node selector term, associated with
                                   the corresponding weight.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -11964,6 +12859,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -12000,6 +12896,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -12048,6 +12945,7 @@ var CRDsValidation map[string]string = map[string]string{
                             may or may not try to eventually evict the pod from its
                             node.
                           properties:
+                            "": {}
                             nodeSelectorTerms:
                               description: Required. A list of node selector terms.
                                 The terms are ORed.
@@ -12057,6 +12955,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   The TopologySelectorTerm type implements a subset
                                   of the NodeSelectorTerm.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: A list of node selector requirements
                                       by node's labels.
@@ -12065,6 +12964,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -12101,6 +13001,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: The label key that the selector
                                             applies to.
@@ -12139,6 +13040,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Describes pod affinity scheduling rules (e.g. co-locate
                         this pod in the same node, zone, etc. as some other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the affinity expressions specified
@@ -12156,14 +13058,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -12174,6 +13079,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -12222,6 +13128,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -12232,6 +13139,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -12322,10 +13230,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -12335,6 +13245,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -12381,6 +13292,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -12390,6 +13302,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -12454,6 +13367,7 @@ var CRDsValidation map[string]string = map[string]string{
                         avoid putting this pod in the same node, zone, etc. as some
                         other pod(s)).
                       properties:
+                        "": {}
                         preferredDuringSchedulingIgnoredDuringExecution:
                           description: The scheduler will prefer to schedule pods
                             to nodes that satisfy the anti-affinity expressions specified
@@ -12472,14 +13386,17 @@ var CRDsValidation map[string]string = map[string]string{
                               fields are added per-node to find the most preferred
                               node(s)
                             properties:
+                              "": {}
                               podAffinityTerm:
                                 description: Required. A pod affinity term, associated
                                   with the corresponding weight.
                                 properties:
+                                  "": {}
                                   labelSelector:
                                     description: A label query over a set of resources,
                                       in this case pods.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -12490,6 +13407,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -12538,6 +13456,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       is beta-level and is only honored when PodAffinityNamespaceSelector
                                       feature is enabled.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -12548,6 +13467,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -12638,10 +13558,12 @@ var CRDsValidation map[string]string = map[string]string{
                               with key <topologyKey> matches that of any node on which
                               a pod of the set of pods is running
                             properties:
+                              "": {}
                               labelSelector:
                                 description: A label query over a set of resources,
                                   in this case pods.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -12651,6 +13573,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -12697,6 +13620,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   only honored when PodAffinityNamespaceSelector feature
                                   is enabled.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -12706,6 +13630,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -12771,6 +13696,7 @@ var CRDsValidation map[string]string = map[string]string{
                     here will be merged to the generated DNS configuration based on
                     DNSPolicy.
                   properties:
+                    "": {}
                     nameservers:
                       description: A list of DNS name server IP addresses. This will
                         be appended to the base nameservers generated from DNSPolicy.
@@ -12787,6 +13713,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: PodDNSConfigOption defines DNS resolver options
                           of a pod.
                         properties:
+                          "": {}
                           name:
                             description: Required.
                             type: string
@@ -12814,10 +13741,12 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Specification of the desired behavior of the VirtualMachineInstance
                     on the host.
                   properties:
+                    "": {}
                     chassis:
                       description: Chassis specifies the chassis info passed to the
                         domain.
                       properties:
+                        "": {}
                         asset:
                           type: string
                         manufacturer:
@@ -12832,14 +13761,17 @@ var CRDsValidation map[string]string = map[string]string{
                     clock:
                       description: Clock sets the clock and timers of the vmi.
                       properties:
+                        "": {}
                         timer:
                           description: Timer specifies whih timers are attached to
                             the vmi.
                           properties:
+                            "": {}
                             hpet:
                               description: HPET (High Precision Event Timer) - multiple
                                 timers with periodic interrupts.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -12857,6 +13789,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 the host’s wall clock time (paravirtualized). For
                                 windows guests.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -12868,6 +13801,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 host’s wall clock time (paravirtualized). For linux
                                 guests."
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -12878,6 +13812,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: PIT (Programmable Interval Timer) - a timer
                                 with periodic interrupts.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -12893,6 +13828,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: RTC (Real Time Clock) - a continuously
                                 running timer with periodic interrupts.
                               properties:
+                                "": {}
                                 present:
                                   description: Enabled set to false makes sure that
                                     the machine type or a preset can't add the timer.
@@ -12918,6 +13854,7 @@ var CRDsValidation map[string]string = map[string]string{
                             If an offset is specified, guest changes to the clock
                             will be kept during reboots and are not reset.
                           properties:
+                            "": {}
                             offsetSeconds:
                               description: OffsetSeconds specifies an offset in seconds,
                                 relative to UTC. If set, guest changes to the clock
@@ -12929,6 +13866,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: CPU allow specified the detailed CPU topology inside
                         the vmi.
                       properties:
+                        "": {}
                         cores:
                           description: Cores specifies the number of cores inside
                             the vmi. Must be a value greater or equal 1.
@@ -12945,6 +13883,7 @@ var CRDsValidation map[string]string = map[string]string{
                           items:
                             description: CPUFeature allows specifying a CPU feature.
                             properties:
+                              "": {}
                               name:
                                 description: Name of the CPU feature
                                 type: string
@@ -12982,6 +13921,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: NUMA allows specifying settings for the guest
                             NUMA topology
                           properties:
+                            "": {}
                             guestMappingPassthrough:
                               description: GuestMappingPassthrough will create an
                                 efficient guest topology based on host CPUs exclusively
@@ -12994,6 +13934,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Realtime instructs the virt-launcher to tune
                             the VMI for lower latency, optional for real time workloads
                           properties:
+                            "": {}
                             mask:
                               description: 'Mask defines the vcpu mask expression
                                 that defines which vcpus are used for realtime. Format
@@ -13015,6 +13956,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Devices allows adding disks, network interfaces,
                         and others
                       properties:
+                        "": {}
                         autoattachGraphicsDevice:
                           description: Whether to attach the default graphics device
                             or not. VNC will not be available if set to false. Defaults
@@ -13051,14 +13993,17 @@ var CRDsValidation map[string]string = map[string]string{
                             are connected to the vmi.
                           items:
                             properties:
+                              "": {}
                               blockSize:
                                 description: If specified, the virtual disk will be
                                   presented with the given block sizes.
                                 properties:
+                                  "": {}
                                   custom:
                                     description: CustomBlockSize represents the desired
                                       logical and physical block size for a VM disk.
                                     properties:
+                                      "": {}
                                       logical:
                                         type: integer
                                       physical:
@@ -13071,6 +14016,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Represents if a feature is enabled
                                       or disabled.
                                     properties:
+                                      "": {}
                                       enabled:
                                         description: Enabled determines if the feature
                                           should be enabled or disabled on the guest.
@@ -13094,6 +14040,7 @@ var CRDsValidation map[string]string = map[string]string{
                               cdrom:
                                 description: Attach a volume as a cdrom to the vmi.
                                 properties:
+                                  "": {}
                                   bus:
                                     description: 'Bus indicates the type of disk device
                                       to emulate. supported values: virtio, sata,
@@ -13116,6 +14063,7 @@ var CRDsValidation map[string]string = map[string]string{
                               disk:
                                 description: Attach a volume as a disk to the vmi.
                                 properties:
+                                  "": {}
                                   bus:
                                     description: 'Bus indicates the type of disk device
                                       to emulate. supported values: virtio, sata,
@@ -13138,6 +14086,7 @@ var CRDsValidation map[string]string = map[string]string{
                               lun:
                                 description: Attach a volume as a LUN to the vmi.
                                 properties:
+                                  "": {}
                                   bus:
                                     description: 'Bus indicates the type of disk device
                                       to emulate. supported values: virtio, sata,
@@ -13171,6 +14120,7 @@ var CRDsValidation map[string]string = map[string]string{
                             to the vmi.
                           items:
                             properties:
+                              "": {}
                               name:
                                 description: Name is the device name
                                 type: string
@@ -13187,6 +14137,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Whether to attach a GPU device to the vmi.
                           items:
                             properties:
+                              "": {}
                               deviceName:
                                 type: string
                               name:
@@ -13200,8 +14151,10 @@ var CRDsValidation map[string]string = map[string]string{
                                 type: string
                               virtualGPUOptions:
                                 properties:
+                                  "": {}
                                   display:
                                     properties:
+                                      "": {}
                                       enabled:
                                         description: Enabled determines if a display
                                           addapter backed by a vGPU should be enabled
@@ -13212,6 +14165,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           the guest OS loads a real GPU driver Defaults
                                           to true.
                                         properties:
+                                          "": {}
                                           enabled:
                                             description: Enabled determines if the
                                               feature should be enabled or disabled
@@ -13230,6 +14184,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Whether to attach a host device to the vmi.
                           items:
                             properties:
+                              "": {}
                               deviceName:
                                 description: DeviceName is the resource name of the
                                   host device exposed by a device plugin
@@ -13251,6 +14206,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Inputs describe input devices
                           items:
                             properties:
+                              "": {}
                               bus:
                                 description: 'Bus indicates the bus of input device
                                   to emulate. Supported values: virtio, usb.'
@@ -13272,6 +14228,7 @@ var CRDsValidation map[string]string = map[string]string{
                             are added to the vmi.
                           items:
                             properties:
+                              "": {}
                               bootOrder:
                                 description: BootOrder is an integer value > 0, used
                                   to determine ordering of boot devices. Lower values
@@ -13287,6 +14244,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: If specified the network interface will
                                   pass additional DHCP options to the VMI
                                 properties:
+                                  "": {}
                                   bootFileName:
                                     description: If specified will pass option 67
                                       to interface's DHCP server
@@ -13304,6 +14262,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: DHCPExtraOptions defines Extra
                                         DHCP options for a VM.
                                       properties:
+                                        "": {}
                                         option:
                                           description: Option is an Integer value
                                             from 224-254 Required.
@@ -13359,6 +14318,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     the virtual machine. Default protocol TCP. The
                                     port field is mandatory
                                   properties:
+                                    "": {}
                                     name:
                                       description: If specified, this must be an IANA_SVC_NAME
                                         and unique within the pod. Each named port
@@ -13410,6 +14370,7 @@ var CRDsValidation map[string]string = map[string]string{
                         sound:
                           description: Whether to emulate a sound device.
                           properties:
+                            "": {}
                             model:
                               description: 'We only support ich9 or ac97. If SoundDevice
                                 is not set: No sound card is emulated. If SoundDevice
@@ -13434,9 +14395,11 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Watchdog describes a watchdog device which
                             can be added to the vmi.
                           properties:
+                            "": {}
                             i6300esb:
                               description: i6300esb watchdog device.
                               properties:
+                                "": {}
                                 action:
                                   description: The action to take. Valid values are
                                     poweroff, reset, shutdown. Defaults to reset.
@@ -13452,10 +14415,12 @@ var CRDsValidation map[string]string = map[string]string{
                     features:
                       description: Features like acpi, apic, hyperv, smm.
                       properties:
+                        "": {}
                         acpi:
                           description: ACPI enables/disables ACPI inside the guest.
                             Defaults to enabled.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -13464,6 +14429,7 @@ var CRDsValidation map[string]string = map[string]string{
                         apic:
                           description: Defaults to the machine type setting.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -13476,11 +14442,13 @@ var CRDsValidation map[string]string = map[string]string{
                         hyperv:
                           description: Defaults to the machine type setting.
                           properties:
+                            "": {}
                             evmcs:
                               description: EVMCS Speeds up L2 vmexits, but disables
                                 other virtualization features. Requires vapic. Defaults
                                 to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13492,6 +14460,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 handling for Hyper-V on KVM. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13503,6 +14472,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 environments. Requires vpindex. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13514,6 +14484,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 on TSC frequency changes. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13524,6 +14495,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Relaxed instructs the guest OS to disable
                                 watchdog timeouts. Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13535,6 +14507,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 vmi. Requires synic. Defaults to the machine type
                                 setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13546,6 +14519,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 improve scheduling in the guest. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13556,6 +14530,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Spinlocks allows to configure the spinlock
                                 retry attempts.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13572,6 +14547,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: SyNIC enables the Synthetic Interrupt Controller.
                                 Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13583,10 +14559,12 @@ var CRDsValidation map[string]string = map[string]string{
                                 Controller Timers, reducing CPU load. Defaults to
                                 the machine type setting.
                               properties:
+                                "": {}
                                 direct:
                                   description: Represents if a feature is enabled
                                     or disabled.
                                   properties:
+                                    "": {}
                                     enabled:
                                       description: Enabled determines if the feature
                                         should be enabled or disabled on the guest.
@@ -13601,6 +14579,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 environments. Requires vpindex. Defaults to the machine
                                 type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13611,6 +14590,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: VAPIC improves the paravirtualized handling
                                 of interrupts. Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13621,6 +14601,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: VendorID allows setting the hypervisor
                                 vendor id. Defaults to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13636,6 +14617,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 to help windows identifying virtual processors. Defaults
                                 to the machine type setting.
                               properties:
+                                "": {}
                                 enabled:
                                   description: Enabled determines if the feature should
                                     be enabled or disabled on the guest. Defaults
@@ -13647,6 +14629,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Configure how KVM presence is exposed to the
                             guest.
                           properties:
+                            "": {}
                             hidden:
                               description: Hide the KVM hypervisor from standard MSR
                                 based discovery. Defaults to false
@@ -13657,6 +14640,7 @@ var CRDsValidation map[string]string = map[string]string{
                             spinlocks. For older kernels this feature should be explicitly
                             disabled.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -13666,6 +14650,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: SMM enables/disables System Management Mode.
                             TSEG not yet implemented.
                           properties:
+                            "": {}
                             enabled:
                               description: Enabled determines if the feature should
                                 be enabled or disabled on the guest. Defaults to true.
@@ -13675,13 +14660,16 @@ var CRDsValidation map[string]string = map[string]string{
                     firmware:
                       description: Firmware.
                       properties:
+                        "": {}
                         bootloader:
                           description: Settings to control the bootloader that is
                             used.
                           properties:
+                            "": {}
                             bios:
                               description: If set (default), BIOS will be used.
                               properties:
+                                "": {}
                                 useSerial:
                                   description: If set, the BIOS output will be transmitted
                                     over serial
@@ -13690,6 +14678,7 @@ var CRDsValidation map[string]string = map[string]string{
                             efi:
                               description: If set, EFI will be used instead of BIOS.
                               properties:
+                                "": {}
                                 secureBoot:
                                   description: If set, SecureBoot will be enabled
                                     and the OVMF roms will be swapped for SecureBoot-enabled
@@ -13701,10 +14690,12 @@ var CRDsValidation map[string]string = map[string]string{
                         kernelBoot:
                           description: Settings to set the kernel for booting.
                           properties:
+                            "": {}
                             container:
                               description: Container defines the container that containes
                                 kernel artifacts
                               properties:
+                                "": {}
                                 image:
                                   description: Image that contains initrd / kernel
                                     files.
@@ -13752,6 +14743,7 @@ var CRDsValidation map[string]string = map[string]string{
                     launchSecurity:
                       description: Launch Security setting of the vmi.
                       properties:
+                        "": {}
                         sev:
                           description: AMD Secure Encrypted Virtualization (SEV).
                           type: object
@@ -13759,6 +14751,7 @@ var CRDsValidation map[string]string = map[string]string{
                     machine:
                       description: Machine type.
                       properties:
+                        "": {}
                         type:
                           description: QEMU machine type is the actual chipset of
                             the VirtualMachineInstance.
@@ -13767,6 +14760,7 @@ var CRDsValidation map[string]string = map[string]string{
                     memory:
                       description: Memory allow specifying the VMI memory features.
                       properties:
+                        "": {}
                         guest:
                           anyOf:
                           - type: integer
@@ -13782,6 +14776,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Hugepages allow to use hugepages for the VirtualMachineInstance
                             instead of regular memory.
                           properties:
+                            "": {}
                             pageSize:
                               description: PageSize specifies the hugepage size, for
                                 x86_64 architecture valid values are 1Gi and 2Mi.
@@ -13792,6 +14787,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Resources describes the Compute Resources required
                         by this vmi.
                       properties:
+                        "": {}
                         limits:
                           additionalProperties:
                             anyOf:
@@ -13838,12 +14834,14 @@ var CRDsValidation map[string]string = map[string]string{
                     VirtualmachineInstances will be stopped if the probe fails. Cannot
                     be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                   properties:
+                    "": {}
                     exec:
                       description: One and only one of the following should be specified.
                         Exec specifies the action to take, it will be executed on
                         the guest through the qemu-guest-agent. If the guest agent
                         is not available, this probe will fail.
                       properties:
+                        "": {}
                         command:
                           description: Command is the command line to execute inside
                             the container, the working directory for the command  is
@@ -13869,6 +14867,7 @@ var CRDsValidation map[string]string = map[string]string{
                     httpGet:
                       description: HTTPGet specifies the http request to perform.
                       properties:
+                        "": {}
                         host:
                           description: Host name to connect to, defaults to the pod
                             IP. You probably want to set "Host" in httpHeaders instead.
@@ -13880,6 +14879,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: HTTPHeader describes a custom header to be
                               used in HTTP probes
                             properties:
+                              "": {}
                               name:
                                 description: The header field name
                                 type: string
@@ -13931,6 +14931,7 @@ var CRDsValidation map[string]string = map[string]string{
                         port. TCP hooks not yet supported TODO: implement a realistic
                         TCP lifecycle hook'
                       properties:
+                        "": {}
                         host:
                           description: 'Optional: Host name to connect to, defaults
                             to the pod IP.'
@@ -13965,9 +14966,11 @@ var CRDsValidation map[string]string = map[string]string{
                     description: Network represents a network type and a resource
                       that should be connected to the vm.
                     properties:
+                      "": {}
                       multus:
                         description: Represents the multus cni network.
                         properties:
+                          "": {}
                           default:
                             description: Select the default network and add it to
                               the multus-cni.io/default-network annotation.
@@ -13987,6 +14990,7 @@ var CRDsValidation map[string]string = map[string]string{
                       pod:
                         description: Represents the stock pod network interface.
                         properties:
+                          "": {}
                           vmIPv6NetworkCIDR:
                             description: IPv6 CIDR for the vm network. Defaults to
                               fd10:0:2::/120 if not specified.
@@ -14017,12 +15021,14 @@ var CRDsValidation map[string]string = map[string]string{
                     VirtualmachineInstances will be removed from service endpoints
                     if the probe fails. Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                   properties:
+                    "": {}
                     exec:
                       description: One and only one of the following should be specified.
                         Exec specifies the action to take, it will be executed on
                         the guest through the qemu-guest-agent. If the guest agent
                         is not available, this probe will fail.
                       properties:
+                        "": {}
                         command:
                           description: Command is the command line to execute inside
                             the container, the working directory for the command  is
@@ -14048,6 +15054,7 @@ var CRDsValidation map[string]string = map[string]string{
                     httpGet:
                       description: HTTPGet specifies the http request to perform.
                       properties:
+                        "": {}
                         host:
                           description: Host name to connect to, defaults to the pod
                             IP. You probably want to set "Host" in httpHeaders instead.
@@ -14059,6 +15066,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: HTTPHeader describes a custom header to be
                               used in HTTP probes
                             properties:
+                              "": {}
                               name:
                                 description: The header field name
                                 type: string
@@ -14110,6 +15118,7 @@ var CRDsValidation map[string]string = map[string]string{
                         port. TCP hooks not yet supported TODO: implement a realistic
                         TCP lifecycle hook'
                       properties:
+                        "": {}
                         host:
                           description: 'Optional: Host name to connect to, defaults
                             to the pod IP.'
@@ -14166,6 +15175,7 @@ var CRDsValidation map[string]string = map[string]string{
                       any taint that matches the triple <key,value,effect> using the
                       matching operator <operator>.
                     properties:
+                      "": {}
                       effect:
                         description: Effect indicates the taint effect to match. Empty
                           means match all taint effects. When specified, allowed values
@@ -14199,18 +15209,130 @@ var CRDsValidation map[string]string = map[string]string{
                         type: string
                     type: object
                   type: array
+                topologySpreadConstraints:
+                  description: TopologySpreadConstraints describes how a group of
+                    VMIs ought to spread across topology domains. K8s scheduler will
+                    schedule VMI pods in a way which abides by the constraints.
+                  items:
+                    description: TopologySpreadConstraint specifies how to spread
+                      matching pods among the given topology.
+                    properties:
+                      "": {}
+                      labelSelector:
+                        description: LabelSelector is used to find matching pods.
+                          Pods that match this label selector are counted to determine
+                          the number of pods in their corresponding topology domain.
+                        properties:
+                          "": {}
+                          matchExpressions:
+                            description: matchExpressions is a list of label selector
+                              requirements. The requirements are ANDed.
+                            items:
+                              description: A label selector requirement is a selector
+                                that contains values, a key, and an operator that
+                                relates the key and values.
+                              properties:
+                                "": {}
+                                key:
+                                  description: key is the label key that the selector
+                                    applies to.
+                                  type: string
+                                operator:
+                                  description: operator represents a key's relationship
+                                    to a set of values. Valid operators are In, NotIn,
+                                    Exists and DoesNotExist.
+                                  type: string
+                                values:
+                                  description: values is an array of string values.
+                                    If the operator is In or NotIn, the values array
+                                    must be non-empty. If the operator is Exists or
+                                    DoesNotExist, the values array must be empty.
+                                    This array is replaced during a strategic merge
+                                    patch.
+                                  items:
+                                    type: string
+                                  type: array
+                              required:
+                              - key
+                              - operator
+                              type: object
+                            type: array
+                          matchLabels:
+                            additionalProperties:
+                              type: string
+                            description: matchLabels is a map of {key,value} pairs.
+                              A single {key,value} in the matchLabels map is equivalent
+                              to an element of matchExpressions, whose key field is
+                              "key", the operator is "In", and the values array contains
+                              only "value". The requirements are ANDed.
+                            type: object
+                        type: object
+                      maxSkew:
+                        description: 'MaxSkew describes the degree to which pods may
+                          be unevenly distributed. When ''whenUnsatisfiable=DoNotSchedule'',
+                          it is the maximum permitted difference between the number
+                          of matching pods in the target topology and the global minimum.
+                          For example, in a 3-zone cluster, MaxSkew is set to 1, and
+                          pods with the same labelSelector spread as 1/1/0: | zone1
+                          | zone2 | zone3 | |   P   |   P   |       | - if MaxSkew
+                          is 1, incoming pod can only be scheduled to zone3 to become
+                          1/1/1; scheduling it onto zone1(zone2) would make the ActualSkew(2-0)
+                          on zone1(zone2) violate MaxSkew(1). - if MaxSkew is 2, incoming
+                          pod can be scheduled onto any zone. When ''whenUnsatisfiable=ScheduleAnyway'',
+                          it is used to give higher precedence to topologies that
+                          satisfy it. It''s a required field. Default value is 1 and
+                          0 is not allowed.'
+                        format: int32
+                        type: integer
+                      topologyKey:
+                        description: TopologyKey is the key of node labels. Nodes
+                          that have a label with this key and identical values are
+                          considered to be in the same topology. We consider each
+                          <key, value> as a "bucket", and try to put balanced number
+                          of pods into each bucket. It's a required field.
+                        type: string
+                      whenUnsatisfiable:
+                        description: 'WhenUnsatisfiable indicates how to deal with
+                          a pod if it doesn''t satisfy the spread constraint. - DoNotSchedule
+                          (default) tells the scheduler not to schedule it. - ScheduleAnyway
+                          tells the scheduler to schedule the pod in any location,   but
+                          giving higher precedence to topologies that would help reduce
+                          the   skew. A constraint is considered "Unsatisfiable" for
+                          an incoming pod if and only if every possible node assignment
+                          for that pod would violate "MaxSkew" on some topology. For
+                          example, in a 3-zone cluster, MaxSkew is set to 1, and pods
+                          with the same labelSelector spread as 3/1/1: | zone1 | zone2
+                          | zone3 | | P P P |   P   |   P   | If WhenUnsatisfiable
+                          is set to DoNotSchedule, incoming pod can only be scheduled
+                          to zone2(zone3) to become 3/2/1(3/1/2) as ActualSkew(2-1)
+                          on zone2(zone3) satisfies MaxSkew(1). In other words, the
+                          cluster can still be imbalanced, but scheduler won''t make
+                          it *more* imbalanced. It''s a required field.'
+                        type: string
+                    required:
+                    - maxSkew
+                    - topologyKey
+                    - whenUnsatisfiable
+                    type: object
+                  type: array
+                  x-kubernetes-list-map-keys:
+                  - topologyKey
+                  - whenUnsatisfiable
+                  x-kubernetes-list-type: map
                 volumes:
                   description: List of volumes that can be mounted by disks belonging
                     to the vmi.
                   items:
                     description: Volume represents a named volume in a vmi.
                     properties:
+                      "": {}
                       cloudInitConfigDrive:
                         description: 'CloudInitConfigDrive represents a cloud-init
                           Config Drive user-data source. The Config Drive data will
                           be added as a disk to the vmi. A proper cloud-init installation
                           is required inside the guest. More info: https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html'
                         properties:
+                          "": {}
                           networkData:
                             description: NetworkData contains config drive inline
                               cloud-init networkdata.
@@ -14223,6 +15345,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: NetworkDataSecretRef references a k8s secret
                               that contains config drive networkdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -14233,6 +15356,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: UserDataSecretRef references a k8s secret
                               that contains config drive userdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -14254,6 +15378,7 @@ var CRDsValidation map[string]string = map[string]string{
                           to the vmi. A proper cloud-init installation is required
                           inside the guest. More info: http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html'
                         properties:
+                          "": {}
                           networkData:
                             description: NetworkData contains NoCloud inline cloud-init
                               networkdata.
@@ -14266,6 +15391,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: NetworkDataSecretRef references a k8s secret
                               that contains NoCloud networkdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -14276,6 +15402,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: UserDataSecretRef references a k8s secret
                               that contains NoCloud userdata.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -14295,6 +15422,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'ConfigMapSource represents a reference to a
                           ConfigMap in the same namespace. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/'
                         properties:
+                          "": {}
                           name:
                             description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                               TODO: Add other useful fields. apiVersion, kind, uid?'
@@ -14314,6 +15442,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'ContainerDisk references a docker image, embedding
                           a qcow or raw disk. More info: https://kubevirt.gitbooks.io/user-guide/registry-disk.html'
                         properties:
+                          "": {}
                           image:
                             description: Image is the name of the image with the embedded
                               disk.
@@ -14341,6 +15470,7 @@ var CRDsValidation map[string]string = map[string]string{
                           PVC for this volume as well as the process of populating
                           that PVC with a disk image.
                         properties:
+                          "": {}
                           hotpluggable:
                             description: Hotpluggable indicates whether the volume
                               can be hotplugged and hotunplugged.
@@ -14356,17 +15486,20 @@ var CRDsValidation map[string]string = map[string]string{
                         description: DownwardAPI represents downward API about the
                           pod that should populate this volume
                         properties:
+                          "": {}
                           fields:
                             description: Fields is a list of downward API volume file
                             items:
                               description: DownwardAPIVolumeFile represents information
                                 to create the file containing the pod field
                               properties:
+                                "": {}
                                 fieldRef:
                                   description: 'Required: Selects a field of the pod:
                                     only annotations, labels, name and namespace are
                                     supported.'
                                   properties:
+                                    "": {}
                                     apiVersion:
                                       description: Version of the schema the FieldPath
                                         is written in terms of, defaults to "v1".
@@ -14403,6 +15536,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     limits.memory, requests.cpu and requests.memory)
                                     are currently supported.'
                                   properties:
+                                    "": {}
                                     containerName:
                                       description: 'Container name: required for volumes,
                                         optional for env vars'
@@ -14442,6 +15576,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'EmptyDisk represents a temporary disk which
                           shares the vmis lifecycle. More info: https://kubevirt.gitbooks.io/user-guide/disks-and-volumes.html'
                         properties:
+                          "": {}
                           capacity:
                             anyOf:
                             - type: integer
@@ -14457,11 +15592,13 @@ var CRDsValidation map[string]string = map[string]string{
                           specified source and provides copy-on-write image on top
                           of it.
                         properties:
+                          "": {}
                           persistentVolumeClaim:
                             description: 'PersistentVolumeClaimVolumeSource represents
                               a reference to a PersistentVolumeClaim in the same namespace.
                               Directly attached to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                             properties:
+                              "": {}
                               claimName:
                                 description: 'ClaimName is the name of a PersistentVolumeClaim
                                   in the same namespace as the pod using this volume.
@@ -14479,6 +15616,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: HostDisk represents a disk created on the cluster
                           level
                         properties:
+                          "": {}
                           capacity:
                             anyOf:
                             - type: integer
@@ -14506,6 +15644,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: MemoryDump is attached to the virt launcher and
                           is populated with a memory dump of the vmi
                         properties:
+                          "": {}
                           claimName:
                             description: 'ClaimName is the name of a PersistentVolumeClaim
                               in the same namespace as the pod using this volume.
@@ -14531,6 +15670,7 @@ var CRDsValidation map[string]string = map[string]string{
                           a reference to a PersistentVolumeClaim in the same namespace.
                           Directly attached to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                         properties:
+                          "": {}
                           claimName:
                             description: 'ClaimName is the name of a PersistentVolumeClaim
                               in the same namespace as the pod using this volume.
@@ -14551,6 +15691,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: 'SecretVolumeSource represents a reference to
                           a secret data in the same namespace. More info: https://kubernetes.io/docs/concepts/configuration/secret/'
                         properties:
+                          "": {}
                           optional:
                             description: Specify whether the Secret or it's keys must
                               be defined
@@ -14571,6 +15712,7 @@ var CRDsValidation map[string]string = map[string]string{
                           to a service account. There can only be one volume of this
                           type! More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
                         properties:
+                          "": {}
                           serviceAccountName:
                             description: 'Name of the service account in the pod''s
                               namespace to use. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
@@ -14579,11 +15721,13 @@ var CRDsValidation map[string]string = map[string]string{
                       sysprep:
                         description: Represents a Sysprep volume source.
                         properties:
+                          "": {}
                           configMap:
                             description: ConfigMap references a ConfigMap that contains
                               Sysprep answer file named autounattend.xml that should
                               be attached as disk of CDROM type.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -14595,6 +15739,7 @@ var CRDsValidation map[string]string = map[string]string{
                               Sysprep answer file named autounattend.xml that should
                               be attached as disk of CDROM type.
                             properties:
+                              "": {}
                               name:
                                 description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
                                   TODO: Add other useful fields. apiVersion, kind,
@@ -14619,9 +15764,11 @@ var CRDsValidation map[string]string = map[string]string{
         is doing. It contains information available to controllers and users.
       nullable: true
       properties:
+        "": {}
         conditions:
           items:
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -14665,6 +15812,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachinePool resource contains a VirtualMachine configuration
     that can be used to replicate multiple VirtualMachine resources.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -14679,6 +15827,7 @@ var CRDsValidation map[string]string = map[string]string{
       type: object
     spec:
       properties:
+        "": {}
         paused:
           description: Indicates that the pool is paused.
           type: boolean
@@ -14691,6 +15840,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Label selector for pods. Existing Poolss whose pods are selected
             by this will be the ones affected by this deployment.
           properties:
+            "": {}
             matchExpressions:
               description: matchExpressions is a list of label selector requirements.
                 The requirements are ANDed.
@@ -14698,6 +15848,7 @@ var CRDsValidation map[string]string = map[string]string{
                 description: A label selector requirement is a selector that contains
                   values, a key, and an operator that relates the key and values.
                 properties:
+                  "": {}
                   key:
                     description: key is the label key that the selector applies to.
                     type: string
@@ -14730,6 +15881,7 @@ var CRDsValidation map[string]string = map[string]string{
         virtualMachineTemplate:
           description: Template describes the VM that will be created.
           properties:
+            "": {}
             metadata:
               nullable: true
               type: object
@@ -14737,6 +15889,7 @@ var CRDsValidation map[string]string = map[string]string{
             spec:
               description: VirtualMachineSpec contains the VirtualMachine specification.
               properties:
+                "": {}
                 dataVolumeTemplates:
                   description: dataVolumeTemplates is a list of dataVolumes that the
                     VirtualMachineInstance template can reference. DataVolumes in
@@ -14745,6 +15898,7 @@ var CRDsValidation map[string]string = map[string]string{
                   items:
                     nullable: true
                     properties:
+                      "": {}
                       apiVersion:
                         description: 'APIVersion defines the versioned schema of this
                           representation of an object. Servers should convert recognized
@@ -14764,6 +15918,7 @@ var CRDsValidation map[string]string = map[string]string{
                       spec:
                         description: DataVolumeSpec contains the DataVolume specification.
                         properties:
+                          "": {}
                           checkpoints:
                             description: Checkpoints is a list of DataVolumeCheckpoints,
                               representing stages in a multistage import.
@@ -14771,6 +15926,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: DataVolumeCheckpoint defines a stage in
                                 a warm migration.
                               properties:
+                                "": {}
                                 current:
                                   description: Current is the identifier of the snapshot
                                     created for this checkpoint.
@@ -14806,6 +15962,7 @@ var CRDsValidation map[string]string = map[string]string{
                           pvc:
                             description: PVC is the PVC specification
                             properties:
+                              "": {}
                               accessModes:
                                 description: 'AccessModes contains the desired access
                                   modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -14823,6 +15980,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   is enabled, this field will always have the same
                                   contents as the DataSourceRef field.'
                                 properties:
+                                  "": {}
                                   apiGroup:
                                     description: APIGroup is the group for the resource
                                       being referenced. If APIGroup is not specified,
@@ -14866,6 +16024,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   (Alpha) Using this field requires the AnyVolumeDataSource
                                   feature gate to be enabled.'
                                 properties:
+                                  "": {}
                                   apiGroup:
                                     description: APIGroup is the group for the resource
                                       being referenced. If APIGroup is not specified,
@@ -14893,6 +16052,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   value but must still be higher than capacity recorded
                                   in the status field of the claim. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                                 properties:
+                                  "": {}
                                   limits:
                                     additionalProperties:
                                       anyOf:
@@ -14922,6 +16082,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: A label query over volumes to consider
                                   for binding.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -14931,6 +16092,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -14984,6 +16146,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: Source is the src of the data for the requested
                               DataVolume
                             properties:
+                              "": {}
                               blank:
                                 description: DataVolumeBlankImage provides the parameters
                                   to create a new raw blank image for the PVC
@@ -14994,6 +16157,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   user name and password, and an optional configmap
                                   containing additional CAs
                                 properties:
+                                  "": {}
                                   certConfigMap:
                                     description: CertConfigMap is a configmap reference,
                                       containing a Certificate Authority(CA) public
@@ -15030,6 +16194,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   parameters to create a Data Volume from an imageio
                                   source
                                 properties:
+                                  "": {}
                                   certConfigMap:
                                     description: CertConfigMap provides a reference
                                       to the CA cert
@@ -15053,6 +16218,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: DataVolumeSourcePVC provides the parameters
                                   to create a Data Volume from an existing PVC
                                 properties:
+                                  "": {}
                                   name:
                                     description: The name of the source PVC
                                     type: string
@@ -15068,6 +16234,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   parameters to create a Data Volume from an registry
                                   source
                                 properties:
+                                  "": {}
                                   certConfigMap:
                                     description: CertConfigMap provides a reference
                                       to the Registry certs
@@ -15094,6 +16261,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: DataVolumeSourceS3 provides the parameters
                                   to create a Data Volume from an S3 source
                                 properties:
+                                  "": {}
                                   certConfigMap:
                                     description: CertConfigMap is a configmap reference,
                                       containing a Certificate Authority(CA) public
@@ -15117,6 +16285,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: DataVolumeSourceVDDK provides the parameters
                                   to create a Data Volume from a Vmware source
                                 properties:
+                                  "": {}
                                   backingFile:
                                     description: BackingFile is the path to the virtual
                                       hard disk to migrate from vCenter/ESXi
@@ -15149,6 +16318,7 @@ var CRDsValidation map[string]string = map[string]string{
                             description: SourceRef is an indirect reference to the
                               source of data for the requested DataVolume
                             properties:
+                              "": {}
                               kind:
                                 description: The kind of the source reference, currently
                                   only "DataSource" is supported
@@ -15167,6 +16337,7 @@ var CRDsValidation map[string]string = map[string]string{
                           storage:
                             description: Storage is the requested storage specification
                             properties:
+                              "": {}
                               accessModes:
                                 description: 'AccessModes contains the desired access
                                   modes the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -15185,6 +16356,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   data source, it will create a new volume based on
                                   the contents of the specified data source.'
                                 properties:
+                                  "": {}
                                   apiGroup:
                                     description: APIGroup is the group for the resource
                                       being referenced. If APIGroup is not specified,
@@ -15208,6 +16380,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: 'Resources represents the minimum resources
                                   the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                                 properties:
+                                  "": {}
                                   limits:
                                     additionalProperties:
                                       anyOf:
@@ -15237,6 +16410,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: A label query over volumes to consider
                                   for binding.
                                 properties:
+                                  "": {}
                                   matchExpressions:
                                     description: matchExpressions is a list of label
                                       selector requirements. The requirements are
@@ -15246,6 +16420,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         a selector that contains values, a key, and
                                         an operator that relates the key and values.
                                       properties:
+                                        "": {}
                                         key:
                                           description: key is the label key that the
                                             selector applies to.
@@ -15309,6 +16484,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: FlavorMatcher references a flavor that is used to fill
                     fields in Template
                   properties:
+                    "": {}
                     kind:
                       description: 'Kind specifies which flavor resource is referenced.
                         Allowed values are: "VirtualMachineFlavor" and "VirtualMachineClusterFlavor".
@@ -15326,6 +16502,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: PreferenceMatcher references a set of preference that
                     is used to fill fields in Template
                   properties:
+                    "": {}
                     kind:
                       description: 'Kind specifies which preference resource is referenced.
                         Allowed values are: "VirtualMachinePreference" and "VirtualMachineClusterPreference".
@@ -15350,6 +16527,7 @@ var CRDsValidation map[string]string = map[string]string{
                 template:
                   description: Template is the direct specification of VirtualMachineInstance
                   properties:
+                    "": {}
                     metadata:
                       nullable: true
                       type: object
@@ -15358,6 +16536,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: VirtualMachineInstance Spec contains the VirtualMachineInstance
                         specification.
                       properties:
+                        "": {}
                         accessCredentials:
                           description: Specifies a set of public keys to inject into
                             the vm guest
@@ -15366,15 +16545,18 @@ var CRDsValidation map[string]string = map[string]string{
                               source that can be used to authorize remote access to
                               the vm guest Only one of its members may be specified.
                             properties:
+                              "": {}
                               sshPublicKey:
                                 description: SSHPublicKey represents the source and
                                   method of applying a ssh public key into a guest
                                   virtual machine.
                                 properties:
+                                  "": {}
                                   propagationMethod:
                                     description: PropagationMethod represents how
                                       the public key is injected into the vm guest.
                                     properties:
+                                      "": {}
                                       configDrive:
                                         description: ConfigDrivePropagation means
                                           that the ssh public keys are injected into
@@ -15388,6 +16570,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           agent. This feature requires the qemu guest
                                           agent to be running within the guest.
                                         properties:
+                                          "": {}
                                           users:
                                             description: Users represents a list of
                                               guest users that should have the ssh
@@ -15405,10 +16588,12 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Source represents where the public
                                       keys are pulled from
                                     properties:
+                                      "": {}
                                       secret:
                                         description: Secret means that the access
                                           credential is pulled from a kubernetes secret
                                         properties:
+                                          "": {}
                                           secretName:
                                             description: SecretName represents the
                                               name of the secret in the VMI's namespace
@@ -15425,11 +16610,13 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: UserPassword represents the source and
                                   method for applying a guest user's password
                                 properties:
+                                  "": {}
                                   propagationMethod:
                                     description: propagationMethod represents how
                                       the user passwords are injected into the vm
                                       guest.
                                     properties:
+                                      "": {}
                                       qemuGuestAgent:
                                         description: QemuGuestAgentAccessCredentailPropagation
                                           means passwords are dynamically injected
@@ -15442,10 +16629,12 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Source represents where the user
                                       passwords are pulled from
                                     properties:
+                                      "": {}
                                       secret:
                                         description: Secret means that the access
                                           credential is pulled from a kubernetes secret
                                         properties:
+                                          "": {}
                                           secretName:
                                             description: SecretName represents the
                                               name of the secret in the VMI's namespace
@@ -15465,10 +16654,12 @@ var CRDsValidation map[string]string = map[string]string{
                           description: If affinity is specifies, obey all the affinity
                             rules
                           properties:
+                            "": {}
                             nodeAffinity:
                               description: Describes node affinity scheduling rules
                                 for the pod.
                               properties:
+                                "": {}
                                 preferredDuringSchedulingIgnoredDuringExecution:
                                   description: The scheduler will prefer to schedule
                                     pods to nodes that satisfy the affinity expressions
@@ -15489,10 +16680,12 @@ var CRDsValidation map[string]string = map[string]string{
                                       it's a no-op). A null preferred scheduling term
                                       matches no objects (i.e. is also a no-op).
                                     properties:
+                                      "": {}
                                       preference:
                                         description: A node selector term, associated
                                           with the corresponding weight.
                                         properties:
+                                          "": {}
                                           matchExpressions:
                                             description: A list of node selector requirements
                                               by node's labels.
@@ -15502,6 +16695,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: The label key that
                                                     the selector applies to.
@@ -15542,6 +16736,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: The label key that
                                                     the selector applies to.
@@ -15594,6 +16789,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     (e.g. due to an update), the system may or may
                                     not try to eventually evict the pod from its node.
                                   properties:
+                                    "": {}
                                     nodeSelectorTerms:
                                       description: Required. A list of node selector
                                         terms. The terms are ORed.
@@ -15603,6 +16799,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           of them are ANDed. The TopologySelectorTerm
                                           type implements a subset of the NodeSelectorTerm.
                                         properties:
+                                          "": {}
                                           matchExpressions:
                                             description: A list of node selector requirements
                                               by node's labels.
@@ -15612,6 +16809,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: The label key that
                                                     the selector applies to.
@@ -15652,6 +16850,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: The label key that
                                                     the selector applies to.
@@ -15694,6 +16893,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 (e.g. co-locate this pod in the same node, zone, etc.
                                 as some other pod(s)).
                               properties:
+                                "": {}
                                 preferredDuringSchedulingIgnoredDuringExecution:
                                   description: The scheduler will prefer to schedule
                                     pods to nodes that satisfy the affinity expressions
@@ -15713,14 +16913,17 @@ var CRDsValidation map[string]string = map[string]string{
                                       WeightedPodAffinityTerm fields are added per-node
                                       to find the most preferred node(s)
                                     properties:
+                                      "": {}
                                       podAffinityTerm:
                                         description: Required. A pod affinity term,
                                           associated with the corresponding weight.
                                         properties:
+                                          "": {}
                                           labelSelector:
                                             description: A label query over a set
                                               of resources, in this case pods.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -15731,6 +16934,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -15787,6 +16991,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               honored when PodAffinityNamespaceSelector
                                               feature is enabled.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -15797,6 +17002,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -15898,10 +17104,12 @@ var CRDsValidation map[string]string = map[string]string{
                                       <topologyKey> matches that of any node on which
                                       a pod of the set of pods is running
                                     properties:
+                                      "": {}
                                       labelSelector:
                                         description: A label query over a set of resources,
                                           in this case pods.
                                         properties:
+                                          "": {}
                                           matchExpressions:
                                             description: matchExpressions is a list
                                               of label selector requirements. The
@@ -15912,6 +17120,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: key is the label key
                                                     that the selector applies to.
@@ -15962,6 +17171,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           and is only honored when PodAffinityNamespaceSelector
                                           feature is enabled.
                                         properties:
+                                          "": {}
                                           matchExpressions:
                                             description: matchExpressions is a list
                                               of label selector requirements. The
@@ -15972,6 +17182,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: key is the label key
                                                     that the selector applies to.
@@ -16042,6 +17253,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 rules (e.g. avoid putting this pod in the same node,
                                 zone, etc. as some other pod(s)).
                               properties:
+                                "": {}
                                 preferredDuringSchedulingIgnoredDuringExecution:
                                   description: The scheduler will prefer to schedule
                                     pods to nodes that satisfy the anti-affinity expressions
@@ -16061,14 +17273,17 @@ var CRDsValidation map[string]string = map[string]string{
                                       WeightedPodAffinityTerm fields are added per-node
                                       to find the most preferred node(s)
                                     properties:
+                                      "": {}
                                       podAffinityTerm:
                                         description: Required. A pod affinity term,
                                           associated with the corresponding weight.
                                         properties:
+                                          "": {}
                                           labelSelector:
                                             description: A label query over a set
                                               of resources, in this case pods.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -16079,6 +17294,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -16135,6 +17351,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               honored when PodAffinityNamespaceSelector
                                               feature is enabled.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -16145,6 +17362,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -16247,10 +17465,12 @@ var CRDsValidation map[string]string = map[string]string{
                                       <topologyKey> matches that of any node on which
                                       a pod of the set of pods is running
                                     properties:
+                                      "": {}
                                       labelSelector:
                                         description: A label query over a set of resources,
                                           in this case pods.
                                         properties:
+                                          "": {}
                                           matchExpressions:
                                             description: matchExpressions is a list
                                               of label selector requirements. The
@@ -16261,6 +17481,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: key is the label key
                                                     that the selector applies to.
@@ -16311,6 +17532,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           and is only honored when PodAffinityNamespaceSelector
                                           feature is enabled.
                                         properties:
+                                          "": {}
                                           matchExpressions:
                                             description: matchExpressions is a list
                                               of label selector requirements. The
@@ -16321,6 +17543,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 a key, and an operator that relates
                                                 the key and values.
                                               properties:
+                                                "": {}
                                                 key:
                                                   description: key is the label key
                                                     that the selector applies to.
@@ -16392,6 +17615,7 @@ var CRDsValidation map[string]string = map[string]string{
                             specified here will be merged to the generated DNS configuration
                             based on DNSPolicy.
                           properties:
+                            "": {}
                             nameservers:
                               description: A list of DNS name server IP addresses.
                                 This will be appended to the base nameservers generated
@@ -16409,6 +17633,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: PodDNSConfigOption defines DNS resolver
                                   options of a pod.
                                 properties:
+                                  "": {}
                                   name:
                                     description: Required.
                                     type: string
@@ -16437,10 +17662,12 @@ var CRDsValidation map[string]string = map[string]string{
                           description: Specification of the desired behavior of the
                             VirtualMachineInstance on the host.
                           properties:
+                            "": {}
                             chassis:
                               description: Chassis specifies the chassis info passed
                                 to the domain.
                               properties:
+                                "": {}
                                 asset:
                                   type: string
                                 manufacturer:
@@ -16456,14 +17683,17 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Clock sets the clock and timers of the
                                 vmi.
                               properties:
+                                "": {}
                                 timer:
                                   description: Timer specifies whih timers are attached
                                     to the vmi.
                                   properties:
+                                    "": {}
                                     hpet:
                                       description: HPET (High Precision Event Timer)
                                         - multiple timers with periodic interrupts.
                                       properties:
+                                        "": {}
                                         present:
                                           description: Enabled set to false makes
                                             sure that the machine type or a preset
@@ -16481,6 +17711,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         read the host’s wall clock time (paravirtualized).
                                         For windows guests.
                                       properties:
+                                        "": {}
                                         present:
                                           description: Enabled set to false makes
                                             sure that the machine type or a preset
@@ -16492,6 +17723,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         read the host’s wall clock time (paravirtualized).
                                         For linux guests."
                                       properties:
+                                        "": {}
                                         present:
                                           description: Enabled set to false makes
                                             sure that the machine type or a preset
@@ -16502,6 +17734,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: PIT (Programmable Interval Timer)
                                         - a timer with periodic interrupts.
                                       properties:
+                                        "": {}
                                         present:
                                           description: Enabled set to false makes
                                             sure that the machine type or a preset
@@ -16518,6 +17751,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: RTC (Real Time Clock) - a continuously
                                         running timer with periodic interrupts.
                                       properties:
+                                        "": {}
                                         present:
                                           description: Enabled set to false makes
                                             sure that the machine type or a preset
@@ -16546,6 +17780,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     to the clock will be kept during reboots and are
                                     not reset.
                                   properties:
+                                    "": {}
                                     offsetSeconds:
                                       description: OffsetSeconds specifies an offset
                                         in seconds, relative to UTC. If set, guest
@@ -16558,6 +17793,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: CPU allow specified the detailed CPU topology
                                 inside the vmi.
                               properties:
+                                "": {}
                                 cores:
                                   description: Cores specifies the number of cores
                                     inside the vmi. Must be a value greater or equal
@@ -16577,6 +17813,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: CPUFeature allows specifying a CPU
                                       feature.
                                     properties:
+                                      "": {}
                                       name:
                                         description: Name of the CPU feature
                                         type: string
@@ -16617,6 +17854,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: NUMA allows specifying settings for
                                     the guest NUMA topology
                                   properties:
+                                    "": {}
                                     guestMappingPassthrough:
                                       description: GuestMappingPassthrough will create
                                         an efficient guest topology based on host
@@ -16631,6 +17869,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     to tune the VMI for lower latency, optional for
                                     real time workloads
                                   properties:
+                                    "": {}
                                     mask:
                                       description: 'Mask defines the vcpu mask expression
                                         that defines which vcpus are used for realtime.
@@ -16655,6 +17894,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Devices allows adding disks, network interfaces,
                                 and others
                               properties:
+                                "": {}
                                 autoattachGraphicsDevice:
                                   description: Whether to attach the default graphics
                                     device or not. VNC will not be available if set
@@ -16691,15 +17931,18 @@ var CRDsValidation map[string]string = map[string]string{
                                     which are connected to the vmi.
                                   items:
                                     properties:
+                                      "": {}
                                       blockSize:
                                         description: If specified, the virtual disk
                                           will be presented with the given block sizes.
                                         properties:
+                                          "": {}
                                           custom:
                                             description: CustomBlockSize represents
                                               the desired logical and physical block
                                               size for a VM disk.
                                             properties:
+                                              "": {}
                                               logical:
                                                 type: integer
                                               physical:
@@ -16712,6 +17955,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             description: Represents if a feature is
                                               enabled or disabled.
                                             properties:
+                                              "": {}
                                               enabled:
                                                 description: Enabled determines if
                                                   the feature should be enabled or
@@ -16738,6 +17982,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: Attach a volume as a cdrom to
                                           the vmi.
                                         properties:
+                                          "": {}
                                           bus:
                                             description: 'Bus indicates the type of
                                               disk device to emulate. supported values:
@@ -16763,6 +18008,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: Attach a volume as a disk to
                                           the vmi.
                                         properties:
+                                          "": {}
                                           bus:
                                             description: 'Bus indicates the type of
                                               disk device to emulate. supported values:
@@ -16787,6 +18033,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: Attach a volume as a LUN to the
                                           vmi.
                                         properties:
+                                          "": {}
                                           bus:
                                             description: 'Bus indicates the type of
                                               disk device to emulate. supported values:
@@ -16822,6 +18069,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     is connected to the vmi.
                                   items:
                                     properties:
+                                      "": {}
                                       name:
                                         description: Name is the device name
                                         type: string
@@ -16839,6 +18087,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     vmi.
                                   items:
                                     properties:
+                                      "": {}
                                       deviceName:
                                         type: string
                                       name:
@@ -16852,8 +18101,10 @@ var CRDsValidation map[string]string = map[string]string{
                                         type: string
                                       virtualGPUOptions:
                                         properties:
+                                          "": {}
                                           display:
                                             properties:
+                                              "": {}
                                               enabled:
                                                 description: Enabled determines if
                                                   a display addapter backed by a vGPU
@@ -16865,6 +18116,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                   until the guest OS loads a real
                                                   GPU driver Defaults to true.
                                                 properties:
+                                                  "": {}
                                                   enabled:
                                                     description: Enabled determines
                                                       if the feature should be enabled
@@ -16885,6 +18137,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     the vmi.
                                   items:
                                     properties:
+                                      "": {}
                                       deviceName:
                                         description: DeviceName is the resource name
                                           of the host device exposed by a device plugin
@@ -16906,6 +18159,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Inputs describe input devices
                                   items:
                                     properties:
+                                      "": {}
                                       bus:
                                         description: 'Bus indicates the bus of input
                                           device to emulate. Supported values: virtio,
@@ -16928,6 +18182,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     which are added to the vmi.
                                   items:
                                     properties:
+                                      "": {}
                                       bootOrder:
                                         description: BootOrder is an integer value
                                           > 0, used to determine ordering of boot
@@ -16945,6 +18200,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           will pass additional DHCP options to the
                                           VMI
                                         properties:
+                                          "": {}
                                           bootFileName:
                                             description: If specified will pass option
                                               67 to interface's DHCP server
@@ -16964,6 +18220,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               description: DHCPExtraOptions defines
                                                 Extra DHCP options for a VM.
                                               properties:
+                                                "": {}
                                                 option:
                                                   description: Option is an Integer
                                                     value from 224-254 Required.
@@ -17022,6 +18279,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             from the virtual machine. Default protocol
                                             TCP. The port field is mandatory
                                           properties:
+                                            "": {}
                                             name:
                                               description: If specified, this must
                                                 be an IANA_SVC_NAME and unique within
@@ -17078,6 +18336,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 sound:
                                   description: Whether to emulate a sound device.
                                   properties:
+                                    "": {}
                                     model:
                                       description: 'We only support ich9 or ac97.
                                         If SoundDevice is not set: No sound card is
@@ -17105,9 +18364,11 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Watchdog describes a watchdog device
                                     which can be added to the vmi.
                                   properties:
+                                    "": {}
                                     i6300esb:
                                       description: i6300esb watchdog device.
                                       properties:
+                                        "": {}
                                         action:
                                           description: The action to take. Valid values
                                             are poweroff, reset, shutdown. Defaults
@@ -17124,10 +18385,12 @@ var CRDsValidation map[string]string = map[string]string{
                             features:
                               description: Features like acpi, apic, hyperv, smm.
                               properties:
+                                "": {}
                                 acpi:
                                   description: ACPI enables/disables ACPI inside the
                                     guest. Defaults to enabled.
                                   properties:
+                                    "": {}
                                     enabled:
                                       description: Enabled determines if the feature
                                         should be enabled or disabled on the guest.
@@ -17137,6 +18400,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 apic:
                                   description: Defaults to the machine type setting.
                                   properties:
+                                    "": {}
                                     enabled:
                                       description: Enabled determines if the feature
                                         should be enabled or disabled on the guest.
@@ -17151,11 +18415,13 @@ var CRDsValidation map[string]string = map[string]string{
                                 hyperv:
                                   description: Defaults to the machine type setting.
                                   properties:
+                                    "": {}
                                     evmcs:
                                       description: EVMCS Speeds up L2 vmexits, but
                                         disables other virtualization features. Requires
                                         vapic. Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17167,6 +18433,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         source handling for Hyper-V on KVM. Defaults
                                         to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17178,6 +18445,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         environments. Requires vpindex. Defaults to
                                         the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17189,6 +18457,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         on TSC frequency changes. Defaults to the
                                         machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17200,6 +18469,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         to disable watchdog timeouts. Defaults to
                                         the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17211,6 +18481,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         for the vmi. Requires synic. Defaults to the
                                         machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17222,6 +18493,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         to improve scheduling in the guest. Defaults
                                         to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17232,6 +18504,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: Spinlocks allows to configure the
                                         spinlock retry attempts.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17248,6 +18521,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: SyNIC enables the Synthetic Interrupt
                                         Controller. Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17259,10 +18533,12 @@ var CRDsValidation map[string]string = map[string]string{
                                         Controller Timers, reducing CPU load. Defaults
                                         to the machine type setting.
                                       properties:
+                                        "": {}
                                         direct:
                                           description: Represents if a feature is
                                             enabled or disabled.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -17277,6 +18553,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         in overcommited environments. Requires vpindex.
                                         Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17288,6 +18565,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         handling of interrupts. Defaults to the machine
                                         type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17298,6 +18576,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: VendorID allows setting the hypervisor
                                         vendor id. Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17314,6 +18593,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         Index to help windows identifying virtual
                                         processors. Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -17325,6 +18605,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Configure how KVM presence is exposed
                                     to the guest.
                                   properties:
+                                    "": {}
                                     hidden:
                                       description: Hide the KVM hypervisor from standard
                                         MSR based discovery. Defaults to false
@@ -17335,6 +18616,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     paravirtual spinlocks. For older kernels this
                                     feature should be explicitly disabled.
                                   properties:
+                                    "": {}
                                     enabled:
                                       description: Enabled determines if the feature
                                         should be enabled or disabled on the guest.
@@ -17345,6 +18627,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: SMM enables/disables System Management
                                     Mode. TSEG not yet implemented.
                                   properties:
+                                    "": {}
                                     enabled:
                                       description: Enabled determines if the feature
                                         should be enabled or disabled on the guest.
@@ -17355,14 +18638,17 @@ var CRDsValidation map[string]string = map[string]string{
                             firmware:
                               description: Firmware.
                               properties:
+                                "": {}
                                 bootloader:
                                   description: Settings to control the bootloader
                                     that is used.
                                   properties:
+                                    "": {}
                                     bios:
                                       description: If set (default), BIOS will be
                                         used.
                                       properties:
+                                        "": {}
                                         useSerial:
                                           description: If set, the BIOS output will
                                             be transmitted over serial
@@ -17372,6 +18658,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: If set, EFI will be used instead
                                         of BIOS.
                                       properties:
+                                        "": {}
                                         secureBoot:
                                           description: If set, SecureBoot will be
                                             enabled and the OVMF roms will be swapped
@@ -17383,10 +18670,12 @@ var CRDsValidation map[string]string = map[string]string{
                                 kernelBoot:
                                   description: Settings to set the kernel for booting.
                                   properties:
+                                    "": {}
                                     container:
                                       description: Container defines the container
                                         that containes kernel artifacts
                                       properties:
+                                        "": {}
                                         image:
                                           description: Image that contains initrd
                                             / kernel files.
@@ -17436,6 +18725,7 @@ var CRDsValidation map[string]string = map[string]string{
                             launchSecurity:
                               description: Launch Security setting of the vmi.
                               properties:
+                                "": {}
                                 sev:
                                   description: AMD Secure Encrypted Virtualization
                                     (SEV).
@@ -17444,6 +18734,7 @@ var CRDsValidation map[string]string = map[string]string{
                             machine:
                               description: Machine type.
                               properties:
+                                "": {}
                                 type:
                                   description: QEMU machine type is the actual chipset
                                     of the VirtualMachineInstance.
@@ -17453,6 +18744,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Memory allow specifying the VMI memory
                                 features.
                               properties:
+                                "": {}
                                 guest:
                                   anyOf:
                                   - type: integer
@@ -17469,6 +18761,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     the VirtualMachineInstance instead of regular
                                     memory.
                                   properties:
+                                    "": {}
                                     pageSize:
                                       description: PageSize specifies the hugepage
                                         size, for x86_64 architecture valid values
@@ -17480,6 +18773,7 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Resources describes the Compute Resources
                                 required by this vmi.
                               properties:
+                                "": {}
                                 limits:
                                   additionalProperties:
                                     anyOf:
@@ -17528,6 +18822,7 @@ var CRDsValidation map[string]string = map[string]string{
                             VirtualmachineInstances will be stopped if the probe fails.
                             Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                           properties:
+                            "": {}
                             exec:
                               description: One and only one of the following should
                                 be specified. Exec specifies the action to take, it
@@ -17535,6 +18830,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 If the guest agent is not available, this probe will
                                 fail.
                               properties:
+                                "": {}
                                 command:
                                   description: Command is the command line to execute
                                     inside the container, the working directory for
@@ -17562,6 +18858,7 @@ var CRDsValidation map[string]string = map[string]string{
                             httpGet:
                               description: HTTPGet specifies the http request to perform.
                               properties:
+                                "": {}
                                 host:
                                   description: Host name to connect to, defaults to
                                     the pod IP. You probably want to set "Host" in
@@ -17574,6 +18871,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: HTTPHeader describes a custom header
                                       to be used in HTTP probes
                                     properties:
+                                      "": {}
                                       name:
                                         description: The header field name
                                         type: string
@@ -17625,6 +18923,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 a TCP port. TCP hooks not yet supported TODO: implement
                                 a realistic TCP lifecycle hook'
                               properties:
+                                "": {}
                                 host:
                                   description: 'Optional: Host name to connect to,
                                     defaults to the pod IP.'
@@ -17660,9 +18959,11 @@ var CRDsValidation map[string]string = map[string]string{
                             description: Network represents a network type and a resource
                               that should be connected to the vm.
                             properties:
+                              "": {}
                               multus:
                                 description: Represents the multus cni network.
                                 properties:
+                                  "": {}
                                   default:
                                     description: Select the default network and add
                                       it to the multus-cni.io/default-network annotation.
@@ -17683,6 +18984,7 @@ var CRDsValidation map[string]string = map[string]string{
                               pod:
                                 description: Represents the stock pod network interface.
                                 properties:
+                                  "": {}
                                   vmIPv6NetworkCIDR:
                                     description: IPv6 CIDR for the vm network. Defaults
                                       to fd10:0:2::/120 if not specified.
@@ -17715,6 +19017,7 @@ var CRDsValidation map[string]string = map[string]string{
                             service endpoints if the probe fails. Cannot be updated.
                             More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                           properties:
+                            "": {}
                             exec:
                               description: One and only one of the following should
                                 be specified. Exec specifies the action to take, it
@@ -17722,6 +19025,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 If the guest agent is not available, this probe will
                                 fail.
                               properties:
+                                "": {}
                                 command:
                                   description: Command is the command line to execute
                                     inside the container, the working directory for
@@ -17749,6 +19053,7 @@ var CRDsValidation map[string]string = map[string]string{
                             httpGet:
                               description: HTTPGet specifies the http request to perform.
                               properties:
+                                "": {}
                                 host:
                                   description: Host name to connect to, defaults to
                                     the pod IP. You probably want to set "Host" in
@@ -17761,6 +19066,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: HTTPHeader describes a custom header
                                       to be used in HTTP probes
                                     properties:
+                                      "": {}
                                       name:
                                         description: The header field name
                                         type: string
@@ -17812,6 +19118,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 a TCP port. TCP hooks not yet supported TODO: implement
                                 a realistic TCP lifecycle hook'
                               properties:
+                                "": {}
                                 host:
                                   description: 'Optional: Host name to connect to,
                                     defaults to the pod IP.'
@@ -17870,6 +19177,7 @@ var CRDsValidation map[string]string = map[string]string{
                               any taint that matches the triple <key,value,effect>
                               using the matching operator <operator>.
                             properties:
+                              "": {}
                               effect:
                                 description: Effect indicates the taint effect to
                                   match. Empty means match all taint effects. When
@@ -17906,12 +19214,131 @@ var CRDsValidation map[string]string = map[string]string{
                                 type: string
                             type: object
                           type: array
+                        topologySpreadConstraints:
+                          description: TopologySpreadConstraints describes how a group
+                            of VMIs ought to spread across topology domains. K8s scheduler
+                            will schedule VMI pods in a way which abides by the constraints.
+                          items:
+                            description: TopologySpreadConstraint specifies how to
+                              spread matching pods among the given topology.
+                            properties:
+                              "": {}
+                              labelSelector:
+                                description: LabelSelector is used to find matching
+                                  pods. Pods that match this label selector are counted
+                                  to determine the number of pods in their corresponding
+                                  topology domain.
+                                properties:
+                                  "": {}
+                                  matchExpressions:
+                                    description: matchExpressions is a list of label
+                                      selector requirements. The requirements are
+                                      ANDed.
+                                    items:
+                                      description: A label selector requirement is
+                                        a selector that contains values, a key, and
+                                        an operator that relates the key and values.
+                                      properties:
+                                        "": {}
+                                        key:
+                                          description: key is the label key that the
+                                            selector applies to.
+                                          type: string
+                                        operator:
+                                          description: operator represents a key's
+                                            relationship to a set of values. Valid
+                                            operators are In, NotIn, Exists and DoesNotExist.
+                                          type: string
+                                        values:
+                                          description: values is an array of string
+                                            values. If the operator is In or NotIn,
+                                            the values array must be non-empty. If
+                                            the operator is Exists or DoesNotExist,
+                                            the values array must be empty. This array
+                                            is replaced during a strategic merge patch.
+                                          items:
+                                            type: string
+                                          type: array
+                                      required:
+                                      - key
+                                      - operator
+                                      type: object
+                                    type: array
+                                  matchLabels:
+                                    additionalProperties:
+                                      type: string
+                                    description: matchLabels is a map of {key,value}
+                                      pairs. A single {key,value} in the matchLabels
+                                      map is equivalent to an element of matchExpressions,
+                                      whose key field is "key", the operator is "In",
+                                      and the values array contains only "value".
+                                      The requirements are ANDed.
+                                    type: object
+                                type: object
+                              maxSkew:
+                                description: 'MaxSkew describes the degree to which
+                                  pods may be unevenly distributed. When ''whenUnsatisfiable=DoNotSchedule'',
+                                  it is the maximum permitted difference between the
+                                  number of matching pods in the target topology and
+                                  the global minimum. For example, in a 3-zone cluster,
+                                  MaxSkew is set to 1, and pods with the same labelSelector
+                                  spread as 1/1/0: | zone1 | zone2 | zone3 | |   P   |   P   |       |
+                                  - if MaxSkew is 1, incoming pod can only be scheduled
+                                  to zone3 to become 1/1/1; scheduling it onto zone1(zone2)
+                                  would make the ActualSkew(2-0) on zone1(zone2) violate
+                                  MaxSkew(1). - if MaxSkew is 2, incoming pod can
+                                  be scheduled onto any zone. When ''whenUnsatisfiable=ScheduleAnyway'',
+                                  it is used to give higher precedence to topologies
+                                  that satisfy it. It''s a required field. Default
+                                  value is 1 and 0 is not allowed.'
+                                format: int32
+                                type: integer
+                              topologyKey:
+                                description: TopologyKey is the key of node labels.
+                                  Nodes that have a label with this key and identical
+                                  values are considered to be in the same topology.
+                                  We consider each <key, value> as a "bucket", and
+                                  try to put balanced number of pods into each bucket.
+                                  It's a required field.
+                                type: string
+                              whenUnsatisfiable:
+                                description: 'WhenUnsatisfiable indicates how to deal
+                                  with a pod if it doesn''t satisfy the spread constraint.
+                                  - DoNotSchedule (default) tells the scheduler not
+                                  to schedule it. - ScheduleAnyway tells the scheduler
+                                  to schedule the pod in any location,   but giving
+                                  higher precedence to topologies that would help
+                                  reduce the   skew. A constraint is considered "Unsatisfiable"
+                                  for an incoming pod if and only if every possible
+                                  node assignment for that pod would violate "MaxSkew"
+                                  on some topology. For example, in a 3-zone cluster,
+                                  MaxSkew is set to 1, and pods with the same labelSelector
+                                  spread as 3/1/1: | zone1 | zone2 | zone3 | | P P
+                                  P |   P   |   P   | If WhenUnsatisfiable is set
+                                  to DoNotSchedule, incoming pod can only be scheduled
+                                  to zone2(zone3) to become 3/2/1(3/1/2) as ActualSkew(2-1)
+                                  on zone2(zone3) satisfies MaxSkew(1). In other words,
+                                  the cluster can still be imbalanced, but scheduler
+                                  won''t make it *more* imbalanced. It''s a required
+                                  field.'
+                                type: string
+                            required:
+                            - maxSkew
+                            - topologyKey
+                            - whenUnsatisfiable
+                            type: object
+                          type: array
+                          x-kubernetes-list-map-keys:
+                          - topologyKey
+                          - whenUnsatisfiable
+                          x-kubernetes-list-type: map
                         volumes:
                           description: List of volumes that can be mounted by disks
                             belonging to the vmi.
                           items:
                             description: Volume represents a named volume in a vmi.
                             properties:
+                              "": {}
                               cloudInitConfigDrive:
                                 description: 'CloudInitConfigDrive represents a cloud-init
                                   Config Drive user-data source. The Config Drive
@@ -17919,6 +19346,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   cloud-init installation is required inside the guest.
                                   More info: https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html'
                                 properties:
+                                  "": {}
                                   networkData:
                                     description: NetworkData contains config drive
                                       inline cloud-init networkdata.
@@ -17932,6 +19360,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: NetworkDataSecretRef references a
                                       k8s secret that contains config drive networkdata.
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -17943,6 +19372,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: UserDataSecretRef references a k8s
                                       secret that contains config drive userdata.
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -17966,6 +19396,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   installation is required inside the guest. More
                                   info: http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html'
                                 properties:
+                                  "": {}
                                   networkData:
                                     description: NetworkData contains NoCloud inline
                                       cloud-init networkdata.
@@ -17978,6 +19409,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: NetworkDataSecretRef references a
                                       k8s secret that contains NoCloud networkdata.
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -17989,6 +19421,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: UserDataSecretRef references a k8s
                                       secret that contains NoCloud userdata.
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -18010,6 +19443,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   to a ConfigMap in the same namespace. More info:
                                   https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/'
                                 properties:
+                                  "": {}
                                   name:
                                     description: 'Name of the referent. More info:
                                       https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -18032,6 +19466,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: 'ContainerDisk references a docker image,
                                   embedding a qcow or raw disk. More info: https://kubevirt.gitbooks.io/user-guide/registry-disk.html'
                                 properties:
+                                  "": {}
                                   image:
                                     description: Image is the name of the image with
                                       the embedded disk.
@@ -18059,6 +19494,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   a PVC for this volume as well as the process of
                                   populating that PVC with a disk image.
                                 properties:
+                                  "": {}
                                   hotpluggable:
                                     description: Hotpluggable indicates whether the
                                       volume can be hotplugged and hotunplugged.
@@ -18074,6 +19510,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: DownwardAPI represents downward API about
                                   the pod that should populate this volume
                                 properties:
+                                  "": {}
                                   fields:
                                     description: Fields is a list of downward API
                                       volume file
@@ -18082,11 +19519,13 @@ var CRDsValidation map[string]string = map[string]string{
                                         information to create the file containing
                                         the pod field
                                       properties:
+                                        "": {}
                                         fieldRef:
                                           description: 'Required: Selects a field
                                             of the pod: only annotations, labels,
                                             name and namespace are supported.'
                                           properties:
+                                            "": {}
                                             apiVersion:
                                               description: Version of the schema the
                                                 FieldPath is written in terms of,
@@ -18127,6 +19566,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             (limits.cpu, limits.memory, requests.cpu
                                             and requests.memory) are currently supported.'
                                           properties:
+                                            "": {}
                                             containerName:
                                               description: 'Container name: required
                                                 for volumes, optional for env vars'
@@ -18170,6 +19610,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: 'EmptyDisk represents a temporary disk
                                   which shares the vmis lifecycle. More info: https://kubevirt.gitbooks.io/user-guide/disks-and-volumes.html'
                                 properties:
+                                  "": {}
                                   capacity:
                                     anyOf:
                                     - type: integer
@@ -18185,12 +19626,14 @@ var CRDsValidation map[string]string = map[string]string{
                                   that "wraps" specified source and provides copy-on-write
                                   image on top of it.
                                 properties:
+                                  "": {}
                                   persistentVolumeClaim:
                                     description: 'PersistentVolumeClaimVolumeSource
                                       represents a reference to a PersistentVolumeClaim
                                       in the same namespace. Directly attached to
                                       the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                                     properties:
+                                      "": {}
                                       claimName:
                                         description: 'ClaimName is the name of a PersistentVolumeClaim
                                           in the same namespace as the pod using this
@@ -18208,6 +19651,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: HostDisk represents a disk created on
                                   the cluster level
                                 properties:
+                                  "": {}
                                   capacity:
                                     anyOf:
                                     - type: integer
@@ -18236,6 +19680,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: MemoryDump is attached to the virt launcher
                                   and is populated with a memory dump of the vmi
                                 properties:
+                                  "": {}
                                   claimName:
                                     description: 'ClaimName is the name of a PersistentVolumeClaim
                                       in the same namespace as the pod using this
@@ -18262,6 +19707,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   namespace. Directly attached to the vmi via qemu.
                                   More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                                 properties:
+                                  "": {}
                                   claimName:
                                     description: 'ClaimName is the name of a PersistentVolumeClaim
                                       in the same namespace as the pod using this
@@ -18283,6 +19729,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   to a secret data in the same namespace. More info:
                                   https://kubernetes.io/docs/concepts/configuration/secret/'
                                 properties:
+                                  "": {}
                                   optional:
                                     description: Specify whether the Secret or it's
                                       keys must be defined
@@ -18304,6 +19751,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   a reference to a service account. There can only
                                   be one volume of this type! More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
                                 properties:
+                                  "": {}
                                   serviceAccountName:
                                     description: 'Name of the service account in the
                                       pod''s namespace to use. More info: https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
@@ -18312,11 +19760,13 @@ var CRDsValidation map[string]string = map[string]string{
                               sysprep:
                                 description: Represents a Sysprep volume source.
                                 properties:
+                                  "": {}
                                   configMap:
                                     description: ConfigMap references a ConfigMap
                                       that contains Sysprep answer file named autounattend.xml
                                       that should be attached as disk of CDROM type.
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -18329,6 +19779,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       contains Sysprep answer file named autounattend.xml
                                       that should be attached as disk of CDROM type.
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -18355,9 +19806,11 @@ var CRDsValidation map[string]string = map[string]string{
       type: object
     status:
       properties:
+        "": {}
         conditions:
           items:
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -18396,6 +19849,7 @@ var CRDsValidation map[string]string = map[string]string{
   description: VirtualMachinePreference resource contains optional preferences related
     to the VirtualMachine.
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -18411,14 +19865,17 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: Required spec describing the preferences
       properties:
+        "": {}
         clock:
           description: Clock optionally defines preferences associated with the Clock
             attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredClockOffset:
               description: ClockOffset allows specifying the UTC offset or the timezone
                 of the guest clock.
               properties:
+                "": {}
                 timezone:
                   description: Timezone sets the guest clock to the specified timezone.
                     Zone name follows the TZ environment variable format (e.g. 'America/New_York').
@@ -18428,6 +19885,7 @@ var CRDsValidation map[string]string = map[string]string{
                     offset is specified, guest changes to the clock will be kept during
                     reboots and are not reset.
                   properties:
+                    "": {}
                     offsetSeconds:
                       description: OffsetSeconds specifies an offset in seconds, relative
                         to UTC. If set, guest changes to the clock will be kept during
@@ -18438,10 +19896,12 @@ var CRDsValidation map[string]string = map[string]string{
             preferredTimer:
               description: Timer specifies whih timers are attached to the vmi.
               properties:
+                "": {}
                 hpet:
                   description: HPET (High Precision Event Timer) - multiple timers
                     with periodic interrupts.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -18456,6 +19916,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Hyperv (Hypervclock) - lets guests read the host’s
                     wall clock time (paravirtualized). For windows guests.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -18465,6 +19926,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: "KVM \t(KVM clock) - lets guests read the host’s wall
                     clock time (paravirtualized). For linux guests."
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -18474,6 +19936,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: PIT (Programmable Interval Timer) - a timer with periodic
                     interrupts.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -18488,6 +19951,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: RTC (Real Time Clock) - a continuously running timer
                     with periodic interrupts.
                   properties:
+                    "": {}
                     present:
                       description: Enabled set to false makes sure that the machine
                         type or a preset can't add the timer. Defaults to true.
@@ -18507,6 +19971,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: CPU optionally defines preferences associated with the CPU
             attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredCPUTopology:
               description: PreferredCPUTopology optionally defines the preferred guest
                 visible CPU topology, defaults to PreferCores.
@@ -18516,6 +19981,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Devices optionally defines preferences associated with the
             Devices attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredAutoattachGraphicsDevice:
               description: PreferredAutoattachGraphicsDevice optionally defines the
                 preferred value of AutoattachGraphicsDevice
@@ -18548,10 +20014,12 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredBlockSize optionally defines the block size of
                 Disk devices.
               properties:
+                "": {}
                 custom:
                   description: CustomBlockSize represents the desired logical and
                     physical block size for a VM disk.
                   properties:
+                    "": {}
                     logical:
                       type: integer
                     physical:
@@ -18563,6 +20031,7 @@ var CRDsValidation map[string]string = map[string]string{
                 matchVolume:
                   description: Represents if a feature is enabled or disabled.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18625,8 +20094,10 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredVirtualGPUOptions optionally defines the preferred
                 value of VirtualGPUOptions
               properties:
+                "": {}
                 display:
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if a display addapter backed
                         by a vGPU should be enabled or disabled on the guest. Defaults
@@ -18636,6 +20107,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: Enables a boot framebuffer, until the guest OS
                         loads a real GPU driver Defaults to true.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -18648,9 +20120,11 @@ var CRDsValidation map[string]string = map[string]string{
           description: Features optionally defines preferences associated with the
             Features attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredAcpi:
               description: PreferredAcpi optionally enables the ACPI feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -18660,6 +20134,7 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredApic optionally enables and configures the APIC
                 feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -18673,10 +20148,12 @@ var CRDsValidation map[string]string = map[string]string{
               description: PreferredHyperv optionally enables and configures HyperV
                 features
               properties:
+                "": {}
                 evmcs:
                   description: EVMCS Speeds up L2 vmexits, but disables other virtualization
                     features. Requires vapic. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18686,6 +20163,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Frequencies improves the TSC clock source handling
                     for Hyper-V on KVM. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18695,6 +20173,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: IPI improves performances in overcommited environments.
                     Requires vpindex. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18704,6 +20183,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Reenlightenment enables the notifications on TSC frequency
                     changes. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18713,6 +20193,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Relaxed instructs the guest OS to disable watchdog
                     timeouts. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18722,6 +20203,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Reset enables Hyperv reboot/reset for the vmi. Requires
                     synic. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18731,6 +20213,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Runtime improves the time accounting to improve scheduling
                     in the guest. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18739,6 +20222,7 @@ var CRDsValidation map[string]string = map[string]string{
                 spinlocks:
                   description: Spinlocks allows to configure the spinlock retry attempts.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18753,6 +20237,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: SyNIC enables the Synthetic Interrupt Controller. Defaults
                     to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18762,9 +20247,11 @@ var CRDsValidation map[string]string = map[string]string{
                   description: SyNICTimer enables Synthetic Interrupt Controller Timers,
                     reducing CPU load. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     direct:
                       description: Represents if a feature is enabled or disabled.
                       properties:
+                        "": {}
                         enabled:
                           description: Enabled determines if the feature should be
                             enabled or disabled on the guest. Defaults to true.
@@ -18777,6 +20264,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: TLBFlush improves performances in overcommited environments.
                     Requires vpindex. Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18786,6 +20274,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: VAPIC improves the paravirtualized handling of interrupts.
                     Defaults to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18795,6 +20284,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: VendorID allows setting the hypervisor vendor id. Defaults
                     to the machine type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18809,6 +20299,7 @@ var CRDsValidation map[string]string = map[string]string{
                     windows identifying virtual processors. Defaults to the machine
                     type setting.
                   properties:
+                    "": {}
                     enabled:
                       description: Enabled determines if the feature should be enabled
                         or disabled on the guest. Defaults to true.
@@ -18818,6 +20309,7 @@ var CRDsValidation map[string]string = map[string]string{
             preferredKvm:
               description: PreferredKvm optionally enables and configures KVM features
               properties:
+                "": {}
                 hidden:
                   description: Hide the KVM hypervisor from standard MSR based discovery.
                     Defaults to false
@@ -18826,6 +20318,7 @@ var CRDsValidation map[string]string = map[string]string{
             preferredPvspinlock:
               description: PreferredPvspinlock optionally enables the Pvspinlock feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -18834,6 +20327,7 @@ var CRDsValidation map[string]string = map[string]string{
             preferredSmm:
               description: PreferredSmm optionally enables the SMM feature
               properties:
+                "": {}
                 enabled:
                   description: Enabled determines if the feature should be enabled
                     or disabled on the guest. Defaults to true.
@@ -18844,6 +20338,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Firmware optionally defines preferences associated with the
             Firmware attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredUseBios:
               description: PreferredUseBios optionally enables BIOS
               type: boolean
@@ -18864,6 +20359,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: Machine optionally defines preferences associated with the
             Machine attribute of a VirtualMachineInstance DomainSpec
           properties:
+            "": {}
             preferredMachineType:
               description: PreferredMachineType optionally defines the preferred machine
                 type to use.
@@ -18877,6 +20373,7 @@ var CRDsValidation map[string]string = map[string]string{
 	"virtualmachinerestore": `openAPIV3Schema:
   description: VirtualMachineRestore defines the operation of restoring a VM
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -18892,6 +20389,7 @@ var CRDsValidation map[string]string = map[string]string{
     spec:
       description: VirtualMachineRestoreSpec is the spec for a VirtualMachineRestoreresource
       properties:
+        "": {}
         patches:
           description: "If the target for the restore does not exist, it will be created.
             Patches holds JSON patches that would be applied to the target manifest
@@ -18905,6 +20403,7 @@ var CRDsValidation map[string]string = map[string]string{
         target:
           description: initially only VirtualMachine type supported
           properties:
+            "": {}
             apiGroup:
               description: APIGroup is the group for the resource being referenced.
                 If APIGroup is not specified, the specified Kind must be in the core
@@ -18929,12 +20428,14 @@ var CRDsValidation map[string]string = map[string]string{
     status:
       description: VirtualMachineRestoreStatus is the spec for a VirtualMachineRestoreresource
       properties:
+        "": {}
         complete:
           type: boolean
         conditions:
           items:
             description: Condition defines conditions
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -18968,6 +20469,7 @@ var CRDsValidation map[string]string = map[string]string{
           items:
             description: VolumeRestore contains the data neeed to restore a PVC
             properties:
+              "": {}
               dataVolumeName:
                 type: string
               persistentVolumeClaim:
@@ -18990,6 +20492,7 @@ var CRDsValidation map[string]string = map[string]string{
 	"virtualmachinesnapshot": `openAPIV3Schema:
   description: VirtualMachineSnapshot defines the operation of snapshotting a VM
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -19006,6 +20509,7 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineSnapshotSpec is the spec for a VirtualMachineSnapshot
         resource
       properties:
+        "": {}
         deletionPolicy:
           description: DeletionPolicy defines that to do with VirtualMachineSnapshot
             when VirtualMachineSnapshot is deleted
@@ -19019,6 +20523,7 @@ var CRDsValidation map[string]string = map[string]string{
           description: TypedLocalObjectReference contains enough information to let
             you locate the typed referenced object inside the same namespace.
           properties:
+            "": {}
             apiGroup:
               description: APIGroup is the group for the resource being referenced.
                 If APIGroup is not specified, the specified Kind must be in the core
@@ -19041,10 +20546,12 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineSnapshotStatus is the status for a VirtualMachineSnapshot
         resource
       properties:
+        "": {}
         conditions:
           items:
             description: Condition defines conditions
             properties:
+              "": {}
               lastProbeTime:
                 format: date-time
                 nullable: true
@@ -19074,6 +20581,7 @@ var CRDsValidation map[string]string = map[string]string{
         error:
           description: Error is the last error encountered during the snapshot/restore
           properties:
+            "": {}
             message:
               type: string
             time:
@@ -19107,6 +20615,7 @@ var CRDsValidation map[string]string = map[string]string{
 	"virtualmachinesnapshotcontent": `openAPIV3Schema:
   description: VirtualMachineSnapshotContent contains the snapshot data
   properties:
+    "": {}
     apiVersion:
       description: 'APIVersion defines the versioned schema of this representation
         of an object. Servers should convert recognized schemas to the latest internal
@@ -19123,12 +20632,15 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineSnapshotContentSpec is the spec for a VirtualMachineSnapshotContent
         resource
       properties:
+        "": {}
         source:
           description: SourceSpec contains the appropriate spec for the resource being
             snapshotted
           properties:
+            "": {}
             virtualMachine:
               properties:
+                "": {}
                 metadata:
                   nullable: true
                   type: object
@@ -19136,6 +20648,7 @@ var CRDsValidation map[string]string = map[string]string{
                 spec:
                   description: VirtualMachineSpec contains the VirtualMachine specification.
                   properties:
+                    "": {}
                     dataVolumeTemplates:
                       description: dataVolumeTemplates is a list of dataVolumes that
                         the VirtualMachineInstance template can reference. DataVolumes
@@ -19144,6 +20657,7 @@ var CRDsValidation map[string]string = map[string]string{
                       items:
                         nullable: true
                         properties:
+                          "": {}
                           apiVersion:
                             description: 'APIVersion defines the versioned schema
                               of this representation of an object. Servers should
@@ -19163,6 +20677,7 @@ var CRDsValidation map[string]string = map[string]string{
                           spec:
                             description: DataVolumeSpec contains the DataVolume specification.
                             properties:
+                              "": {}
                               checkpoints:
                                 description: Checkpoints is a list of DataVolumeCheckpoints,
                                   representing stages in a multistage import.
@@ -19170,6 +20685,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: DataVolumeCheckpoint defines a stage
                                     in a warm migration.
                                   properties:
+                                    "": {}
                                     current:
                                       description: Current is the identifier of the
                                         snapshot created for this checkpoint.
@@ -19205,6 +20721,7 @@ var CRDsValidation map[string]string = map[string]string{
                               pvc:
                                 description: PVC is the PVC specification
                                 properties:
+                                  "": {}
                                   accessModes:
                                     description: 'AccessModes contains the desired
                                       access modes the volume should have. More info:
@@ -19224,6 +20741,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       gate is enabled, this field will always have
                                       the same contents as the DataSourceRef field.'
                                     properties:
+                                      "": {}
                                       apiGroup:
                                         description: APIGroup is the group for the
                                           resource being referenced. If APIGroup is
@@ -19270,6 +20788,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       requires the AnyVolumeDataSource feature gate
                                       to be enabled.'
                                     properties:
+                                      "": {}
                                       apiGroup:
                                         description: APIGroup is the group for the
                                           resource being referenced. If APIGroup is
@@ -19298,6 +20817,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       recorded in the status field of the claim. More
                                       info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                                     properties:
+                                      "": {}
                                       limits:
                                         additionalProperties:
                                           anyOf:
@@ -19328,6 +20848,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: A label query over volumes to consider
                                       for binding.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -19338,6 +20859,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -19393,6 +20915,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: Source is the src of the data for the
                                   requested DataVolume
                                 properties:
+                                  "": {}
                                   blank:
                                     description: DataVolumeBlankImage provides the
                                       parameters to create a new raw blank image for
@@ -19404,6 +20927,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       basic auth user name and password, and an optional
                                       configmap containing additional CAs
                                     properties:
+                                      "": {}
                                       certConfigMap:
                                         description: CertConfigMap is a configmap
                                           reference, containing a Certificate Authority(CA)
@@ -19442,6 +20966,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       the parameters to create a Data Volume from
                                       an imageio source
                                     properties:
+                                      "": {}
                                       certConfigMap:
                                         description: CertConfigMap provides a reference
                                           to the CA cert
@@ -19466,6 +20991,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       parameters to create a Data Volume from an existing
                                       PVC
                                     properties:
+                                      "": {}
                                       name:
                                         description: The name of the source PVC
                                         type: string
@@ -19481,6 +21007,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       the parameters to create a Data Volume from
                                       an registry source
                                     properties:
+                                      "": {}
                                       certConfigMap:
                                         description: CertConfigMap provides a reference
                                           to the Registry certs
@@ -19509,6 +21036,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: DataVolumeSourceS3 provides the parameters
                                       to create a Data Volume from an S3 source
                                     properties:
+                                      "": {}
                                       certConfigMap:
                                         description: CertConfigMap is a configmap
                                           reference, containing a Certificate Authority(CA)
@@ -19534,6 +21062,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       parameters to create a Data Volume from a Vmware
                                       source
                                     properties:
+                                      "": {}
                                       backingFile:
                                         description: BackingFile is the path to the
                                           virtual hard disk to migrate from vCenter/ESXi
@@ -19568,6 +21097,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: SourceRef is an indirect reference to
                                   the source of data for the requested DataVolume
                                 properties:
+                                  "": {}
                                   kind:
                                     description: The kind of the source reference,
                                       currently only "DataSource" is supported
@@ -19586,6 +21116,7 @@ var CRDsValidation map[string]string = map[string]string{
                               storage:
                                 description: Storage is the requested storage specification
                                 properties:
+                                  "": {}
                                   accessModes:
                                     description: 'AccessModes contains the desired
                                       access modes the volume should have. More info:
@@ -19606,6 +21137,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       data source, it will create a new volume based
                                       on the contents of the specified data source.'
                                     properties:
+                                      "": {}
                                       apiGroup:
                                         description: APIGroup is the group for the
                                           resource being referenced. If APIGroup is
@@ -19630,6 +21162,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       resources the volume should have. More info:
                                       https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                                     properties:
+                                      "": {}
                                       limits:
                                         additionalProperties:
                                           anyOf:
@@ -19660,6 +21193,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: A label query over volumes to consider
                                       for binding.
                                     properties:
+                                      "": {}
                                       matchExpressions:
                                         description: matchExpressions is a list of
                                           label selector requirements. The requirements
@@ -19670,6 +21204,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             key, and an operator that relates the
                                             key and values.
                                           properties:
+                                            "": {}
                                             key:
                                               description: key is the label key that
                                                 the selector applies to.
@@ -19735,6 +21270,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: FlavorMatcher references a flavor that is used
                         to fill fields in Template
                       properties:
+                        "": {}
                         kind:
                           description: 'Kind specifies which flavor resource is referenced.
                             Allowed values are: "VirtualMachineFlavor" and "VirtualMachineClusterFlavor".
@@ -19752,6 +21288,7 @@ var CRDsValidation map[string]string = map[string]string{
                       description: PreferenceMatcher references a set of preference
                         that is used to fill fields in Template
                       properties:
+                        "": {}
                         kind:
                           description: 'Kind specifies which preference resource is
                             referenced. Allowed values are: "VirtualMachinePreference"
@@ -19776,6 +21313,7 @@ var CRDsValidation map[string]string = map[string]string{
                     template:
                       description: Template is the direct specification of VirtualMachineInstance
                       properties:
+                        "": {}
                         metadata:
                           nullable: true
                           type: object
@@ -19784,6 +21322,7 @@ var CRDsValidation map[string]string = map[string]string{
                           description: VirtualMachineInstance Spec contains the VirtualMachineInstance
                             specification.
                           properties:
+                            "": {}
                             accessCredentials:
                               description: Specifies a set of public keys to inject
                                 into the vm guest
@@ -19792,16 +21331,19 @@ var CRDsValidation map[string]string = map[string]string{
                                   source that can be used to authorize remote access
                                   to the vm guest Only one of its members may be specified.
                                 properties:
+                                  "": {}
                                   sshPublicKey:
                                     description: SSHPublicKey represents the source
                                       and method of applying a ssh public key into
                                       a guest virtual machine.
                                     properties:
+                                      "": {}
                                       propagationMethod:
                                         description: PropagationMethod represents
                                           how the public key is injected into the
                                           vm guest.
                                         properties:
+                                          "": {}
                                           configDrive:
                                             description: ConfigDrivePropagation means
                                               that the ssh public keys are injected
@@ -19816,6 +21358,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               the qemu guest agent to be running within
                                               the guest.
                                             properties:
+                                              "": {}
                                               users:
                                                 description: Users represents a list
                                                   of guest users that should have
@@ -19833,11 +21376,13 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: Source represents where the public
                                           keys are pulled from
                                         properties:
+                                          "": {}
                                           secret:
                                             description: Secret means that the access
                                               credential is pulled from a kubernetes
                                               secret
                                             properties:
+                                              "": {}
                                               secretName:
                                                 description: SecretName represents
                                                   the name of the secret in the VMI's
@@ -19855,11 +21400,13 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: UserPassword represents the source
                                       and method for applying a guest user's password
                                     properties:
+                                      "": {}
                                       propagationMethod:
                                         description: propagationMethod represents
                                           how the user passwords are injected into
                                           the vm guest.
                                         properties:
+                                          "": {}
                                           qemuGuestAgent:
                                             description: QemuGuestAgentAccessCredentailPropagation
                                               means passwords are dynamically injected
@@ -19873,11 +21420,13 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: Source represents where the user
                                           passwords are pulled from
                                         properties:
+                                          "": {}
                                           secret:
                                             description: Secret means that the access
                                               credential is pulled from a kubernetes
                                               secret
                                             properties:
+                                              "": {}
                                               secretName:
                                                 description: SecretName represents
                                                   the name of the secret in the VMI's
@@ -19898,10 +21447,12 @@ var CRDsValidation map[string]string = map[string]string{
                               description: If affinity is specifies, obey all the
                                 affinity rules
                               properties:
+                                "": {}
                                 nodeAffinity:
                                   description: Describes node affinity scheduling
                                     rules for the pod.
                                   properties:
+                                    "": {}
                                     preferredDuringSchedulingIgnoredDuringExecution:
                                       description: The scheduler will prefer to schedule
                                         pods to nodes that satisfy the affinity expressions
@@ -19924,10 +21475,12 @@ var CRDsValidation map[string]string = map[string]string{
                                           scheduling term matches no objects (i.e.
                                           is also a no-op).
                                         properties:
+                                          "": {}
                                           preference:
                                             description: A node selector term, associated
                                               with the corresponding weight.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: A list of node selector
                                                   requirements by node's labels.
@@ -19937,6 +21490,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: The label key that
                                                         the selector applies to.
@@ -19978,6 +21532,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: The label key that
                                                         the selector applies to.
@@ -20032,6 +21587,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         system may or may not try to eventually evict
                                         the pod from its node.
                                       properties:
+                                        "": {}
                                         nodeSelectorTerms:
                                           description: Required. A list of node selector
                                             terms. The terms are ORed.
@@ -20041,6 +21597,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               of them are ANDed. The TopologySelectorTerm
                                               type implements a subset of the NodeSelectorTerm.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: A list of node selector
                                                   requirements by node's labels.
@@ -20050,6 +21607,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: The label key that
                                                         the selector applies to.
@@ -20091,6 +21649,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: The label key that
                                                         the selector applies to.
@@ -20134,6 +21693,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     (e.g. co-locate this pod in the same node, zone,
                                     etc. as some other pod(s)).
                                   properties:
+                                    "": {}
                                     preferredDuringSchedulingIgnoredDuringExecution:
                                       description: The scheduler will prefer to schedule
                                         pods to nodes that satisfy the affinity expressions
@@ -20154,15 +21714,18 @@ var CRDsValidation map[string]string = map[string]string{
                                           WeightedPodAffinityTerm fields are added
                                           per-node to find the most preferred node(s)
                                         properties:
+                                          "": {}
                                           podAffinityTerm:
                                             description: Required. A pod affinity
                                               term, associated with the corresponding
                                               weight.
                                             properties:
+                                              "": {}
                                               labelSelector:
                                                 description: A label query over a
                                                   set of resources, in this case pods.
                                                 properties:
+                                                  "": {}
                                                   matchExpressions:
                                                     description: matchExpressions
                                                       is a list of label selector
@@ -20175,6 +21738,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                         and an operator that relates
                                                         the key and values.
                                                       properties:
+                                                        "": {}
                                                         key:
                                                           description: key is the
                                                             label key that the selector
@@ -20234,6 +21798,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                   and is only honored when PodAffinityNamespaceSelector
                                                   feature is enabled.
                                                 properties:
+                                                  "": {}
                                                   matchExpressions:
                                                     description: matchExpressions
                                                       is a list of label selector
@@ -20246,6 +21811,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                         and an operator that relates
                                                         the key and values.
                                                       properties:
+                                                        "": {}
                                                         key:
                                                           description: key is the
                                                             label key that the selector
@@ -20353,10 +21919,12 @@ var CRDsValidation map[string]string = map[string]string{
                                           that of any node on which a pod of the set
                                           of pods is running
                                         properties:
+                                          "": {}
                                           labelSelector:
                                             description: A label query over a set
                                               of resources, in this case pods.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -20367,6 +21935,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -20423,6 +21992,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               honored when PodAffinityNamespaceSelector
                                               feature is enabled.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -20433,6 +22003,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -20509,6 +22080,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     rules (e.g. avoid putting this pod in the same
                                     node, zone, etc. as some other pod(s)).
                                   properties:
+                                    "": {}
                                     preferredDuringSchedulingIgnoredDuringExecution:
                                       description: The scheduler will prefer to schedule
                                         pods to nodes that satisfy the anti-affinity
@@ -20530,15 +22102,18 @@ var CRDsValidation map[string]string = map[string]string{
                                           WeightedPodAffinityTerm fields are added
                                           per-node to find the most preferred node(s)
                                         properties:
+                                          "": {}
                                           podAffinityTerm:
                                             description: Required. A pod affinity
                                               term, associated with the corresponding
                                               weight.
                                             properties:
+                                              "": {}
                                               labelSelector:
                                                 description: A label query over a
                                                   set of resources, in this case pods.
                                                 properties:
+                                                  "": {}
                                                   matchExpressions:
                                                     description: matchExpressions
                                                       is a list of label selector
@@ -20551,6 +22126,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                         and an operator that relates
                                                         the key and values.
                                                       properties:
+                                                        "": {}
                                                         key:
                                                           description: key is the
                                                             label key that the selector
@@ -20610,6 +22186,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                   and is only honored when PodAffinityNamespaceSelector
                                                   feature is enabled.
                                                 properties:
+                                                  "": {}
                                                   matchExpressions:
                                                     description: matchExpressions
                                                       is a list of label selector
@@ -20622,6 +22199,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                         and an operator that relates
                                                         the key and values.
                                                       properties:
+                                                        "": {}
                                                         key:
                                                           description: key is the
                                                             label key that the selector
@@ -20729,10 +22307,12 @@ var CRDsValidation map[string]string = map[string]string{
                                           that of any node on which a pod of the set
                                           of pods is running
                                         properties:
+                                          "": {}
                                           labelSelector:
                                             description: A label query over a set
                                               of resources, in this case pods.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -20743,6 +22323,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -20799,6 +22380,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               honored when PodAffinityNamespaceSelector
                                               feature is enabled.
                                             properties:
+                                              "": {}
                                               matchExpressions:
                                                 description: matchExpressions is a
                                                   list of label selector requirements.
@@ -20809,6 +22391,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                     a key, and an operator that relates
                                                     the key and values.
                                                   properties:
+                                                    "": {}
                                                     key:
                                                       description: key is the label
                                                         key that the selector applies
@@ -20886,6 +22469,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 Parameters specified here will be merged to the generated
                                 DNS configuration based on DNSPolicy.
                               properties:
+                                "": {}
                                 nameservers:
                                   description: A list of DNS name server IP addresses.
                                     This will be appended to the base nameservers
@@ -20904,6 +22488,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: PodDNSConfigOption defines DNS resolver
                                       options of a pod.
                                     properties:
+                                      "": {}
                                       name:
                                         description: Required.
                                         type: string
@@ -20933,10 +22518,12 @@ var CRDsValidation map[string]string = map[string]string{
                               description: Specification of the desired behavior of
                                 the VirtualMachineInstance on the host.
                               properties:
+                                "": {}
                                 chassis:
                                   description: Chassis specifies the chassis info
                                     passed to the domain.
                                   properties:
+                                    "": {}
                                     asset:
                                       type: string
                                     manufacturer:
@@ -20952,15 +22539,18 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Clock sets the clock and timers of
                                     the vmi.
                                   properties:
+                                    "": {}
                                     timer:
                                       description: Timer specifies whih timers are
                                         attached to the vmi.
                                       properties:
+                                        "": {}
                                         hpet:
                                           description: HPET (High Precision Event
                                             Timer) - multiple timers with periodic
                                             interrupts.
                                           properties:
+                                            "": {}
                                             present:
                                               description: Enabled set to false makes
                                                 sure that the machine type or a preset
@@ -20979,6 +22569,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             guests read the host’s wall clock time
                                             (paravirtualized). For windows guests.
                                           properties:
+                                            "": {}
                                             present:
                                               description: Enabled set to false makes
                                                 sure that the machine type or a preset
@@ -20990,6 +22581,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             read the host’s wall clock time (paravirtualized).
                                             For linux guests."
                                           properties:
+                                            "": {}
                                             present:
                                               description: Enabled set to false makes
                                                 sure that the machine type or a preset
@@ -21000,6 +22592,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           description: PIT (Programmable Interval
                                             Timer) - a timer with periodic interrupts.
                                           properties:
+                                            "": {}
                                             present:
                                               description: Enabled set to false makes
                                                 sure that the machine type or a preset
@@ -21016,6 +22609,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           description: RTC (Real Time Clock) - a continuously
                                             running timer with periodic interrupts.
                                           properties:
+                                            "": {}
                                             present:
                                               description: Enabled set to false makes
                                                 sure that the machine type or a preset
@@ -21044,6 +22638,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         changes to the clock will be kept during reboots
                                         and are not reset.
                                       properties:
+                                        "": {}
                                         offsetSeconds:
                                           description: OffsetSeconds specifies an
                                             offset in seconds, relative to UTC. If
@@ -21056,6 +22651,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: CPU allow specified the detailed CPU
                                     topology inside the vmi.
                                   properties:
+                                    "": {}
                                     cores:
                                       description: Cores specifies the number of cores
                                         inside the vmi. Must be a value greater or
@@ -21075,6 +22671,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: CPUFeature allows specifying
                                           a CPU feature.
                                         properties:
+                                          "": {}
                                           name:
                                             description: Name of the CPU feature
                                             type: string
@@ -21117,6 +22714,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: NUMA allows specifying settings
                                         for the guest NUMA topology
                                       properties:
+                                        "": {}
                                         guestMappingPassthrough:
                                           description: GuestMappingPassthrough will
                                             create an efficient guest topology based
@@ -21131,6 +22729,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         to tune the VMI for lower latency, optional
                                         for real time workloads
                                       properties:
+                                        "": {}
                                         mask:
                                           description: 'Mask defines the vcpu mask
                                             expression that defines which vcpus are
@@ -21155,6 +22754,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Devices allows adding disks, network
                                     interfaces, and others
                                   properties:
+                                    "": {}
                                     autoattachGraphicsDevice:
                                       description: Whether to attach the default graphics
                                         device or not. VNC will not be available if
@@ -21193,16 +22793,19 @@ var CRDsValidation map[string]string = map[string]string{
                                         luns which are connected to the vmi.
                                       items:
                                         properties:
+                                          "": {}
                                           blockSize:
                                             description: If specified, the virtual
                                               disk will be presented with the given
                                               block sizes.
                                             properties:
+                                              "": {}
                                               custom:
                                                 description: CustomBlockSize represents
                                                   the desired logical and physical
                                                   block size for a VM disk.
                                                 properties:
+                                                  "": {}
                                                   logical:
                                                     type: integer
                                                   physical:
@@ -21215,6 +22818,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 description: Represents if a feature
                                                   is enabled or disabled.
                                                 properties:
+                                                  "": {}
                                                   enabled:
                                                     description: Enabled determines
                                                       if the feature should be enabled
@@ -21241,6 +22845,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             description: Attach a volume as a cdrom
                                               to the vmi.
                                             properties:
+                                              "": {}
                                               bus:
                                                 description: 'Bus indicates the type
                                                   of disk device to emulate. supported
@@ -21267,6 +22872,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             description: Attach a volume as a disk
                                               to the vmi.
                                             properties:
+                                              "": {}
                                               bus:
                                                 description: 'Bus indicates the type
                                                   of disk device to emulate. supported
@@ -21292,6 +22898,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             description: Attach a volume as a LUN
                                               to the vmi.
                                             properties:
+                                              "": {}
                                               bus:
                                                 description: 'Bus indicates the type
                                                   of disk device to emulate. supported
@@ -21329,6 +22936,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         which is connected to the vmi.
                                       items:
                                         properties:
+                                          "": {}
                                           name:
                                             description: Name is the device name
                                             type: string
@@ -21346,6 +22954,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         to the vmi.
                                       items:
                                         properties:
+                                          "": {}
                                           deviceName:
                                             type: string
                                           name:
@@ -21360,8 +22969,10 @@ var CRDsValidation map[string]string = map[string]string{
                                             type: string
                                           virtualGPUOptions:
                                             properties:
+                                              "": {}
                                               display:
                                                 properties:
+                                                  "": {}
                                                   enabled:
                                                     description: Enabled determines
                                                       if a display addapter backed
@@ -21374,6 +22985,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                       until the guest OS loads a real
                                                       GPU driver Defaults to true.
                                                     properties:
+                                                      "": {}
                                                       enabled:
                                                         description: Enabled determines
                                                           if the feature should be
@@ -21394,6 +23006,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         to the vmi.
                                       items:
                                         properties:
+                                          "": {}
                                           deviceName:
                                             description: DeviceName is the resource
                                               name of the host device exposed by a
@@ -21417,6 +23030,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: Inputs describe input devices
                                       items:
                                         properties:
+                                          "": {}
                                           bus:
                                             description: 'Bus indicates the bus of
                                               input device to emulate. Supported values:
@@ -21439,6 +23053,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         which are added to the vmi.
                                       items:
                                         properties:
+                                          "": {}
                                           bootOrder:
                                             description: BootOrder is an integer value
                                               > 0, used to determine ordering of boot
@@ -21456,6 +23071,7 @@ var CRDsValidation map[string]string = map[string]string{
                                               interface will pass additional DHCP
                                               options to the VMI
                                             properties:
+                                              "": {}
                                               bootFileName:
                                                 description: If specified will pass
                                                   option 67 to interface's DHCP server
@@ -21475,6 +23091,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                   description: DHCPExtraOptions defines
                                                     Extra DHCP options for a VM.
                                                   properties:
+                                                    "": {}
                                                     option:
                                                       description: Option is an Integer
                                                         value from 224-254 Required.
@@ -21536,6 +23153,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 Default protocol TCP. The port field
                                                 is mandatory
                                               properties:
+                                                "": {}
                                                 name:
                                                   description: If specified, this
                                                     must be an IANA_SVC_NAME and unique
@@ -21595,6 +23213,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     sound:
                                       description: Whether to emulate a sound device.
                                       properties:
+                                        "": {}
                                         model:
                                           description: 'We only support ich9 or ac97.
                                             If SoundDevice is not set: No sound card
@@ -21622,9 +23241,11 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: Watchdog describes a watchdog device
                                         which can be added to the vmi.
                                       properties:
+                                        "": {}
                                         i6300esb:
                                           description: i6300esb watchdog device.
                                           properties:
+                                            "": {}
                                             action:
                                               description: The action to take. Valid
                                                 values are poweroff, reset, shutdown.
@@ -21641,10 +23262,12 @@ var CRDsValidation map[string]string = map[string]string{
                                 features:
                                   description: Features like acpi, apic, hyperv, smm.
                                   properties:
+                                    "": {}
                                     acpi:
                                       description: ACPI enables/disables ACPI inside
                                         the guest. Defaults to enabled.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -21654,6 +23277,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     apic:
                                       description: Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -21668,12 +23292,14 @@ var CRDsValidation map[string]string = map[string]string{
                                     hyperv:
                                       description: Defaults to the machine type setting.
                                       properties:
+                                        "": {}
                                         evmcs:
                                           description: EVMCS Speeds up L2 vmexits,
                                             but disables other virtualization features.
                                             Requires vapic. Defaults to the machine
                                             type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21685,6 +23311,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             clock source handling for Hyper-V on KVM.
                                             Defaults to the machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21696,6 +23323,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             overcommited environments. Requires vpindex.
                                             Defaults to the machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21707,6 +23335,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             notifications on TSC frequency changes.
                                             Defaults to the machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21718,6 +23347,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             OS to disable watchdog timeouts. Defaults
                                             to the machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21729,6 +23359,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             for the vmi. Requires synic. Defaults
                                             to the machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21740,6 +23371,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             to improve scheduling in the guest. Defaults
                                             to the machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21750,6 +23382,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           description: Spinlocks allows to configure
                                             the spinlock retry attempts.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21767,6 +23400,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             Interrupt Controller. Defaults to the
                                             machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21779,10 +23413,12 @@ var CRDsValidation map[string]string = map[string]string{
                                             CPU load. Defaults to the machine type
                                             setting.
                                           properties:
+                                            "": {}
                                             direct:
                                               description: Represents if a feature
                                                 is enabled or disabled.
                                               properties:
+                                                "": {}
                                                 enabled:
                                                   description: Enabled determines
                                                     if the feature should be enabled
@@ -21799,6 +23435,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             vpindex. Defaults to the machine type
                                             setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21810,6 +23447,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             handling of interrupts. Defaults to the
                                             machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21821,6 +23459,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             hypervisor vendor id. Defaults to the
                                             machine type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21838,6 +23477,7 @@ var CRDsValidation map[string]string = map[string]string{
                                             virtual processors. Defaults to the machine
                                             type setting.
                                           properties:
+                                            "": {}
                                             enabled:
                                               description: Enabled determines if the
                                                 feature should be enabled or disabled
@@ -21849,6 +23489,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: Configure how KVM presence is exposed
                                         to the guest.
                                       properties:
+                                        "": {}
                                         hidden:
                                           description: Hide the KVM hypervisor from
                                             standard MSR based discovery. Defaults
@@ -21861,6 +23502,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         kernels this feature should be explicitly
                                         disabled.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -21871,6 +23513,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: SMM enables/disables System Management
                                         Mode. TSEG not yet implemented.
                                       properties:
+                                        "": {}
                                         enabled:
                                           description: Enabled determines if the feature
                                             should be enabled or disabled on the guest.
@@ -21881,14 +23524,17 @@ var CRDsValidation map[string]string = map[string]string{
                                 firmware:
                                   description: Firmware.
                                   properties:
+                                    "": {}
                                     bootloader:
                                       description: Settings to control the bootloader
                                         that is used.
                                       properties:
+                                        "": {}
                                         bios:
                                           description: If set (default), BIOS will
                                             be used.
                                           properties:
+                                            "": {}
                                             useSerial:
                                               description: If set, the BIOS output
                                                 will be transmitted over serial
@@ -21898,6 +23544,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           description: If set, EFI will be used instead
                                             of BIOS.
                                           properties:
+                                            "": {}
                                             secureBoot:
                                               description: If set, SecureBoot will
                                                 be enabled and the OVMF roms will
@@ -21911,10 +23558,12 @@ var CRDsValidation map[string]string = map[string]string{
                                       description: Settings to set the kernel for
                                         booting.
                                       properties:
+                                        "": {}
                                         container:
                                           description: Container defines the container
                                             that containes kernel artifacts
                                           properties:
+                                            "": {}
                                             image:
                                               description: Image that contains initrd
                                                 / kernel files.
@@ -21964,6 +23613,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 launchSecurity:
                                   description: Launch Security setting of the vmi.
                                   properties:
+                                    "": {}
                                     sev:
                                       description: AMD Secure Encrypted Virtualization
                                         (SEV).
@@ -21972,6 +23622,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 machine:
                                   description: Machine type.
                                   properties:
+                                    "": {}
                                     type:
                                       description: QEMU machine type is the actual
                                         chipset of the VirtualMachineInstance.
@@ -21981,6 +23632,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Memory allow specifying the VMI memory
                                     features.
                                   properties:
+                                    "": {}
                                     guest:
                                       anyOf:
                                       - type: integer
@@ -21998,6 +23650,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         for the VirtualMachineInstance instead of
                                         regular memory.
                                       properties:
+                                        "": {}
                                         pageSize:
                                           description: PageSize specifies the hugepage
                                             size, for x86_64 architecture valid values
@@ -22009,6 +23662,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: Resources describes the Compute Resources
                                     required by this vmi.
                                   properties:
+                                    "": {}
                                     limits:
                                       additionalProperties:
                                         anyOf:
@@ -22059,6 +23713,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 if the probe fails. Cannot be updated. More info:
                                 https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
+                                "": {}
                                 exec:
                                   description: One and only one of the following should
                                     be specified. Exec specifies the action to take,
@@ -22066,6 +23721,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     If the guest agent is not available, this probe
                                     will fail.
                                   properties:
+                                    "": {}
                                     command:
                                       description: Command is the command line to
                                         execute inside the container, the working
@@ -22094,6 +23750,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: HTTPGet specifies the http request
                                     to perform.
                                   properties:
+                                    "": {}
                                     host:
                                       description: Host name to connect to, defaults
                                         to the pod IP. You probably want to set "Host"
@@ -22106,6 +23763,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: HTTPHeader describes a custom
                                           header to be used in HTTP probes
                                         properties:
+                                          "": {}
                                           name:
                                             description: The header field name
                                             type: string
@@ -22159,6 +23817,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     a TCP port. TCP hooks not yet supported TODO:
                                     implement a realistic TCP lifecycle hook'
                                   properties:
+                                    "": {}
                                     host:
                                       description: 'Optional: Host name to connect
                                         to, defaults to the pod IP.'
@@ -22194,9 +23853,11 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: Network represents a network type and
                                   a resource that should be connected to the vm.
                                 properties:
+                                  "": {}
                                   multus:
                                     description: Represents the multus cni network.
                                     properties:
+                                      "": {}
                                       default:
                                         description: Select the default network and
                                           add it to the multus-cni.io/default-network
@@ -22219,6 +23880,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Represents the stock pod network
                                       interface.
                                     properties:
+                                      "": {}
                                       vmIPv6NetworkCIDR:
                                         description: IPv6 CIDR for the vm network.
                                           Defaults to fd10:0:2::/120 if not specified.
@@ -22251,6 +23913,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 removed from service endpoints if the probe fails.
                                 Cannot be updated. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes'
                               properties:
+                                "": {}
                                 exec:
                                   description: One and only one of the following should
                                     be specified. Exec specifies the action to take,
@@ -22258,6 +23921,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     If the guest agent is not available, this probe
                                     will fail.
                                   properties:
+                                    "": {}
                                     command:
                                       description: Command is the command line to
                                         execute inside the container, the working
@@ -22286,6 +23950,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   description: HTTPGet specifies the http request
                                     to perform.
                                   properties:
+                                    "": {}
                                     host:
                                       description: Host name to connect to, defaults
                                         to the pod IP. You probably want to set "Host"
@@ -22298,6 +23963,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: HTTPHeader describes a custom
                                           header to be used in HTTP probes
                                         properties:
+                                          "": {}
                                           name:
                                             description: The header field name
                                             type: string
@@ -22351,6 +24017,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     a TCP port. TCP hooks not yet supported TODO:
                                     implement a realistic TCP lifecycle hook'
                                   properties:
+                                    "": {}
                                     host:
                                       description: 'Optional: Host name to connect
                                         to, defaults to the pod IP.'
@@ -22410,6 +24077,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   tolerates any taint that matches the triple <key,value,effect>
                                   using the matching operator <operator>.
                                 properties:
+                                  "": {}
                                   effect:
                                     description: Effect indicates the taint effect
                                       to match. Empty means match all taint effects.
@@ -22447,6 +24115,132 @@ var CRDsValidation map[string]string = map[string]string{
                                     type: string
                                 type: object
                               type: array
+                            topologySpreadConstraints:
+                              description: TopologySpreadConstraints describes how
+                                a group of VMIs ought to spread across topology domains.
+                                K8s scheduler will schedule VMI pods in a way which
+                                abides by the constraints.
+                              items:
+                                description: TopologySpreadConstraint specifies how
+                                  to spread matching pods among the given topology.
+                                properties:
+                                  "": {}
+                                  labelSelector:
+                                    description: LabelSelector is used to find matching
+                                      pods. Pods that match this label selector are
+                                      counted to determine the number of pods in their
+                                      corresponding topology domain.
+                                    properties:
+                                      "": {}
+                                      matchExpressions:
+                                        description: matchExpressions is a list of
+                                          label selector requirements. The requirements
+                                          are ANDed.
+                                        items:
+                                          description: A label selector requirement
+                                            is a selector that contains values, a
+                                            key, and an operator that relates the
+                                            key and values.
+                                          properties:
+                                            "": {}
+                                            key:
+                                              description: key is the label key that
+                                                the selector applies to.
+                                              type: string
+                                            operator:
+                                              description: operator represents a key's
+                                                relationship to a set of values. Valid
+                                                operators are In, NotIn, Exists and
+                                                DoesNotExist.
+                                              type: string
+                                            values:
+                                              description: values is an array of string
+                                                values. If the operator is In or NotIn,
+                                                the values array must be non-empty.
+                                                If the operator is Exists or DoesNotExist,
+                                                the values array must be empty. This
+                                                array is replaced during a strategic
+                                                merge patch.
+                                              items:
+                                                type: string
+                                              type: array
+                                          required:
+                                          - key
+                                          - operator
+                                          type: object
+                                        type: array
+                                      matchLabels:
+                                        additionalProperties:
+                                          type: string
+                                        description: matchLabels is a map of {key,value}
+                                          pairs. A single {key,value} in the matchLabels
+                                          map is equivalent to an element of matchExpressions,
+                                          whose key field is "key", the operator is
+                                          "In", and the values array contains only
+                                          "value". The requirements are ANDed.
+                                        type: object
+                                    type: object
+                                  maxSkew:
+                                    description: 'MaxSkew describes the degree to
+                                      which pods may be unevenly distributed. When
+                                      ''whenUnsatisfiable=DoNotSchedule'', it is the
+                                      maximum permitted difference between the number
+                                      of matching pods in the target topology and
+                                      the global minimum. For example, in a 3-zone
+                                      cluster, MaxSkew is set to 1, and pods with
+                                      the same labelSelector spread as 1/1/0: | zone1
+                                      | zone2 | zone3 | |   P   |   P   |       |
+                                      - if MaxSkew is 1, incoming pod can only be
+                                      scheduled to zone3 to become 1/1/1; scheduling
+                                      it onto zone1(zone2) would make the ActualSkew(2-0)
+                                      on zone1(zone2) violate MaxSkew(1). - if MaxSkew
+                                      is 2, incoming pod can be scheduled onto any
+                                      zone. When ''whenUnsatisfiable=ScheduleAnyway'',
+                                      it is used to give higher precedence to topologies
+                                      that satisfy it. It''s a required field. Default
+                                      value is 1 and 0 is not allowed.'
+                                    format: int32
+                                    type: integer
+                                  topologyKey:
+                                    description: TopologyKey is the key of node labels.
+                                      Nodes that have a label with this key and identical
+                                      values are considered to be in the same topology.
+                                      We consider each <key, value> as a "bucket",
+                                      and try to put balanced number of pods into
+                                      each bucket. It's a required field.
+                                    type: string
+                                  whenUnsatisfiable:
+                                    description: 'WhenUnsatisfiable indicates how
+                                      to deal with a pod if it doesn''t satisfy the
+                                      spread constraint. - DoNotSchedule (default)
+                                      tells the scheduler not to schedule it. - ScheduleAnyway
+                                      tells the scheduler to schedule the pod in any
+                                      location,   but giving higher precedence to
+                                      topologies that would help reduce the   skew.
+                                      A constraint is considered "Unsatisfiable" for
+                                      an incoming pod if and only if every possible
+                                      node assignment for that pod would violate "MaxSkew"
+                                      on some topology. For example, in a 3-zone cluster,
+                                      MaxSkew is set to 1, and pods with the same
+                                      labelSelector spread as 3/1/1: | zone1 | zone2
+                                      | zone3 | | P P P |   P   |   P   | If WhenUnsatisfiable
+                                      is set to DoNotSchedule, incoming pod can only
+                                      be scheduled to zone2(zone3) to become 3/2/1(3/1/2)
+                                      as ActualSkew(2-1) on zone2(zone3) satisfies
+                                      MaxSkew(1). In other words, the cluster can
+                                      still be imbalanced, but scheduler won''t make
+                                      it *more* imbalanced. It''s a required field.'
+                                    type: string
+                                required:
+                                - maxSkew
+                                - topologyKey
+                                - whenUnsatisfiable
+                                type: object
+                              type: array
+                              x-kubernetes-list-map-keys:
+                              - topologyKey
+                              - whenUnsatisfiable
+                              x-kubernetes-list-type: map
                             volumes:
                               description: List of volumes that can be mounted by
                                 disks belonging to the vmi.
@@ -22454,6 +24248,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: Volume represents a named volume in a
                                   vmi.
                                 properties:
+                                  "": {}
                                   cloudInitConfigDrive:
                                     description: 'CloudInitConfigDrive represents
                                       a cloud-init Config Drive user-data source.
@@ -22461,6 +24256,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       to the vmi. A proper cloud-init installation
                                       is required inside the guest. More info: https://cloudinit.readthedocs.io/en/latest/topics/datasources/configdrive.html'
                                     properties:
+                                      "": {}
                                       networkData:
                                         description: NetworkData contains config drive
                                           inline cloud-init networkdata.
@@ -22475,6 +24271,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           a k8s secret that contains config drive
                                           networkdata.
                                         properties:
+                                          "": {}
                                           name:
                                             description: 'Name of the referent. More
                                               info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22487,6 +24284,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           a k8s secret that contains config drive
                                           userdata.
                                         properties:
+                                          "": {}
                                           name:
                                             description: 'Name of the referent. More
                                               info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22511,6 +24309,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       installation is required inside the guest. More
                                       info: http://cloudinit.readthedocs.io/en/latest/topics/datasources/nocloud.html'
                                     properties:
+                                      "": {}
                                       networkData:
                                         description: NetworkData contains NoCloud
                                           inline cloud-init networkdata.
@@ -22524,6 +24323,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: NetworkDataSecretRef references
                                           a k8s secret that contains NoCloud networkdata.
                                         properties:
+                                          "": {}
                                           name:
                                             description: 'Name of the referent. More
                                               info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22535,6 +24335,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: UserDataSecretRef references
                                           a k8s secret that contains NoCloud userdata.
                                         properties:
+                                          "": {}
                                           name:
                                             description: 'Name of the referent. More
                                               info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22557,6 +24358,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       to a ConfigMap in the same namespace. More info:
                                       https://kubernetes.io/docs/tasks/configure-pod-container/configure-pod-configmap/'
                                     properties:
+                                      "": {}
                                       name:
                                         description: 'Name of the referent. More info:
                                           https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22580,6 +24382,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       image, embedding a qcow or raw disk. More info:
                                       https://kubevirt.gitbooks.io/user-guide/registry-disk.html'
                                     properties:
+                                      "": {}
                                       image:
                                         description: Image is the name of the image
                                           with the embedded disk.
@@ -22608,6 +24411,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       creation a PVC for this volume as well as the
                                       process of populating that PVC with a disk image.
                                     properties:
+                                      "": {}
                                       hotpluggable:
                                         description: Hotpluggable indicates whether
                                           the volume can be hotplugged and hotunplugged.
@@ -22623,6 +24427,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: DownwardAPI represents downward API
                                       about the pod that should populate this volume
                                     properties:
+                                      "": {}
                                       fields:
                                         description: Fields is a list of downward
                                           API volume file
@@ -22631,11 +24436,13 @@ var CRDsValidation map[string]string = map[string]string{
                                             information to create the file containing
                                             the pod field
                                           properties:
+                                            "": {}
                                             fieldRef:
                                               description: 'Required: Selects a field
                                                 of the pod: only annotations, labels,
                                                 name and namespace are supported.'
                                               properties:
+                                                "": {}
                                                 apiVersion:
                                                   description: Version of the schema
                                                     the FieldPath is written in terms
@@ -22678,6 +24485,7 @@ var CRDsValidation map[string]string = map[string]string{
                                                 requests.cpu and requests.memory)
                                                 are currently supported.'
                                               properties:
+                                                "": {}
                                                 containerName:
                                                   description: 'Container name: required
                                                     for volumes, optional for env
@@ -22723,6 +24531,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       disk which shares the vmis lifecycle. More info:
                                       https://kubevirt.gitbooks.io/user-guide/disks-and-volumes.html'
                                     properties:
+                                      "": {}
                                       capacity:
                                         anyOf:
                                         - type: integer
@@ -22738,12 +24547,14 @@ var CRDsValidation map[string]string = map[string]string{
                                       that "wraps" specified source and provides copy-on-write
                                       image on top of it.
                                     properties:
+                                      "": {}
                                       persistentVolumeClaim:
                                         description: 'PersistentVolumeClaimVolumeSource
                                           represents a reference to a PersistentVolumeClaim
                                           in the same namespace. Directly attached
                                           to the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                                         properties:
+                                          "": {}
                                           claimName:
                                             description: 'ClaimName is the name of
                                               a PersistentVolumeClaim in the same
@@ -22762,6 +24573,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: HostDisk represents a disk created
                                       on the cluster level
                                     properties:
+                                      "": {}
                                       capacity:
                                         anyOf:
                                         - type: integer
@@ -22791,6 +24603,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       launcher and is populated with a memory dump
                                       of the vmi
                                     properties:
+                                      "": {}
                                       claimName:
                                         description: 'ClaimName is the name of a PersistentVolumeClaim
                                           in the same namespace as the pod using this
@@ -22817,6 +24630,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       in the same namespace. Directly attached to
                                       the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                                     properties:
+                                      "": {}
                                       claimName:
                                         description: 'ClaimName is the name of a PersistentVolumeClaim
                                           in the same namespace as the pod using this
@@ -22838,6 +24652,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       reference to a secret data in the same namespace.
                                       More info: https://kubernetes.io/docs/concepts/configuration/secret/'
                                     properties:
+                                      "": {}
                                       optional:
                                         description: Specify whether the Secret or
                                           it's keys must be defined
@@ -22860,6 +24675,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       only be one volume of this type! More info:
                                       https://kubernetes.io/docs/tasks/configure-pod-container/configure-service-account/'
                                     properties:
+                                      "": {}
                                       serviceAccountName:
                                         description: 'Name of the service account
                                           in the pod''s namespace to use. More info:
@@ -22869,12 +24685,14 @@ var CRDsValidation map[string]string = map[string]string{
                                   sysprep:
                                     description: Represents a Sysprep volume source.
                                     properties:
+                                      "": {}
                                       configMap:
                                         description: ConfigMap references a ConfigMap
                                           that contains Sysprep answer file named
                                           autounattend.xml that should be attached
                                           as disk of CDROM type.
                                         properties:
+                                          "": {}
                                           name:
                                             description: 'Name of the referent. More
                                               info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22888,6 +24706,7 @@ var CRDsValidation map[string]string = map[string]string{
                                           autounattend.xml that should be attached
                                           as disk of CDROM type.
                                         properties:
+                                          "": {}
                                           name:
                                             description: 'Name of the referent. More
                                               info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
@@ -22911,6 +24730,7 @@ var CRDsValidation map[string]string = map[string]string{
                   description: Status holds the current state of the controller and
                     brief information about its associated VirtualMachineInstance
                   properties:
+                    "": {}
                     conditions:
                       description: Hold the state information of the VirtualMachine
                         and its VirtualMachineInstance
@@ -22918,6 +24738,7 @@ var CRDsValidation map[string]string = map[string]string{
                         description: VirtualMachineCondition represents the state
                           of VirtualMachine
                         properties:
+                          "": {}
                           lastProbeTime:
                             format: date-time
                             nullable: true
@@ -22948,6 +24769,7 @@ var CRDsValidation map[string]string = map[string]string{
                         and info of getting a memory dump to the given pvc
                       nullable: true
                       properties:
+                        "": {}
                         claimName:
                           description: ClaimName is the name of the pvc that will
                             contain the memory dump
@@ -22998,6 +24820,7 @@ var CRDsValidation map[string]string = map[string]string{
                         for the purposes of crash loop backoffs
                       nullable: true
                       properties:
+                        "": {}
                         consecutiveFailCount:
                           type: integer
                         lastFailedVMIUID:
@@ -23016,6 +24839,7 @@ var CRDsValidation map[string]string = map[string]string{
                         start a new one.
                       items:
                         properties:
+                          "": {}
                           action:
                             description: Indicates the type of action that is requested.
                               e.g. Start or Stop
@@ -23041,24 +24865,29 @@ var CRDsValidation map[string]string = map[string]string{
                         VMI.
                       items:
                         properties:
+                          "": {}
                           addVolumeOptions:
                             description: AddVolumeOptions when set indicates a volume
                               should be added. The details within this field specify
                               how to add the volume
                             properties:
+                              "": {}
                               disk:
                                 description: Disk represents the hotplug disk that
                                   will be plugged into the running VMI
                                 properties:
+                                  "": {}
                                   blockSize:
                                     description: If specified, the virtual disk will
                                       be presented with the given block sizes.
                                     properties:
+                                      "": {}
                                       custom:
                                         description: CustomBlockSize represents the
                                           desired logical and physical block size
                                           for a VM disk.
                                         properties:
+                                          "": {}
                                           logical:
                                             type: integer
                                           physical:
@@ -23071,6 +24900,7 @@ var CRDsValidation map[string]string = map[string]string{
                                         description: Represents if a feature is enabled
                                           or disabled.
                                         properties:
+                                          "": {}
                                           enabled:
                                             description: Enabled determines if the
                                               feature should be enabled or disabled
@@ -23095,6 +24925,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Attach a volume as a cdrom to the
                                       vmi.
                                     properties:
+                                      "": {}
                                       bus:
                                         description: 'Bus indicates the type of disk
                                           device to emulate. supported values: virtio,
@@ -23119,6 +24950,7 @@ var CRDsValidation map[string]string = map[string]string{
                                     description: Attach a volume as a disk to the
                                       vmi.
                                     properties:
+                                      "": {}
                                       bus:
                                         description: 'Bus indicates the type of disk
                                           device to emulate. supported values: virtio,
@@ -23142,6 +24974,7 @@ var CRDsValidation map[string]string = map[string]string{
                                   lun:
                                     description: Attach a volume as a LUN to the vmi.
                                     properties:
+                                      "": {}
                                       bus:
                                         description: 'Bus indicates the type of disk
                                           device to emulate. supported values: virtio,
@@ -23190,11 +25023,13 @@ var CRDsValidation map[string]string = map[string]string{
                                 description: VolumeSource represents the source of
                                   the volume to map to the disk.
                                 properties:
+                                  "": {}
                                   dataVolume:
                                     description: DataVolume represents the dynamic
                                       creation a PVC for this volume as well as the
                                       process of populating that PVC with a disk image.
                                     properties:
+                                      "": {}
                                       hotpluggable:
                                         description: Hotpluggable indicates whether
                                           the volume can be hotplugged and hotunplugged.
@@ -23212,6 +25047,7 @@ var CRDsValidation map[string]string = map[string]string{
                                       in the same namespace. Directly attached to
                                       the vmi via qemu. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                                     properties:
+                                      "": {}
                                       claimName:
                                         description: 'ClaimName is the name of a PersistentVolumeClaim
                                           in the same namespace as the pod using this
@@ -23239,6 +25075,7 @@ var CRDsValidation map[string]string = map[string]string{
                               volume should be removed. The details within this field
                               specify how to add the volume
                             properties:
+                              "": {}
                               dryRun:
                                 description: 'When present, indicates that modifications
                                   should not be persisted. An invalid or unrecognized
@@ -23264,6 +25101,7 @@ var CRDsValidation map[string]string = map[string]string{
                         whether snapshotting is supported by each volume.
                       items:
                         properties:
+                          "": {}
                           enabled:
                             description: True if the volume supports snapshotting
                             type: boolean
@@ -23288,8 +25126,10 @@ var CRDsValidation map[string]string = map[string]string{
           items:
             description: VolumeBackup contains the data neeed to restore a PVC
             properties:
+              "": {}
               persistentVolumeClaim:
                 properties:
+                  "": {}
                   metadata:
                     description: 'Standard object''s metadata. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#metadata'
                     type: object
@@ -23298,6 +25138,7 @@ var CRDsValidation map[string]string = map[string]string{
                     description: 'Spec defines the desired characteristics of a volume
                       requested by a pod author. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#persistentvolumeclaims'
                     properties:
+                      "": {}
                       accessModes:
                         description: 'AccessModes contains the desired access modes
                           the volume should have. More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#access-modes-1'
@@ -23314,6 +25155,7 @@ var CRDsValidation map[string]string = map[string]string{
                           feature gate is enabled, this field will always have the
                           same contents as the DataSourceRef field.'
                         properties:
+                          "": {}
                           apiGroup:
                             description: APIGroup is the group for the resource being
                               referenced. If APIGroup is not specified, the specified
@@ -23352,6 +25194,7 @@ var CRDsValidation map[string]string = map[string]string{
                           this field requires the AnyVolumeDataSource feature gate
                           to be enabled.'
                         properties:
+                          "": {}
                           apiGroup:
                             description: APIGroup is the group for the resource being
                               referenced. If APIGroup is not specified, the specified
@@ -23376,6 +25219,7 @@ var CRDsValidation map[string]string = map[string]string{
                           than capacity recorded in the status field of the claim.
                           More info: https://kubernetes.io/docs/concepts/storage/persistent-volumes#resources'
                         properties:
+                          "": {}
                           limits:
                             additionalProperties:
                               anyOf:
@@ -23403,6 +25247,7 @@ var CRDsValidation map[string]string = map[string]string{
                       selector:
                         description: A label query over volumes to consider for binding.
                         properties:
+                          "": {}
                           matchExpressions:
                             description: matchExpressions is a list of label selector
                               requirements. The requirements are ANDed.
@@ -23411,6 +25256,7 @@ var CRDsValidation map[string]string = map[string]string{
                                 that contains values, a key, and an operator that
                                 relates the key and values.
                               properties:
+                                "": {}
                                 key:
                                   description: key is the label key that the selector
                                     applies to.
@@ -23476,6 +25322,7 @@ var CRDsValidation map[string]string = map[string]string{
       description: VirtualMachineSnapshotContentStatus is the status for a VirtualMachineSnapshotStatus
         resource
       properties:
+        "": {}
         creationTime:
           format: date-time
           nullable: true
@@ -23483,6 +25330,7 @@ var CRDsValidation map[string]string = map[string]string{
         error:
           description: Error is the last error encountered during the snapshot/restore
           properties:
+            "": {}
             message:
               type: string
             time:
@@ -23495,6 +25343,7 @@ var CRDsValidation map[string]string = map[string]string{
           items:
             description: VolumeSnapshotStatus is the status of a VolumeSnapshot
             properties:
+              "": {}
               creationTime:
                 format: date-time
                 nullable: true
@@ -23502,6 +25351,7 @@ var CRDsValidation map[string]string = map[string]string{
               error:
                 description: Error is the last error encountered during the snapshot/restore
                 properties:
+                  "": {}
                   message:
                     type: string
                   time:

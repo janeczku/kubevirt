@@ -1450,6 +1450,8 @@ func (t *templateService) renderLaunchManifest(vmi *v1.VirtualMachineInstance, i
 
 	pod.Spec.Tolerations = vmi.Spec.Tolerations
 
+	pod.Spec.TopologySpreadConstraints = vmi.Spec.TopologySpreadConstraints
+
 	pod.Spec.SchedulerName = vmi.Spec.SchedulerName
 
 	enableServiceLinks := false

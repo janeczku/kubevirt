@@ -4498,6 +4498,13 @@ func (in *VirtualMachineInstanceSpec) DeepCopyInto(out *VirtualMachineInstanceSp
 			(*in)[i].DeepCopyInto(&(*out)[i])
 		}
 	}
+	if in.TopologySpreadConstraints != nil {
+		in, out := &in.TopologySpreadConstraints, &out.TopologySpreadConstraints
+		*out = make([]corev1.TopologySpreadConstraint, len(*in))
+		for i := range *in {
+			(*in)[i].DeepCopyInto(&(*out)[i])
+		}
+	}
 	if in.EvictionStrategy != nil {
 		in, out := &in.EvictionStrategy, &out.EvictionStrategy
 		*out = new(EvictionStrategy)
