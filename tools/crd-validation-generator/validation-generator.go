@@ -68,6 +68,7 @@ func generateGoFile(outputDir string, validations map[string]*extv1.CustomResour
 
 	for _, crdname := range crds {
 		crd := validations[crdname]
+		crd.OpenAPIV3Schema = sanitizeSchema(crd.OpenAPIV3Schema)
 		b, _ := yaml.Marshal(crd)
 		file.WriteString(fmt.Sprintf(variable, crdname, string(b)))
 	}
@@ -88,4 +89,39 @@ func getValidation(filename string) (string, *extv1.CustomResourceValidation) {
 		panic(fmt.Errorf("Failed to parse crd from file %v, %v", filename, err))
 	}
 	return crd.Spec.Names.Singular, crd.Spec.Versions[0].Schema
+}
+
+// sanitizeSchema traverses the given JSON-Schema object and replaces all occurrences of the
+// backtick (`) character in the (sub-)schema Description fields with single quote characters
+func sanitizeSchema(schema *extv1.JSONSchemaProps) *extv1.JSONSchemaProps {
+	if schema.Description != "" {
+		schema.Description = strings.ReplaceAll(schema.Description, "`", "'")
+	}
+
+	// Traverse Items
+	if schema.Items != nil {
+		if schema.Items.Schema != nil {
+			schema.Items.Schema = sanitizeSchema(schema.Items.Schema)
+		}
+		if len(schema.Items.JSONSchemas) > 0 {
+			sanitizedProps := make([]extv1.JSONSchemaProps, len(schema.Items.JSONSchemas))
+			for _, schema := range schema.Items.JSONSchemas {
+				sanitizedProps = append(sanitizedProps, *sanitizeSchema(&schema))
+			}
+			schema.Items.JSONSchemas = sanitizedProps
+		}
+	}
+
+	// Traverse Properties
+	if len(schema.Properties) > 0 {
+		propNames := make([]string, len(schema.Properties))
+		for p := range schema.Properties {
+			propNames = append(propNames, p)
+		}
+		for _, name := range propNames {
+			prop := schema.Properties[name]
+			schema.Properties[name] = *sanitizeSchema(&prop)
+		}
+	}
+	return schema
 }
