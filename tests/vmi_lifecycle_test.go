@@ -1717,6 +1717,72 @@ var _ = Describe("[rfe_id:273][crit:high][arm64][vendor:cnv-qe@redhat.com][level
 			Expect(event).To(BeNil(), "virt-handler tried to sync on a VirtualMachineInstance in final state")
 		})
 	})
+
+	Context("replicaset with topology spread constraints", func() {
+		It("Replicas should be spread across nodes", func() {
+			nodes := libnode.GetAllSchedulableNodes(virtClient)
+			Expect(nodes.Items).ToNot(BeEmpty(), "There should be some schedulable nodes")
+			numNodes := len(nodes.Items)
+			vmLabelKey := "test" + rand.String(5)
+			vmLabelValue := "test" + rand.String(5)
+			vmi := tests.NewRandomVMI()
+			vmi.Spec.TopologySpreadConstraints = []k8sv1.TopologySpreadConstraint{
+				{
+					MaxSkew:           1,
+					TopologyKey:       "kubernetes.io/hostname",
+					WhenUnsatisfiable: "DoNotSchedule",
+					LabelSelector: &metav1.LabelSelector{
+						MatchLabels: map[string]string{
+							vmLabelKey: vmLabelValue,
+						},
+					},
+				},
+			}
+
+			By("Creating a VirtualMachineInstanceReplicaSet")
+			replicas := int32(numNodes)
+			rs := &v1.VirtualMachineInstanceReplicaSet{
+				ObjectMeta: metav1.ObjectMeta{Name: "replicaset" + rand.String(5)},
+				Spec: v1.VirtualMachineInstanceReplicaSetSpec{
+					Replicas: &replicas,
+					Selector: &metav1.LabelSelector{
+						MatchLabels: map[string]string{vmLabelKey: vmLabelValue},
+					},
+					Template: &v1.VirtualMachineInstanceTemplateSpec{
+						ObjectMeta: metav1.ObjectMeta{
+							Labels: map[string]string{vmLabelKey: vmLabelValue},
+							Name:   vmi.ObjectMeta.Name,
+						},
+						Spec: vmi.Spec,
+					},
+				},
+			}
+			createdRs, err := virtClient.ReplicaSet(vmi.Namespace).Create(rs)
+			Expect(err).ToNot(HaveOccurred(), "Should create replicaset")
+
+			By("Ensuring that all VMIs are ready")
+			Eventually(func() int {
+				rs, err := virtClient.ReplicaSet(vmi.Namespace).Get(createdRs.ObjectMeta.Name, metav1.GetOptions{})
+				Expect(err).ToNot(HaveOccurred())
+				return int(rs.Status.ReadyReplicas)
+			}, 120*time.Second, 1*time.Second).Should(Equal(numNodes))
+
+			By("Ensuring that VMI replicas are scheduled to seperate nodes")
+			vmiSet, err := virtClient.VirtualMachineInstance(vmi.Namespace).List(&metav1.ListOptions{
+				LabelSelector: fmt.Sprintf("%s=%s", vmLabelKey, vmLabelValue),
+			})
+			Expect(err).ToNot(HaveOccurred(), "Should find VMIs by label")
+			Expect(vmiSet.Items).To(HaveLen(numNodes), "Should get expected number of VMIs")
+
+			var nodeNames map[string]bool
+			for _, vmi := range vmiSet.Items {
+				nodeName := vmi.Status.NodeName
+				_, nodeHasReplica := nodeNames[nodeName]
+				Expect(nodeHasReplica).To(BeFalse(), "Multiple replicas should not be scheduled to the same node")
+				nodeNames[nodeName] = true
+			}
+		})
+	})
 })
 
 func renderPkillAllPod(processName string) *k8sv1.Pod {
